@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alef | AI-Native Legal for Startups</title>
+  <meta name="description" content="AI-powered contract review with licensed attorney oversight. 48-hour turnaround. Pay per result, not per hour.">
+  <meta property="og:title" content="Alef | AI-Native Legal for Startups">
+  <meta property="og:description" content="Your sales team closes deals. We close contracts. 48-hour turnaround.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alef.legal">
+
+  <!-- Favicon (Alef icon mark - orange) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 328 328'%3E%3Cpath fill='%23bd5427' d='M108.41,42.96l62.51,62.3c1.08,1.07,1.69,2.53,1.69,4.06h0c.01,3.19-2.57,5.78-5.76,5.78h-61.46c-3.18,0-5.76,2.58-5.76,5.76v43.93c0,3.18,2.58,5.76,5.76,5.76h81.32c3.18,0,5.76-2.58,5.76-5.76V47.85c0-3.18,2.58-5.76,5.76-5.76h82.51c3.18,0,5.76,2.58,5.76,5.76v210.05c0,5.13-6.2,7.7-9.83,4.07l-28.56-28.56c-1.08-1.08-2.54-1.69-4.07-1.69h-10.9c-3.18,0-5.76,2.58-5.76,5.76v43.65c0,3.18-2.58,5.76-5.76,5.76h-68.28c-1.53,0-2.99-.61-4.07-1.69L43.36,179.17c-1.08-1.08-1.68-2.54-1.68-4.07V82.72c0-1.61.67-3.15,1.86-4.24l38.75-35.68c1.06-.98,2.46-1.52,3.9-1.52h18.16c1.52,0,2.99.6,4.06,1.68Z'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+
+  <style>
+    /* ===== RESET ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; }
+    img, svg { display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { border: none; background: none; cursor: pointer; font: inherit; }
+
+    ::selection {
+      background: var(--alef-orange);
+      color: var(--alef-white);
+    }
+
+    /* ===== VARIABLES ===== */
+    :root {
+      --alef-orange: #D4632A;
+      --alef-maroon: #7A1828;
+      --alef-teal: #84A494;
+      --alef-ice-blue: #D4EAF0;
+      --alef-cream: #F2E8D8;
+      --alef-navy: #2B5EA7;
+      --alef-bright-blue: #3B7DD8;
+      --alef-dark-brown: #2D2018;
+      --alef-white: #FFFFFF;
+
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+      --section-py: 100px;
+      --container-max: 1140px;
+      --header-h: 72px;
+    }
+
+    /* ===== BASE TYPOGRAPHY ===== */
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--alef-dark-brown);
+      background: var(--alef-cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.15; }
+    h1 { font-size: clamp(2.4rem, 5vw, 3.75rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--alef-navy); }
+    h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      color: var(--alef-navy);
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 8px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--alef-orange);
+      color: var(--alef-white);
+    }
+    .btn-primary:hover {
+      background: #bf5722;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212, 99, 42, 0.35);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 2px solid rgba(248, 212, 164, 0.5);
+      color: #f8d4a4;
+    }
+    .btn-ghost:hover {
+      border-color: #f8d4a4;
+      background: rgba(248, 212, 164, 0.08);
+    }
+
+    .btn-inverted {
+      background: var(--alef-white);
+      color: var(--alef-orange);
+    }
+    .btn-inverted:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--alef-orange);
+      color: var(--alef-orange);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: var(--alef-orange);
+      color: var(--alef-white);
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      transition: background 0.35s, box-shadow 0.35s;
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .header__logo svg {
+      height: 36px;
+      width: auto;
+      transition: opacity 0.3s;
+    }
+    .header__logo .logo-dark { display: none; }
+    .header__logo .logo-light { display: block; }
+
+    .header.scrolled {
+      background: var(--alef-cream);
+      box-shadow: 0 1px 16px rgba(45, 32, 24, 0.08);
+    }
+    .header.scrolled .logo-dark { display: block; }
+    .header.scrolled .logo-light { display: none; }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .header__nav a {
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(248, 212, 164, 0.85);
+      transition: color 0.25s;
+      position: relative;
+    }
+    .header__nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--alef-orange);
+      transition: width 0.3s;
+    }
+    .header__nav a:hover::after { width: 100%; }
+
+    .header.scrolled .header__nav a {
+      color: var(--alef-dark-brown);
+    }
+
+    .header__cta .btn { font-size: 14px; padding: 10px 24px; }
+
+    /* Mobile menu toggle */
+    .header__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 28px;
+      padding: 4px 0;
+    }
+    .header__toggle span {
+      display: block;
+      height: 2px;
+      background: #f8d4a4;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .header.scrolled .header__toggle span { background: var(--alef-dark-brown); }
+
+    .header__toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .header__toggle.active span:nth-child(2) { opacity: 0; }
+    .header__toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse at 25% 40%, rgba(212, 99, 42, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 75% 70%, rgba(132, 164, 148, 0.08) 0%, transparent 50%),
+        var(--alef-maroon);
+      overflow: hidden;
+      text-align: center;
+      color: var(--alef-white);
+    }
+
+    /* Geometric dot pattern overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(rgba(248, 212, 164, 0.06) 1.5px, transparent 1.5px),
+        radial-gradient(rgba(248, 212, 164, 0.04) 1px, transparent 1px);
+      background-size: 36px 36px, 18px 18px;
+      background-position: 0 0, 9px 9px;
+      pointer-events: none;
+    }
+
+    /* Floating geometric shapes */
+    .hero-shape {
+      position: absolute;
+      border: 1.5px solid rgba(248, 212, 164, 0.07);
+      pointer-events: none;
+    }
+    .hero-shape--diamond {
+      width: 180px;
+      height: 180px;
+      top: 12%;
+      right: 8%;
+      transform: rotate(45deg);
+      animation: float-1 22s ease-in-out infinite;
+    }
+    .hero-shape--circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      bottom: 18%;
+      left: 6%;
+      animation: float-2 18s ease-in-out infinite;
+    }
+    .hero-shape--hex {
+      width: 90px;
+      height: 90px;
+      top: 55%;
+      right: 15%;
+      transform: rotate(30deg);
+      animation: float-3 25s ease-in-out infinite;
+    }
+
+    @keyframes float-1 {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50% { transform: rotate(50deg) translateY(-18px); }
+    }
+    @keyframes float-2 {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-14px) scale(1.04); }
+    }
+    @keyframes float-3 {
+      0%, 100% { transform: rotate(30deg) translateX(0); }
+      50% { transform: rotate(35deg) translateX(12px); }
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      padding: 0 24px;
+    }
+
+    .hero__logo {
+      margin: 0 auto 48px;
+      width: 200px;
+    }
+    .hero__logo svg { width: 100%; height: auto; }
+
+    .hero h1 {
+      color: var(--alef-white);
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero__sub {
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      color: rgba(248, 212, 164, 0.85);
+      max-width: 580px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== PROBLEM SECTION ===== */
+    .problem {
+      background: var(--alef-cream);
+      padding: var(--section-py) 0;
+    }
+
+    .problem h2 { margin-bottom: 56px; max-width: 640px; }
+
+    .problem__cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .problem__card {
+      background: var(--alef-white);
+      border-radius: 12px;
+      padding: 36px 28px;
+      border: 1px solid rgba(45, 32, 24, 0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .problem__card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(45, 32, 24, 0.08);
+    }
+
+    .problem__stat {
+      font-family: var(--font-mono);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--alef-orange);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .problem__card h3 {
+      color: var(--alef-navy);
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .problem__card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(45, 32, 24, 0.75);
+    }
+
+    .problem__source {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: rgba(45, 32, 24, 0.4);
+    }
+
+    /* ===== TWO PATHS ===== */
+    .paths {
+      background: var(--alef-ice-blue);
+      padding: var(--section-py) 0;
+    }
+
+    .paths h2 {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .paths__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .paths__card {
+      background: var(--alef-white);
+      border-radius: 14px;
+      padding: 44px 36px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .paths__card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(43, 94, 167, 0.1);
+    }
+
+    .paths__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--alef-white);
+    }
+    .paths__card:first-child .paths__icon { background: var(--alef-navy); }
+    .paths__card:last-child .paths__icon { background: var(--alef-orange); }
+
+    .paths__card h3 {
+      color: var(--alef-navy);
+      margin-bottom: 16px;
+      font-size: 1.35rem;
+    }
+
+    .paths__card p {
+      color: rgba(45, 32, 24, 0.7);
+      margin-bottom: 28px;
+      flex: 1;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .paths__card .btn { align-self: flex-start; }
+
+    /* ===== HOW IT WORKS ===== */
+    .how {
+      background: var(--alef-cream);
+      padding: var(--section-py) 0;
+    }
+
+    .how .section-label,
+    .how h2 { text-align: center; }
+    .how h2 { margin-bottom: 64px; }
+
+    .how__steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    /* Connecting line */
+    .how__steps::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: calc(16.67% + 16px);
+      right: calc(16.67% + 16px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--alef-teal), var(--alef-orange));
+      z-index: 1;
+    }
+
+    .how__step {
+      text-align: center;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .how__num {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--alef-white);
+      border: 3px solid var(--alef-teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--alef-maroon);
+    }
+
+    .how__step h3 {
+      color: var(--alef-navy);
+      margin-bottom: 10px;
+    }
+
+    .how__step p {
+      font-size: 15px;
+      color: rgba(45, 32, 24, 0.7);
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      background: var(--alef-maroon);
+      padding: var(--section-py) 0;
+      color: var(--alef-white);
+    }
+
+    .services .section-label { color: rgba(248, 212, 164, 0.6); }
+
+    .services h2 {
+      color: var(--alef-white);
+      margin-bottom: 56px;
+      max-width: 600px;
+    }
+
+    .services__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .services__item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 10px;
+      transition: background 0.25s;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .services__item:hover {
+      background: rgba(248, 212, 164, 0.06);
+    }
+
+    .services__item i {
+      width: 22px;
+      height: 22px;
+      color: var(--alef-teal);
+      flex-shrink: 0;
+    }
+
+    .services__note {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(248, 212, 164, 0.12);
+      font-size: 15px;
+      color: rgba(248, 212, 164, 0.6);
+      max-width: 640px;
+      font-style: italic;
+    }
+
+    /* ===== PRICING / RETAINER TRAP ===== */
+    .pricing {
+      background: var(--alef-cream);
+      padding: var(--section-py) 0;
+    }
+
+    .pricing h2 { margin-bottom: 48px; max-width: 520px; }
+
+    .pricing__scenarios {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .pricing__scenario {
+      background: var(--alef-white);
+      border-radius: 12px;
+      padding: 32px 28px;
+      border: 1px solid rgba(45, 32, 24, 0.06);
+    }
+
+    .pricing__scenario-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--alef-maroon);
+      margin-bottom: 12px;
+    }
+
+    .pricing__scenario h3 {
+      color: var(--alef-navy);
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+    }
+
+    .pricing__scenario p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(45, 32, 24, 0.7);
+      margin-bottom: 20px;
+    }
+
+    .usage-bar {
+      height: 10px;
+      background: rgba(45, 32, 24, 0.06);
+      border-radius: 5px;
+      overflow: visible;
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .usage-bar__fill {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .usage-bar__fill--waste { background: linear-gradient(90deg, var(--alef-orange), #c0392b); }
+    .usage-bar__fill--overflow {
+      background: linear-gradient(90deg, var(--alef-orange), #c0392b);
+      position: relative;
+    }
+
+    .pricing__effective {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 600;
+      color: #c0392b;
+    }
+
+    /* Alef model card */
+    .pricing__alef {
+      background: var(--alef-white);
+      border: 2px solid var(--alef-teal);
+      border-radius: 14px;
+      padding: 36px 32px;
+      margin-bottom: 48px;
+    }
+
+    .pricing__alef h3 {
+      color: var(--alef-navy);
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .pricing__alef p {
+      font-size: 16px;
+      color: rgba(45, 32, 24, 0.75);
+      max-width: 680px;
+      line-height: 1.65;
+    }
+
+    .pricing__pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .pricing__pillar {
+      text-align: center;
+      padding: 28px 20px;
+    }
+
+    .pricing__pillar-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(132, 164, 148, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: var(--alef-teal);
+    }
+
+    .pricing__pillar h3 {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--alef-navy);
+      margin-bottom: 8px;
+    }
+
+    .pricing__pillar p {
+      font-size: 14px;
+      color: rgba(45, 32, 24, 0.65);
+      line-height: 1.55;
+    }
+
+    .pricing__cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    /* ===== DNA / ABOUT ===== */
+    .dna {
+      background: var(--alef-ice-blue);
+      padding: var(--section-py) 0;
+    }
+
+    .dna h2 {
+      margin-bottom: 24px;
+      max-width: 640px;
+    }
+
+    .dna__body {
+      font-size: 17px;
+      color: rgba(45, 32, 24, 0.75);
+      max-width: 640px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+
+    .dna__differentiator {
+      font-weight: 600;
+      color: var(--alef-dark-brown);
+      font-size: 18px;
+      margin-bottom: 48px;
+      max-width: 640px;
+    }
+
+    /* AI → Attorney → You flow */
+    .dna__flow {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      justify-content: center;
+    }
+
+    .dna__flow-step {
+      background: var(--alef-white);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      min-width: 200px;
+      border: 1px solid rgba(43, 94, 167, 0.08);
+    }
+
+    .dna__flow-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      color: var(--alef-white);
+    }
+    .dna__flow-step:nth-child(1) .dna__flow-icon { background: var(--alef-orange); }
+    .dna__flow-step:nth-child(3) .dna__flow-icon { background: var(--alef-navy); }
+    .dna__flow-step:nth-child(5) .dna__flow-icon { background: var(--alef-teal); }
+
+    .dna__flow-step h3 { font-size: 1rem; color: var(--alef-navy); margin-bottom: 4px; }
+    .dna__flow-step p { font-size: 13px; color: rgba(45, 32, 24, 0.6); }
+
+    .dna__flow-arrow {
+      font-size: 28px;
+      color: var(--alef-teal);
+      padding: 0 16px;
+      line-height: 1;
+    }
+
+    /* ===== FINAL CTA ===== */
+    .cta-final {
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(122, 24, 40, 0.15) 0%, transparent 60%),
+        var(--alef-orange);
+      padding: 80px 0;
+      text-align: center;
+      color: var(--alef-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .cta-final .container { position: relative; z-index: 2; }
+
+    .cta-final h2 {
+      color: var(--alef-white);
+      margin-bottom: 16px;
+    }
+
+    .cta-final p {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 36px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--alef-dark-brown);
+      padding: 56px 0 32px;
+      color: rgba(242, 232, 216, 0.7);
+    }
+
+    .footer__inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .footer__logo svg {
+      height: 32px;
+      width: auto;
+      margin-bottom: 16px;
+    }
+
+    .footer__tagline {
+      font-size: 14px;
+      max-width: 280px;
+    }
+
+    .footer__links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer__links a {
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.25s;
+    }
+    .footer__links a:hover {
+      color: var(--alef-cream);
+    }
+
+    .footer__bottom {
+      border-top: 1px solid rgba(242, 232, 216, 0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: rgba(242, 232, 216, 0.4);
+    }
+
+    .footer__bottom a {
+      color: rgba(242, 232, 216, 0.5);
+      transition: color 0.25s;
+    }
+    .footer__bottom a:hover { color: var(--alef-cream); }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .animate-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .animate-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .animate-in.delay-1 { transition-delay: 0.1s; }
+    .animate-in.delay-2 { transition-delay: 0.2s; }
+    .animate-in.delay-3 { transition-delay: 0.3s; }
+
+    /* ===== MOBILE NAV DRAWER ===== */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: var(--header-h);
+      left: 0;
+      right: 0;
+      background: var(--alef-cream);
+      padding: 24px;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 8px 32px rgba(45, 32, 24, 0.1);
+      z-index: 999;
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+      pointer-events: none;
+    }
+    .mobile-nav.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+    .mobile-nav a {
+      display: block;
+      padding: 12px 16px;
+      font-weight: 500;
+      color: var(--alef-dark-brown);
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .mobile-nav a:hover { background: rgba(45, 32, 24, 0.04); }
+    .mobile-nav .btn {
+      margin-top: 8px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      :root { --section-py: 80px; }
+
+      .problem__cards { grid-template-columns: 1fr; gap: 20px; }
+      .paths__grid { grid-template-columns: 1fr; }
+      .how__steps { grid-template-columns: 1fr; gap: 40px; }
+      .how__steps::before { display: none; }
+      .services__grid { grid-template-columns: 1fr; }
+      .pricing__scenarios { grid-template-columns: 1fr; }
+      .pricing__pillars { grid-template-columns: 1fr; gap: 16px; }
+      .dna__flow { flex-direction: column; gap: 0; }
+      .dna__flow-arrow { transform: rotate(90deg); padding: 8px 0; }
+
+      .footer__inner { flex-direction: column; gap: 32px; }
+      .footer__bottom { flex-direction: column; gap: 8px; }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --section-py: 64px;
+        --header-h: 64px;
+      }
+
+      body { font-size: 16px; }
+
+      .header__nav { display: none; }
+      .header__cta { display: none; }
+      .header__toggle { display: flex; }
+      .mobile-nav { display: flex; }
+
+      .hero { min-height: 100svh; }
+      .hero__logo { width: 160px; margin-bottom: 36px; }
+      .hero-shape { display: none; }
+
+      .hero__actions { flex-direction: column; align-items: center; }
+      .hero__actions .btn { width: 100%; max-width: 280px; justify-content: center; }
+
+      .pricing__pillar { text-align: left; display: flex; gap: 16px; align-items: flex-start; padding: 20px 0; }
+      .pricing__pillar-icon { margin: 0; flex-shrink: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="#" class="header__logo" aria-label="Alef — Home">
+        <!-- Maroon logo (visible when scrolled, cream bg) -->
+        <svg class="logo-dark" viewBox="0 0 644.65 182.48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#850b17" d="M10.93,91.24c0,43.15,34.98,78.12,78.12,78.12s78.12-34.98,78.12-78.12S132.2,13.11,89.05,13.11,10.93,48.09,10.93,91.24Zm56.34-34.53l19.01,18.95c.33,.33,.51,.77,.52,1.23h0c0,.97-.78,1.76-1.75,1.76h-18.7c-.97,0-1.75,.78-1.75,1.75v13.36c0,.97,.78,1.75,1.75,1.75h24.74c.97,0,1.75-.78,1.75-1.75V58.19c0-.97,.78-1.75,1.75-1.75h25.1c.97,0,1.75,.78,1.75,1.75v63.9c0,1.56-1.89,2.34-2.99,1.24l-8.69-8.69c-.33-.33-.77-.51-1.24-.51h-3.32c-.97,0-1.75,.78-1.75,1.75v13.28c0,.97-.78,1.75-1.75,1.75h-20.77c-.46,0-.91-.18-1.24-.51l-32.22-32.26c-.33-.33-.51-.77-.51-1.24v-28.1c0-.49,.2-.96,.57-1.29l11.79-10.85c.32-.3,.75-.46,1.19-.46h5.52c.46,0,.91,.18,1.24,.51Z"/>
+          <path fill="#850b17" d="M227.29,47.27c3.95-12.54,14.26-18.55,25.08-18.55s21.3,6.01,25.25,18.55l30.58,99.29h-25.6l-6.7-23.71-46.9,.17-6.7,23.53h-25.6l30.58-99.29Zm8.25,53.25h33.84l-13.06-45.87c-.69-2.41-1.72-3.44-3.78-3.44-1.89,0-3.09,1.03-3.78,3.44l-13.23,45.87Z"/>
+          <path fill="#850b17" d="M359.91,123.37h53.94v23.19h-56.86c-15.98,0-22.16-8.25-22.16-21.47V30.96h25.08V123.37Z"/>
+          <path fill="#850b17" d="M458.33,146.56c-15.98,0-22.16-8.25-22.16-21.47V52.6c0-13.23,6.18-21.64,22.16-21.64h61.16v22.5h-58.23v24.05h54.63v22.5h-54.63v24.05h59.27v22.5h-62.19Z"/>
+          <path fill="#850b17" d="M550.75,146.56V52.6c0-13.23,6.36-21.64,22.16-21.64h60.81v23.19h-57.89v30.23h53.94v23.02h-53.94v39.17h-25.08Z"/>
+        </svg>
+        <!-- Cream logo (visible on hero, dark bg) -->
+        <svg class="logo-light" viewBox="0 0 644.65 182.48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#f8d4a4" d="M10.93,91.24c0,43.15,34.98,78.12,78.12,78.12s78.12-34.98,78.12-78.12S132.2,13.11,89.05,13.11,10.93,48.09,10.93,91.24Zm56.34-34.53l19.01,18.95c.33,.33,.51,.77,.52,1.23h0c0,.97-.78,1.76-1.75,1.76h-18.7c-.97,0-1.75,.78-1.75,1.75v13.36c0,.97,.78,1.75,1.75,1.75h24.74c.97,0,1.75-.78,1.75-1.75V58.19c0-.97,.78-1.75,1.75-1.75h25.1c.97,0,1.75,.78,1.75,1.75v63.9c0,1.56-1.89,2.34-2.99,1.24l-8.69-8.69c-.33-.33-.77-.51-1.24-.51h-3.32c-.97,0-1.75,.78-1.75,1.75v13.28c0,.97-.78,1.75-1.75,1.75h-20.77c-.46,0-.91-.18-1.24-.51l-32.22-32.26c-.33-.33-.51-.77-.51-1.24v-28.1c0-.49,.2-.96,.57-1.29l11.79-10.85c.32-.3,.75-.46,1.19-.46h5.52c.46,0,.91,.18,1.24,.51Z"/>
+          <path fill="#f8d4a4" d="M227.29,47.27c3.95-12.54,14.26-18.55,25.08-18.55s21.3,6.01,25.25,18.55l30.58,99.29h-25.6l-6.7-23.71-46.9,.17-6.7,23.53h-25.6l30.58-99.29Zm8.25,53.25h33.84l-13.06-45.87c-.69-2.41-1.72-3.44-3.78-3.44-1.89,0-3.09,1.03-3.78,3.44l-13.23,45.87Z"/>
+          <path fill="#f8d4a4" d="M359.91,123.37h53.94v23.19h-56.86c-15.98,0-22.16-8.25-22.16-21.47V30.96h25.08V123.37Z"/>
+          <path fill="#f8d4a4" d="M458.33,146.56c-15.98,0-22.16-8.25-22.16-21.47V52.6c0-13.23,6.18-21.64,22.16-21.64h61.16v22.5h-58.23v24.05h54.63v22.5h-54.63v24.05h59.27v22.5h-62.19Z"/>
+          <path fill="#f8d4a4" d="M550.75,146.56V52.6c0-13.23,6.36-21.64,22.16-21.64h60.81v23.19h-57.89v30.23h53.94v23.02h-53.94v39.17h-25.08Z"/>
+        </svg>
+      </a>
+
+      <nav class="header__nav" aria-label="Main navigation">
+        <a href="#problem">Problem</a>
+        <a href="#how">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="header__cta">
+        <a href="https://calendly.com/alef-legal" target="_blank" rel="noopener" class="btn btn-primary">Book a Call</a>
+      </div>
+
+      <button class="header__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="#problem">Problem</a>
+    <a href="#how">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About</a>
+    <a href="https://calendly.com/alef-legal" target="_blank" rel="noopener" class="btn btn-primary">Book a Call</a>
+  </div>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-shape hero-shape--diamond"></div>
+      <div class="hero-shape hero-shape--circle"></div>
+      <div class="hero-shape hero-shape--hex"></div>
+
+      <div class="hero__content">
+        <div class="hero__logo">
+          <!-- Cream horizontal lockup -->
+          <svg viewBox="0 0 644.65 182.48" xmlns="http://www.w3.org/2000/svg" aria-label="Alef">
+            <path fill="#f8d4a4" d="M10.93,91.24c0,43.15,34.98,78.12,78.12,78.12s78.12-34.98,78.12-78.12S132.2,13.11,89.05,13.11,10.93,48.09,10.93,91.24Zm56.34-34.53l19.01,18.95c.33,.33,.51,.77,.52,1.23h0c0,.97-.78,1.76-1.75,1.76h-18.7c-.97,0-1.75,.78-1.75,1.75v13.36c0,.97,.78,1.75,1.75,1.75h24.74c.97,0,1.75-.78,1.75-1.75V58.19c0-.97,.78-1.75,1.75-1.75h25.1c.97,0,1.75,.78,1.75,1.75v63.9c0,1.56-1.89,2.34-2.99,1.24l-8.69-8.69c-.33-.33-.77-.51-1.24-.51h-3.32c-.97,0-1.75,.78-1.75,1.75v13.28c0,.97-.78,1.75-1.75,1.75h-20.77c-.46,0-.91-.18-1.24-.51l-32.22-32.26c-.33-.33-.51-.77-.51-1.24v-28.1c0-.49,.2-.96,.57-1.29l11.79-10.85c.32-.3,.75-.46,1.19-.46h5.52c.46,0,.91,.18,1.24,.51Z"/>
+            <path fill="#f8d4a4" d="M227.29,47.27c3.95-12.54,14.26-18.55,25.08-18.55s21.3,6.01,25.25,18.55l30.58,99.29h-25.6l-6.7-23.71-46.9,.17-6.7,23.53h-25.6l30.58-99.29Zm8.25,53.25h33.84l-13.06-45.87c-.69-2.41-1.72-3.44-3.78-3.44-1.89,0-3.09,1.03-3.78,3.44l-13.23,45.87Z"/>
+            <path fill="#f8d4a4" d="M359.91,123.37h53.94v23.19h-56.86c-15.98,0-22.16-8.25-22.16-21.47V30.96h25.08V123.37Z"/>
+            <path fill="#f8d4a4" d="M458.33,146.56c-15.98,0-22.16-8.25-22.16-21.47V52.6c0-13.23,6.18-21.64,22.16-21.64h61.16v22.5h-58.23v24.05h54.63v22.5h-54.63v24.05h59.27v22.5h-62.19Z"/>
+            <path fill="#f8d4a4" d="M550.75,146.56V52.6c0-13.23,6.36-21.64,22.16-21.64h60.81v23.19h-57.89v30.23h53.94v23.02h-53.94v39.17h-25.08Z"/>
+          </svg>
+        </div>
+
+        <h1>Your sales team closes deals.<br>We close contracts.</h1>
+
+        <p class="hero__sub">AI-powered contract review with licensed attorney oversight. 48-hour turnaround. Pay per result, not per hour.</p>
+
+        <div class="hero__actions">
+          <a href="https://calendly.com/alef-legal" target="_blank" rel="noopener" class="btn btn-primary">Book a Call</a>
+          <a href="#how" class="btn btn-ghost">See How It Works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROBLEM ===== -->
+    <section class="problem" id="problem">
+      <div class="container">
+        <p class="section-label animate-in">The Problem</p>
+        <h2 class="animate-in">Legal is the #1 deal killer for growing companies.</h2>
+
+        <div class="problem__cards">
+          <div class="problem__card animate-in delay-1">
+            <div class="problem__stat">3-4 weeks</div>
+            <h3>Per contract</h3>
+            <p>The average B2B contract takes 3-4 weeks from first draft to signature. Your sales team closes in days. Your legal team takes weeks. A structured contract process can cut 11 weeks from your sales cycle.</p>
+            <span class="problem__source">World Commerce &amp; Contracting / Bind Legal</span>
+          </div>
+
+          <div class="problem__card animate-in delay-2">
+            <div class="problem__stat">9.2%</div>
+            <h3>Of revenue lost</h3>
+            <p>Companies lose an average of 9.2% of annual revenue to contract mismanagement&mdash;missed deadlines, stalled deals, value leakage after signature. At $5M revenue, that&rsquo;s $460K walking out the door.</p>
+            <span class="problem__source">World Commerce &amp; Contracting</span>
+          </div>
+
+          <div class="problem__card animate-in delay-3">
+            <div class="problem__stat">$200-500/hr</div>
+            <h3>And climbing</h3>
+            <p>Startup lawyers charge $200-500/hr. First-year legal costs average $80K. Every additional deal, employee, or vendor adds more hours to the bill. Legal spend scales linearly with growth&mdash;until it doesn&rsquo;t have to.</p>
+            <span class="problem__source">ContractsCounsel / VentureBeat</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TWO PATHS ===== -->
+    <section class="paths" id="paths">
+      <div class="container">
+        <p class="section-label animate-in" style="text-align:center;">Two Problems</p>
+        <h2 class="animate-in">Two problems. One solution.</h2>
+
+        <div class="paths__grid">
+          <div class="paths__card animate-in delay-1">
+            <div class="paths__icon">
+              <i data-lucide="building" style="width:24px;height:24px;"></i>
+            </div>
+            <h3>You have in-house counsel</h3>
+            <p>Your lawyers are spending 60% of their time on routine contracts&mdash;NDAs, vendor agreements, customer terms. Alef implements your playbook. We handle the 80% of contracts that are pattern work, so your counsel focuses on the 20% that matters.</p>
+            <a href="https://calendly.com/alef-legal" target="_blank" rel="noopener" class="btn btn-outline">Free up your legal team</a>
+          </div>
+
+          <div class="paths__card animate-in delay-2">
+            <div class="paths__icon">
+              <i data-lucide="rocket" style="width:24px;height:24px;"></i>
+            </div>
+            <h3>You don&rsquo;t have a lawyer yet</h3>
+            <p>You&rsquo;re choosing between expensive law firms ($300-600/hr), risky templates, or just not getting contracts reviewed. Alef gives you a legal team without the overhead. Send us any contract. Get it back in 48 hours. Pay per result.</p>
+            <a href="https://calendly.com/alef-legal" target="_blank" rel="noopener" class="btn btn-primary">Get started</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="how" id="how">
+      <div class="container">
+        <p class="section-label animate-in">How It Works</p>
+        <h2 class="animate-in">Three steps. 48 hours.</h2>
+
+        <div class="how__steps">
+          <div class="how__step animate-in delay-1">
+            <div class="how__num">1</div>
+            <h3>Send us the contract</h3>
+            <p>Email, upload, or forward. Any format. We handle the rest.</p>
+          </div>
+
+          <div class="how__step animate-in delay-2">
+            <div class="how__num">2</div>
+            <h3>AI + Lawyer review</h3>
+            <p>Our AI identifies standard clauses, flags deviations, generates the redline. A licensed attorney reviews every deliverable.</p>
+          </div>
+
+          <div class="how__step animate-in delay-3">
+            <div class="how__num">3</div>
+            <h3>Get it back in 48 hours</h3>
+            <p>Clean redline, risk summary, and recommended positions. Ready to send back to the counterparty.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="services">
+      <div class="container">
+        <p class="section-label animate-in">What We Cover</p>
+        <h2 class="animate-in">From NDAs to DPAs. We cover the deal stack.</h2>
+
+        <div class="services__grid">
+          <div class="services__item animate-in delay-1"><i data-lucide="lock"></i> NDAs &amp; Confidentiality Agreements</div>
+          <div class="services__item animate-in delay-1"><i data-lucide="file-text"></i> Master Service Agreements (MSAs)</div>
+          <div class="services__item animate-in delay-2"><i data-lucide="cloud"></i> SaaS / Subscription Agreements</div>
+          <div class="services__item animate-in delay-2"><i data-lucide="package"></i> Vendor &amp; Supplier Contracts</div>
+          <div class="services__item animate-in delay-1"><i data-lucide="briefcase"></i> Customer Contracts</div>
+          <div class="services__item animate-in delay-1"><i data-lucide="shield"></i> Data Processing Agreements (DPAs)</div>
+          <div class="services__item animate-in delay-2"><i data-lucide="heart"></i> Business Associate Agreements (BAAs)</div>
+          <div class="services__item animate-in delay-2"><i data-lucide="search"></i> Security Reviews &amp; Questionnaires</div>
+          <div class="services__item animate-in delay-1"><i data-lucide="book-open"></i> Terms of Service &amp; Privacy Policies</div>
+          <div class="services__item animate-in delay-1"><i data-lucide="award"></i> Commercial Licensing Agreements</div>
+        </div>
+
+        <p class="services__note animate-in">Not full-service legal. We own the deal workflow&mdash;the contracts and compliance work that block revenue.</p>
+      </div>
+    </section>
+
+    <!-- ===== PRICING / RETAINER TRAP ===== -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <p class="section-label animate-in">Pricing</p>
+        <h2 class="animate-in">Retainers are a trap. For everyone.</h2>
+
+        <div class="pricing__scenarios">
+          <div class="pricing__scenario animate-in delay-1">
+            <div class="pricing__scenario-label">Scenario A &mdash; Slow month</div>
+            <h3>Low contract volume</h3>
+            <p>You&rsquo;re paying $3,000-5,000/mo for a retainer with 5-6 hours included. But this month you only needed 2 hours. You just paid $1,500/hr for legal work.</p>
+            <div class="usage-bar">
+              <div class="usage-bar__fill usage-bar__fill--waste" style="width: 33%;"></div>
+            </div>
+            <div class="pricing__effective">Effective rate: ~$2,000/hr &mdash; 67% wasted</div>
+          </div>
+
+          <div class="pricing__scenario animate-in delay-2">
+            <div class="pricing__scenario-label">Scenario B &mdash; Busy month</div>
+            <h3>High contract volume</h3>
+            <p>You hit your retainer cap by week 2. Now every additional contract costs $300-500/hr on top of the retainer. The busier you get, the more you pay&mdash;exactly when margins matter most.</p>
+            <div class="usage-bar">
+              <div class="usage-bar__fill usage-bar__fill--overflow" style="width: 100%;"></div>
+            </div>
+            <div class="pricing__effective">Total: $7,200+ &mdash; growth penalized</div>
+          </div>
+        </div>
+
+        <div class="pricing__alef animate-in">
+          <h3>The Alef model</h3>
+          <p>We price by outcome, not by hour. Send a contract, get it back in 48 hours. You pay for what you use. Quiet months cost $0. Busy months cost less than hourly overflow. Your incentives and ours are aligned&mdash;we only win when you close.</p>
+        </div>
+
+        <div class="pricing__pillars">
+          <div class="pricing__pillar animate-in delay-1">
+            <div class="pricing__pillar-icon">
+              <i data-lucide="circle-dollar-sign" style="width:24px;height:24px;"></i>
+            </div>
+            <div>
+              <h3>$0 in quiet months</h3>
+              <p>No retainer floor. No minimum commitment. You pay when you need us.</p>
+            </div>
+          </div>
+
+          <div class="pricing__pillar animate-in delay-2">
+            <div class="pricing__pillar-icon">
+              <i data-lucide="receipt" style="width:24px;height:24px;"></i>
+            </div>
+            <div>
+              <h3>Flat per-outcome pricing</h3>
+              <p>Every contract has a clear price before you send it. No surprise bills.</p>
+            </div>
+          </div>
+
+          <div class="pricing__pillar animate-in delay-3">
+            <div class="pricing__pillar-icon">
+              <i data-lucide="trending-down" style="width:24px;height:24px;"></i>
+            </div>
+            <div>
+              <h3>Costs go down over time</h3>
+              <p>After we build your templates and playbook, routine work self-serves. You only pay for high-value reviews.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing__cta animate-in">
+          <a href="https://calendly.com/alef-legal" target="_blank" rel="noopener" class="btn btn-primary">See what Alef costs for your volume</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT / DNA ===== -->
+    <section class="dna" id="about">
+      <div class="container">
+        <p class="section-label animate-in">About</p>
+        <h2 class="animate-in">We&rsquo;ve managed thousands of contracts. Now we&rsquo;ve made it faster.</h2>
+
+        <p class="dna__body animate-in">We scaled Deel from 70 to 7,000 employees&mdash;managing legal operations across 150+ countries. We built Reform to $1.7M ARR. We know what it&rsquo;s like to wait on contracts while deals go cold. Alef is what we wished existed: the speed of AI with the accountability of licensed attorneys.</p>
+
+        <p class="dna__differentiator animate-in">Every deliverable is reviewed by a licensed attorney before it reaches you. AI handles the pattern work. Your lawyer signs off on every page.</p>
+
+        <div class="dna__flow animate-in">
+          <div class="dna__flow-step">
+            <div class="dna__flow-icon"><i data-lucide="cpu" style="width:22px;height:22px;"></i></div>
+            <h3>AI analyzes</h3>
+            <p>Clause identification, risk flagging, redline draft</p>
+          </div>
+          <div class="dna__flow-arrow">&rarr;</div>
+          <div class="dna__flow-step">
+            <div class="dna__flow-icon"><i data-lucide="scale" style="width:22px;height:22px;"></i></div>
+            <h3>Attorney reviews</h3>
+            <p>Licensed lawyer reviews every deliverable</p>
+          </div>
+          <div class="dna__flow-arrow">&rarr;</div>
+          <div class="dna__flow-step">
+            <div class="dna__flow-icon"><i data-lucide="check-circle" style="width:22px;height:22px;"></i></div>
+            <h3>You receive</h3>
+            <p>Clean redline, risk summary, ready to send</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta-final">
+      <div class="container">
+        <h2 class="animate-in">Stop managing your lawyers. Start closing deals.</h2>
+        <p class="animate-in">Send us your next contract. Get it back in 48 hours.</p>
+        <a href="https://calendly.com/alef-legal" target="_blank" rel="noopener" class="btn btn-inverted animate-in">Book a Call</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <!-- Cream logo on dark bg -->
+            <svg viewBox="0 0 644.65 182.48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill="#f8d4a4" d="M10.93,91.24c0,43.15,34.98,78.12,78.12,78.12s78.12-34.98,78.12-78.12S132.2,13.11,89.05,13.11,10.93,48.09,10.93,91.24Zm56.34-34.53l19.01,18.95c.33,.33,.51,.77,.52,1.23h0c0,.97-.78,1.76-1.75,1.76h-18.7c-.97,0-1.75,.78-1.75,1.75v13.36c0,.97,.78,1.75,1.75,1.75h24.74c.97,0,1.75-.78,1.75-1.75V58.19c0-.97,.78-1.75,1.75-1.75h25.1c.97,0,1.75,.78,1.75,1.75v63.9c0,1.56-1.89,2.34-2.99,1.24l-8.69-8.69c-.33-.33-.77-.51-1.24-.51h-3.32c-.97,0-1.75,.78-1.75,1.75v13.28c0,.97-.78,1.75-1.75,1.75h-20.77c-.46,0-.91-.18-1.24-.51l-32.22-32.26c-.33-.33-.51-.77-.51-1.24v-28.1c0-.49,.2-.96,.57-1.29l11.79-10.85c.32-.3,.75-.46,1.19-.46h5.52c.46,0,.91,.18,1.24,.51Z"/>
+              <path fill="#f8d4a4" d="M227.29,47.27c3.95-12.54,14.26-18.55,25.08-18.55s21.3,6.01,25.25,18.55l30.58,99.29h-25.6l-6.7-23.71-46.9,.17-6.7,23.53h-25.6l30.58-99.29Zm8.25,53.25h33.84l-13.06-45.87c-.69-2.41-1.72-3.44-3.78-3.44-1.89,0-3.09,1.03-3.78,3.44l-13.23,45.87Z"/>
+              <path fill="#f8d4a4" d="M359.91,123.37h53.94v23.19h-56.86c-15.98,0-22.16-8.25-22.16-21.47V30.96h25.08V123.37Z"/>
+              <path fill="#f8d4a4" d="M458.33,146.56c-15.98,0-22.16-8.25-22.16-21.47V52.6c0-13.23,6.18-21.64,22.16-21.64h61.16v22.5h-58.23v24.05h54.63v22.5h-54.63v24.05h59.27v22.5h-62.19Z"/>
+              <path fill="#f8d4a4" d="M550.75,146.56V52.6c0-13.23,6.36-21.64,22.16-21.64h60.81v23.19h-57.89v30.23h53.94v23.02h-53.94v39.17h-25.08Z"/>
+            </svg>
+          </div>
+          <p class="footer__tagline">AI-native legal for startups. Contracts reviewed in 48 hours. Every deliverable signed off by a licensed attorney.</p>
+        </div>
+
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="#how">How It Works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#about">About</a>
+          <a href="mailto:jaafar@alefcompute.com">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Alef Technologies Ltd.</span>
+        <a href="mailto:jaafar@alefcompute.com">jaafar@alefcompute.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // --- Header scroll behavior ---
+      var header = document.querySelector('.header');
+      var heroSection = document.getElementById('hero');
+
+      function onScroll() {
+        if (window.scrollY > 60) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // --- Mobile menu toggle ---
+      var toggle = document.querySelector('.header__toggle');
+      var mobileNav = document.getElementById('mobileNav');
+
+      toggle.addEventListener('click', function () {
+        var isOpen = mobileNav.classList.toggle('open');
+        toggle.classList.toggle('active');
+        toggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Close mobile nav on link click
+      mobileNav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobileNav.classList.remove('open');
+          toggle.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // --- Smooth scroll for anchor links ---
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            var offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72;
+            var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+
+      // --- Intersection Observer for scroll animations ---
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.animate-in').forEach(function (el) {
+        observer.observe(el);
+      });
+
+      // --- Usage bar animation on scroll ---
+      var barObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var bars = entry.target.querySelectorAll('.usage-bar__fill');
+            bars.forEach(function (bar) {
+              var w = bar.style.width;
+              bar.style.width = '0%';
+              requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                  bar.style.width = w;
+                });
+              });
+            });
+            barObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      document.querySelectorAll('.pricing__scenario').forEach(function (el) {
+        barObserver.observe(el);
+      });
+
+      // --- Initialize Lucide icons ---
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+
+</body>
+</html>
