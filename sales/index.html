@@ -1,0 +1,2876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alef | AI-Native Legal Services</title>
+  <meta name="description" content="AI-powered contract review with licensed attorney oversight. 48-hour turnaround. Pay per result, not per hour.">
+  <meta property="og:title" content="Alef | AI-Native Legal for Startups">
+  <meta property="og:description" content="Your sales team closes deals. We close contracts. 48-hour turnaround.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alef.legal">
+
+  <!-- Favicon (Alef icon mark - orange) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 328 328'%3E%3Cpath fill='%23D4632A' d='M108.41,42.96l62.51,62.3c1.08,1.07,1.69,2.53,1.69,4.06h0c.01,3.19-2.57,5.78-5.76,5.78h-61.46c-3.18,0-5.76,2.58-5.76,5.76v43.93c0,3.18,2.58,5.76,5.76,5.76h81.32c3.18,0,5.76-2.58,5.76-5.76V47.85c0-3.18,2.58-5.76,5.76-5.76h82.51c3.18,0,5.76,2.58,5.76,5.76v210.05c0,5.13-6.2,7.7-9.83,4.07l-28.56-28.56c-1.08-1.08-2.54-1.69-4.07-1.69h-10.9c-3.18,0-5.76,2.58-5.76,5.76v43.65c0,3.18-2.58,5.76-5.76,5.76h-68.28c-1.53,0-2.99-.61-4.07-1.69L43.36,179.17c-1.08-1.08-1.68-2.54-1.68-4.07V82.72c0-1.61.67-3.15,1.86-4.24l38.75-35.68c1.06-.98,2.46-1.52,3.9-1.52h18.16c1.52,0,2.99.6,4.06,1.68Z'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* ===== RESET ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; }
+    img, svg { display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { border: none; background: none; cursor: pointer; font: inherit; }
+
+    ::selection {
+      background: var(--alef-green);
+      color: var(--alef-white);
+    }
+
+    /* ===== VARIABLES ===== */
+    :root {
+      --alef-orange: #B86D3E;
+      --alef-teal: #7A9E9F;
+      --alef-white: #FFFFFF;
+      --alef-black: #2A2A2A;
+      --alef-charcoal: #27292B;
+      --alef-slate: #2F343B;
+      --alef-light: #F5F5F5;
+      --alef-mist: #EFEFEF;
+      --alef-green: #7A9E9F;
+
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+      --section-py: 100px;
+      --container-max: 1140px;
+      --header-h: 72px;
+    }
+
+    /* ===== BASE TYPOGRAPHY ===== */
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.65;
+      color: rgba(42,42,42,0.75);
+      background: var(--alef-light);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.15; }
+    h1 { font-size: clamp(2.4rem, 5vw, 3.75rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--alef-charcoal); }
+    h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      color: var(--alef-orange);
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 8px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--alef-green);
+      color: var(--alef-white);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(122, 158, 159, 0.35);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      color: #FFFFFF;
+    }
+    .btn-ghost:hover {
+      border-color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-inverted {
+      background: var(--alef-white);
+      color: var(--alef-green);
+    }
+    .btn-inverted:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-outline {
+      border: none;
+      color: var(--alef-white);
+      background: var(--alef-teal);
+    }
+    .btn-outline:hover {
+      background: #6B8E8F;
+      color: var(--alef-white);
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      transition: background 0.35s, box-shadow 0.35s;
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .header__logo svg {
+      height: 36px;
+      width: auto;
+      transition: opacity 0.3s;
+    }
+    .header__logo .logo-dark { display: none; }
+    .header__logo .logo-light { display: block; }
+
+    .header.scrolled {
+      background: var(--alef-white);
+      box-shadow: 0 1px 16px rgba(42, 42, 42, 0.06);
+    }
+    .header.scrolled .logo-dark { display: block; }
+    .header.scrolled .logo-light { display: none; }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .header__nav a {
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.85);
+      transition: color 0.25s;
+      position: relative;
+    }
+    .header__nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--alef-orange);
+      transition: width 0.3s;
+    }
+    .header__nav a:hover::after { width: 100%; }
+
+    .header.scrolled .header__nav a {
+      color: var(--alef-charcoal);
+    }
+
+    .header__cta .btn { font-size: 14px; padding: 10px 24px; }
+
+    /* Mobile menu toggle */
+    .header__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 28px;
+      padding: 4px 0;
+    }
+    .header__toggle span {
+      display: block;
+      height: 2px;
+      background: #FFFFFF;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .header.scrolled .header__toggle span { background: var(--alef-charcoal); }
+
+    .header__toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .header__toggle.active span:nth-child(2) { opacity: 0; }
+    .header__toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1A1A1A url('../images/hero-bg.png') center/cover no-repeat;
+      overflow: hidden;
+      text-align: center;
+      color: var(--alef-white);
+    }
+
+    /* Dark overlay on hero image */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+    }
+
+    .hero-shape { display: none; }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      padding: 0 24px;
+    }
+
+    .hero__logo {
+      margin: 0 auto 48px;
+      width: 200px;
+    }
+    .hero__logo svg { width: 100%; height: auto; }
+
+    .hero h1 {
+      color: var(--alef-white);
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero__sub {
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 580px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    .hero__credential, .hero__icp { display: none;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero .btn-ghost {
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #FFFFFF;
+    }
+    .hero .btn-ghost:hover {
+      border-color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero__pricing {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--alef-orange);
+      margin-top: 20px;
+    }
+
+    /* ===== PROBLEM SECTION ===== */
+    .problem {
+      background: var(--alef-light);
+      padding: var(--section-py) 0;
+    }
+
+    .problem h2 { margin-bottom: 56px; max-width: 640px; }
+
+    .problem__cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .problem__card {
+      background: var(--alef-white);
+      border-radius: 12px;
+      padding: 36px 28px;
+      border: 1px solid rgba(42, 42, 42, 0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .problem__card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(42, 42, 42, 0.08);
+    }
+
+    .problem__stat {
+      font-family: var(--font-mono);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--alef-orange);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .problem__card h3 {
+      color: var(--alef-charcoal);
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .problem__card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(42, 42, 42, 0.7);
+    }
+
+    .problem__source {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: rgba(42, 42, 42, 0.35);
+    }
+
+    /* ===== TWO PATHS ===== */
+    .paths {
+      background: var(--alef-mist);
+      padding: var(--section-py) 0;
+    }
+
+    .paths h2 {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .paths__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .paths__card {
+      background: var(--alef-white);
+      border-radius: 14px;
+      padding: 44px 36px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .paths__card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(42, 42, 42, 0.08);
+    }
+
+    .paths__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--alef-white);
+    }
+    .paths__card:first-child .paths__icon { background: var(--alef-teal); }
+    .paths__card:last-child .paths__icon { background: var(--alef-green); }
+
+    .paths__card h3 {
+      color: var(--alef-charcoal);
+      margin-bottom: 16px;
+      font-size: 1.35rem;
+    }
+
+    .paths__card p {
+      color: rgba(42, 42, 42, 0.7);
+      margin-bottom: 28px;
+      flex: 1;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .paths__card .btn { align-self: flex-start; }
+
+    /* ===== HOW IT WORKS — SCROLL REEL ===== */
+    .reel {
+      position: relative;
+      height: 900vh;
+      background: var(--alef-white);
+    }
+
+    .reel__sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .reel__header {
+      text-align: center;
+      padding: calc(var(--header-h) + 24px) 24px 0;
+      flex-shrink: 0;
+    }
+    .reel__header .section-label { margin-bottom: 12px; }
+    .reel__header h2 { margin-bottom: 0; }
+
+    .reel__track {
+      display: flex;
+      flex: 1;
+      will-change: transform;
+    }
+
+    .reel__panel {
+      min-width: 85vw;
+      width: 85vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 48px 80px;
+      transition: opacity 0.4s ease;
+    }
+
+    /* --- Panel Indicator Dots --- */
+    .reel__dots {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+    .reel__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--alef-mist);
+      border: 2px solid rgba(42,42,42,0.15);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .reel__dot.active {
+      background: var(--alef-green);
+      border-color: var(--alef-green);
+      transform: scale(1.3);
+    }
+    .reel__skip {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(42,42,42,0.4);
+      text-decoration: none;
+      margin-left: 16px;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    .reel__skip:hover { color: var(--alef-charcoal); }
+
+    /* --- Panel Labels --- */
+    .reel__panel-label {
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--alef-orange);
+      opacity: 0.7;
+    }
+
+    /* ===== SLACK MOCK ===== */
+    .slack-mock {
+      width: 100%;
+      max-width: 720px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+      display: flex;
+      height: 420px;
+      font-family: var(--font-body);
+    }
+    .slack-mock__sidebar {
+      width: 200px;
+      background: #3F0E40;
+      padding: 20px 14px;
+      flex-shrink: 0;
+    }
+    .slack-mock__workspace {
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 20px;
+      padding: 0 2px;
+    }
+    .slack-mock__channels {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+    }
+    .slack-mock__channels li {
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin-bottom: 2px;
+      cursor: default;
+    }
+    .slack-mock__channels li.active {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-weight: 600;
+    }
+    .slack-mock__main {
+      flex: 1;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .slack-mock__header {
+      padding: 14px 20px;
+      border-bottom: 1px solid #e8e8e8;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--alef-charcoal);
+    }
+    .slack-mock__messages {
+      flex: 1;
+      padding: 16px 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .slack-msg {
+      display: flex;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    .slack-msg.revealed {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .slack-msg__avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .slack-msg__body { flex: 1; }
+    .slack-msg__name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--alef-charcoal);
+    }
+    .slack-msg__name span {
+      font-weight: 400;
+      font-size: 11px;
+      color: rgba(42,42,42,0.4);
+      margin-left: 6px;
+    }
+    .slack-msg__text {
+      font-size: 14px;
+      color: rgba(42,42,42,0.85);
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+    .slack-msg__text .mention {
+      background: rgba(116,166,98,0.12);
+      color: var(--alef-green);
+      padding: 1px 4px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .slack-msg__file {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      padding: 8px 12px;
+      background: var(--alef-light);
+      border: 1px solid var(--alef-mist);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--alef-charcoal);
+    }
+    .slack-msg__file::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: var(--alef-orange);
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .slack-typing {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 20px;
+      font-size: 12px;
+      color: rgba(42,42,42,0.45);
+      opacity: 0;
+    }
+    .slack-typing.revealed { opacity: 1; transition: opacity 0.3s; }
+    .slack-typing__dots {
+      display: flex;
+      gap: 3px;
+    }
+    .slack-typing__dots span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(42,42,42,0.3);
+      animation: typingBounce 1.2s infinite;
+    }
+    .slack-typing__dots span:nth-child(2) { animation-delay: 0.2s; }
+    .slack-typing__dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingBounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-4px); }
+    }
+
+    /* ===== TERMINAL / AI ANALYSIS MOCK ===== */
+    .terminal-mock {
+      width: 100%;
+      max-width: 680px;
+      background: var(--alef-charcoal);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+      height: 420px;
+      display: flex;
+      flex-direction: column;
+    }
+    .terminal-mock__bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.06);
+    }
+    .terminal-mock__dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .terminal-mock__dot--red { background: #ff5f57; }
+    .terminal-mock__dot--yellow { background: #febc2e; }
+    .terminal-mock__dot--green { background: #28c840; }
+    .terminal-mock__title {
+      flex: 1;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+    }
+    .terminal-mock__body {
+      flex: 1;
+      padding: 20px 24px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 2;
+      overflow-y: auto;
+    }
+    .terminal-line {
+      opacity: 0;
+      transform: translateY(6px);
+      color: rgba(255,255,255,0.7);
+    }
+    .terminal-line.revealed {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+    .terminal-line .t-green { color: var(--alef-green); }
+    .terminal-line .t-orange { color: var(--alef-orange); }
+    .terminal-line .t-dim { color: rgba(255,255,255,0.35); }
+    .terminal-line .t-white { color: #fff; font-weight: 700; }
+
+    .terminal-progress {
+      margin: 16px 24px 20px;
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .terminal-progress__fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--alef-green), var(--alef-teal));
+      border-radius: 3px;
+      transition: width 0.1s linear;
+    }
+    .terminal-badge {
+      margin: 0 24px 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      opacity: 0;
+    }
+    .terminal-badge.revealed { opacity: 1; transition: opacity 0.2s; }
+    .terminal-badge--risk {
+      background: rgba(196,98,18,0.15);
+      color: var(--alef-orange);
+    }
+
+    /* ===== DOCUMENT MOCK ===== */
+    .doc-mock {
+      width: 100%;
+      max-width: 760px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.06);
+      height: 420px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+    .doc-mock__topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--alef-mist);
+      flex-shrink: 0;
+    }
+    .doc-mock__title {
+      font-family: var(--font-display);
+      font-size: 14px;
+      color: var(--alef-charcoal);
+    }
+    .doc-mock__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      letter-spacing: 0.5px;
+    }
+    .doc-mock__badge--ai {
+      background: rgba(116,166,98,0.12);
+      color: var(--alef-green);
+    }
+    .doc-mock__badge--lawyer {
+      background: rgba(132,164,148,0.15);
+      color: var(--alef-teal);
+    }
+    .doc-mock__body {
+      flex: 1;
+      padding: 24px 28px;
+      overflow-y: auto;
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(42,42,42,0.8);
+    }
+    .doc-mock__clause {
+      margin-bottom: 28px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    .doc-mock__clause.revealed {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .doc-mock__clause-title {
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--alef-charcoal);
+      margin-bottom: 8px;
+    }
+    .doc-mock__highlight {
+      background: rgba(196,98,18,0.12);
+      padding: 1px 3px;
+      border-radius: 2px;
+    }
+    .doc-mock__strike {
+      text-decoration: line-through;
+      color: rgba(42,42,42,0.4);
+    }
+    .doc-mock__insert {
+      color: var(--alef-green);
+      font-weight: 600;
+    }
+
+    /* Document margin comments */
+    .doc-comment {
+      position: absolute;
+      right: -10px;
+      width: 240px;
+      padding: 12px 14px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      font-size: 12px;
+      line-height: 1.5;
+      color: rgba(42,42,42,0.8);
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    .doc-comment.revealed {
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s;
+    }
+    .doc-comment--ai { border-left: 3px solid var(--alef-green); }
+    .doc-comment--lawyer { border-left: 3px solid var(--alef-teal); }
+    .doc-comment__author {
+      font-weight: 700;
+      font-size: 11px;
+      margin-bottom: 4px;
+      color: var(--alef-charcoal);
+    }
+
+    /* --- Approval Buttons (Panel 4) --- */
+    .approval-buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    .approval-buttons.revealed {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.35s ease 0.1s, transform 0.35s ease 0.1s;
+    }
+    .approval-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid rgba(42,42,42,0.15);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      cursor: default;
+      transition: all 0.4s ease;
+    }
+    .approval-btn--approve { color: var(--alef-green); }
+    .approval-btn--review  { color: var(--alef-orange); }
+    .approval-btn--reject  { color: #b91c1c; }
+    .approval-btn.auto-selected {
+      transform: scale(1.15);
+    }
+    .approval-btn.auto-selected.approval-btn--approve {
+      border-color: var(--alef-green);
+      box-shadow: 0 0 8px rgba(116,166,98,0.35);
+    }
+    .approval-btn.auto-selected.approval-btn--review {
+      border-color: var(--alef-orange);
+      box-shadow: 0 0 8px rgba(196,98,18,0.3);
+    }
+    .approval-btn.auto-selected.approval-btn--reject {
+      border-color: #b91c1c;
+      box-shadow: 0 0 8px rgba(185,28,28,0.3);
+    }
+    .approval-btn.auto-faded {
+      opacity: 0.2;
+      transform: scale(0.85);
+    }
+
+    /* --- Slack Reactions (Panel 5) --- */
+    .slack-reactions {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .slack-reaction {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: rgba(42,42,42,0.05);
+      border: 1px solid rgba(42,42,42,0.1);
+      font-size: 12px;
+      line-height: 1.6;
+      color: rgba(42,42,42,0.7);
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    .slack-reaction.revealed {
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .slack-reaction__emoji { font-size: 14px; }
+    .slack-reaction__count { font-weight: 600; font-size: 11px; }
+
+    /* ===== LAWYER OVERLAY ===== */
+    .lawyer-overlay {
+      position: absolute;
+      bottom: 16px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.96);
+      border: 1px solid var(--alef-mist);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .lawyer-overlay.revealed {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .lawyer-overlay__avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--alef-teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .lawyer-overlay__info { flex: 1; }
+    .lawyer-overlay__name {
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--alef-charcoal);
+    }
+    .lawyer-overlay__status {
+      font-size: 11px;
+      color: var(--alef-green);
+      font-weight: 500;
+    }
+    .lawyer-overlay__stamp {
+      width: 42px;
+      height: 42px;
+      border: 2px solid var(--alef-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--alef-green);
+      font-size: 20px;
+      opacity: 0;
+      transform: scale(0.5) rotate(-15deg);
+    }
+    .lawyer-overlay__stamp.revealed {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* (reel CTA removed) */
+    .reel-cta__actions {
+      display: none;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== SOCIAL PROOF ===== */
+    .proof {
+      background: var(--alef-light);
+      padding: var(--section-py) 0;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 -60px 0 0 var(--alef-light);
+    }
+    .proof h2 { text-align: center; margin-bottom: 56px; }
+    .proof__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .proof__card {
+      background: var(--alef-white);
+      border-radius: 14px;
+      padding: 40px 32px;
+      border: 1px solid rgba(42,42,42,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .proof__card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(42,42,42,0.08);
+    }
+    .proof__stat {
+      font-family: var(--font-mono);
+      font-size: clamp(2.2rem, 4.5vw, 3rem);
+      font-weight: 700;
+      color: var(--alef-orange);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .proof__subline {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--alef-teal);
+      margin-bottom: 16px;
+      text-transform: lowercase;
+    }
+    .proof__card p {
+      font-size: 15px;
+      color: rgba(42,42,42,0.7);
+      line-height: 1.6;
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      background: #D4EAEA;
+      padding: var(--section-py) 0;
+      color: #2A2A2A;
+    }
+
+    .services .section-label { color: #6B9B9B; }
+
+    .services h2 {
+      color: #3D6B6B;
+      margin-bottom: 56px;
+      max-width: 600px;
+    }
+
+    .services__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .services__item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 10px;
+      transition: background 0.25s;
+      font-size: 16px;
+      font-weight: 500;
+      color: #3D6B6B;
+    }
+    .services__item:hover {
+      background: rgba(107, 155, 155, 0.12);
+      z-index: 20;
+    }
+    .services__tooltip {
+      position: absolute;
+      top: calc(100% - 4px);
+      right: -8px;
+      width: 260px;
+      background: rgba(210, 230, 228, 0.82);
+      backdrop-filter: blur(24px) saturate(1.4);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      border: 1.5px solid var(--alef-orange);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+      color: #2A3A3A;
+      font-size: 13.5px;
+      font-weight: 450;
+      line-height: 1.5;
+      padding: 16px 20px;
+      border-radius: 14px;
+      white-space: normal;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      z-index: 10;
+    }
+    .services__item:hover .services__tooltip {
+      opacity: 1;
+    }
+
+    .services__item i {
+      width: 22px;
+      height: 22px;
+      color: #6B9B9B;
+      flex-shrink: 0;
+    }
+
+    .services__note {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.5);
+      max-width: 640px;
+      font-style: italic;
+    }
+
+    /* ===== PRICING / RETAINER TRAP ===== */
+    .pricing {
+      background: var(--alef-light);
+      padding: var(--section-py) 0;
+    }
+
+    .pricing h2 { margin-bottom: 48px; max-width: none; white-space: nowrap; }
+
+    /* Pricing menu grid */
+    .pricing__menu {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+    .pricing__menu-item {
+      background: var(--alef-white);
+      border-radius: 12px;
+      padding: 28px 24px;
+      border: 1px solid rgba(42,42,42,0.06);
+      text-align: center;
+    }
+    .pricing__menu-price {
+      font-family: var(--font-mono);
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--alef-charcoal);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .pricing__menu-label {
+      font-size: 15px;
+      color: rgba(42,42,42,0.6);
+    }
+    .pricing__menu-note {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--alef-teal);
+      margin-top: 8px;
+    }
+
+    .pricing__menu-divider {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: rgba(42,42,42,0.35);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      margin-top: -8px;
+    }
+    .pricing__menu-row2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+
+    .pricing__versus {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .pricing__versus h3 {
+      color: var(--alef-charcoal);
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+    .pricing__versus p {
+      font-size: 15px;
+      color: rgba(42,42,42,0.5);
+      font-family: var(--font-mono);
+    }
+
+    .pricing__scenarios {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .pricing__scenario {
+      background: var(--alef-white);
+      border-radius: 12px;
+      padding: 32px 28px;
+      border: 1px solid rgba(42, 42, 42, 0.06);
+    }
+
+    .pricing__scenario-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--alef-orange);
+      margin-bottom: 12px;
+    }
+
+    .pricing__scenario h3 {
+      color: var(--alef-charcoal);
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+    }
+
+    .pricing__scenario p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(42, 42, 42, 0.7);
+      margin-bottom: 20px;
+    }
+
+    .usage-bar {
+      height: 10px;
+      background: rgba(42, 42, 42, 0.06);
+      border-radius: 5px;
+      overflow: visible;
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .usage-bar__fill {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .usage-bar__fill--waste { background: linear-gradient(90deg, var(--alef-orange), #c0392b); }
+    .usage-bar__fill--overflow {
+      background: linear-gradient(90deg, var(--alef-orange), #c0392b);
+      position: relative;
+    }
+
+    .pricing__effective {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 600;
+      color: #c0392b;
+    }
+
+    .pricing__alef-line {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--alef-green);
+      margin-top: 12px;
+    }
+
+    /* TCO Comparison */
+    .tco { margin-bottom: 48px; }
+    .tco h3 { text-align: center; color: var(--alef-charcoal); font-size: 1.3rem; margin-bottom: 8px; }
+    .tco__sub { text-align: center; font-size: 14px; color: rgba(42,42,42,0.6); margin-bottom: 32px; }
+    .tco__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .tco__card { background: var(--alef-white); border-radius: 12px; padding: 28px 24px; border: 1px solid rgba(42,42,42,0.06); text-align: center; }
+    .tco__volume { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--alef-orange); margin-bottom: 16px; }
+    .tco__row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; color: rgba(42,42,42,0.7); border-bottom: 1px solid rgba(42,42,42,0.06); }
+    .tco__row:last-child { border-bottom: none; }
+    .tco__row span:last-child { font-weight: 600; font-family: var(--font-mono); color: var(--alef-charcoal); }
+    .tco__save { margin-top: 16px; font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--alef-green); }
+    .tco__save-label { font-size: 13px; color: rgba(42,42,42,0.5); margin-top: 2px; }
+    .tco__footnote { text-align: center; font-size: 12px; color: rgba(42,42,42,0.4); margin-top: 20px; font-style: italic; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+    /* Alef model card */
+    .pricing__alef {
+      background: var(--alef-white);
+      border: 2px solid var(--alef-green);
+      border-radius: 14px;
+      padding: 36px 32px;
+      margin-bottom: 48px;
+    }
+
+    .pricing__alef h3 {
+      color: var(--alef-charcoal);
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .pricing__alef p {
+      font-size: 16px;
+      color: rgba(42, 42, 42, 0.7);
+      max-width: 680px;
+      line-height: 1.65;
+    }
+
+    .pricing__alef .pricing__alef-detail {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: rgba(42, 42, 42, 0.6);
+      margin-top: 16px;
+      line-height: 1.7;
+    }
+
+    .pricing__pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .pricing__pillar {
+      text-align: center;
+      padding: 28px 20px;
+    }
+
+    .pricing__pillar-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(116, 166, 98, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: var(--alef-green);
+    }
+
+    .pricing__pillar h3 {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--alef-charcoal);
+      margin-bottom: 8px;
+    }
+
+    .pricing__pillar p {
+      font-size: 14px;
+      color: rgba(42, 42, 42, 0.6);
+      line-height: 1.55;
+    }
+
+    .pricing__cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+    .pricing__cta .btn + .btn { margin-left: 16px; }
+
+    /* ===== DNA / ABOUT ===== */
+    .dna {
+      background: var(--alef-mist);
+      padding: var(--section-py) 0;
+    }
+
+    .dna h2 {
+      margin-bottom: 24px;
+      max-width: 640px;
+    }
+
+    .dna__body {
+      font-size: 17px;
+      color: rgba(42, 42, 42, 0.75);
+      max-width: 640px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+
+    .dna__differentiator {
+      font-weight: 600;
+      color: var(--alef-charcoal);
+      font-size: 18px;
+      margin-bottom: 48px;
+      max-width: 640px;
+    }
+
+    .dna__logos-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(42, 42, 42, 0.4);
+      margin-bottom: 24px;
+    }
+
+    .dna__logos {
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+    }
+
+    .dna__logos-track {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+      animation: logo-scroll 30s linear infinite;
+      width: max-content;
+    }
+
+    .dna__logo-img {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+      opacity: 0.55;
+      filter: grayscale(100%);
+      transition: opacity 0.3s, filter 0.3s;
+    }
+    .dna__logo-img:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+    }
+
+    @keyframes logo-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ===== FINAL CTA ===== */
+    .cta-final {
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(116, 166, 98, 0.12) 0%, transparent 60%),
+        var(--alef-charcoal);
+      padding: 80px 0;
+      text-align: center;
+      color: var(--alef-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .cta-final .container { position: relative; z-index: 2; }
+
+    .cta-final__badge {
+      display: inline-block;
+      background: var(--alef-green);
+      color: white;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .cta-final h2 {
+      color: var(--alef-white);
+      margin-bottom: 16px;
+    }
+
+    .cta-final p {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 36px;
+    }
+
+    .cta-final__actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--alef-black);
+      padding: 56px 0 32px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .footer__inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .footer__logo svg {
+      height: 32px;
+      width: auto;
+      margin-bottom: 16px;
+    }
+
+    .footer__tagline {
+      font-size: 14px;
+      max-width: 280px;
+    }
+
+    .footer__links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer__links a {
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.25s;
+    }
+    .footer__links a:hover {
+      color: var(--alef-white);
+    }
+
+    .footer__bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .footer__bottom a {
+      color: rgba(255, 255, 255, 0.45);
+      transition: color 0.25s;
+    }
+    .footer__bottom a:hover { color: var(--alef-white); }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .animate-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .animate-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .animate-in.delay-1 { transition-delay: 0.1s; }
+    .animate-in.delay-2 { transition-delay: 0.2s; }
+    .animate-in.delay-3 { transition-delay: 0.3s; }
+
+    /* ===== MOBILE NAV DRAWER ===== */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: var(--header-h);
+      left: 0;
+      right: 0;
+      background: var(--alef-white);
+      padding: 24px;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 8px 32px rgba(42, 42, 42, 0.1);
+      z-index: 999;
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+      pointer-events: none;
+    }
+    .mobile-nav.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+    .mobile-nav a {
+      display: block;
+      padding: 12px 16px;
+      font-weight: 500;
+      color: var(--alef-charcoal);
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .mobile-nav a:hover { background: rgba(42, 42, 42, 0.04); }
+    .mobile-nav .btn {
+      margin-top: 8px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      :root { --section-py: 80px; }
+
+      .problem__cards { grid-template-columns: 1fr; gap: 20px; }
+      .paths__grid { grid-template-columns: 1fr; }
+      /* Reel: scale down mocks on tablets */
+      .slack-mock, .terminal-mock, .doc-mock { max-width: 600px; height: 360px; }
+      .reel__panel { padding: 24px 24px 80px; }
+      .slack-mock__sidebar { width: 160px; }
+      .doc-comment { width: 200px; right: -6px; font-size: 11px; }
+      .services__grid { grid-template-columns: 1fr; }
+      .pricing__scenarios { grid-template-columns: 1fr; }
+      .pricing__menu { grid-template-columns: 1fr; }
+      .pricing__menu-row2 { grid-template-columns: 1fr; }
+      .pricing__pillars { grid-template-columns: 1fr; gap: 16px; }
+      .proof__grid { grid-template-columns: 1fr; }
+      .tco__grid { grid-template-columns: 1fr; }
+
+      .footer__inner { flex-direction: column; gap: 32px; }
+      .footer__bottom { flex-direction: column; gap: 8px; }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --section-py: 64px;
+        --header-h: 64px;
+      }
+
+      body { font-size: 16px; }
+
+      .header__nav { display: none; }
+      .header__cta { display: none; }
+      .header__toggle { display: flex; }
+      .mobile-nav { display: flex; }
+
+      .hero { min-height: 100svh; }
+      .hero__logo { width: 160px; margin-bottom: 36px; }
+      .hero-shape { display: none; }
+
+      .hero__actions { flex-direction: column; align-items: center; }
+      .hero__actions .btn { width: 100%; max-width: 280px; justify-content: center; }
+
+
+      .proof__grid { grid-template-columns: 1fr; }
+      .tco__grid { grid-template-columns: 1fr; }
+
+      .pricing__pillar { text-align: left; display: flex; gap: 16px; align-items: flex-start; padding: 20px 0; }
+      .pricing__pillar-icon { margin: 0; flex-shrink: 0; }
+
+      .pricing__cta .btn + .btn { margin-left: 0; margin-top: 12px; }
+      .pricing__cta { display: flex; flex-direction: column; align-items: center; }
+
+      .cta-final__actions { flex-direction: column; align-items: center; }
+      .cta-final__actions .btn { width: 100%; max-width: 280px; justify-content: center; }
+
+      /* Fix 3: Hide hero br on mobile */
+      .hero-br { display: none; }
+
+
+      /* Fix 5: Path cards — reduce padding */
+      .paths__card { padding: 28px 20px; }
+
+      /* Fix 6: Footer links — stack vertically */
+      .footer__links { flex-direction: column; gap: 12px; }
+
+      /* Fix 8: Pricing scenario cards — tighter padding */
+      .pricing__scenario { padding: 24px 20px; }
+
+      /* Fix 10: Touch targets — increase mobile nav link size */
+      .mobile-nav a { padding: 14px 16px; min-height: 44px; display: flex; align-items: center; }
+
+      /* Reel: stack panels vertically on mobile */
+      .reel { height: auto !important; }
+      .reel__sticky {
+        position: relative !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+      .reel__track {
+        flex-direction: column;
+        transform: none !important;
+      }
+      .reel__panel {
+        min-width: 100%;
+        width: 100%;
+        padding: 32px 16px;
+        min-height: auto;
+      }
+      .reel__dots { display: none; }
+      .reel__header { padding: 64px 16px 8px; }
+
+      .slack-mock {
+        flex-direction: column;
+        height: auto;
+        max-width: 100%;
+      }
+      .slack-mock__sidebar { display: none; }
+      .slack-mock__main { min-height: 280px; }
+
+      .terminal-mock { height: auto; min-height: 300px; max-width: 100%; }
+      .doc-mock { height: auto; min-height: 320px; max-width: 100%; }
+
+      .doc-comment {
+        position: relative;
+        right: auto;
+        width: 100%;
+        margin-top: 12px;
+        transform: none;
+      }
+      .doc-comment.revealed { transform: none; }
+
+      .lawyer-overlay { position: relative; bottom: auto; left: auto; right: auto; margin: 16px 20px; }
+
+      /* New elements — visible on mobile */
+      .approval-buttons,
+      .approval-buttons.revealed { transform: none; }
+      .slack-reaction { opacity: 1; transform: none; }
+
+      /* Make all reel sub-elements visible on mobile (no scroll-driven animation) */
+      .slack-msg,
+      .terminal-line,
+      .terminal-badge,
+      .doc-mock__clause,
+      .doc-comment,
+      .approval-buttons,
+      .slack-reaction,
+      .lawyer-overlay,
+      .lawyer-overlay__stamp {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .terminal-progress__fill { width: 100% !important; }
+      .slack-typing { opacity: 0 !important; display: none; }
+
+      /* reel-cta removed */
+    }
+
+    /* Fix 7: Small screens (≤480px) */
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .hero__logo { width: 130px; }
+      .problem__stat { font-size: clamp(1.75rem, 3.5vw, 2.25rem); }
+      :root { --section-py: 48px; }
+      .paths__card { padding: 24px 16px; }
+      .pricing__scenario { padding: 20px 16px; }
+      .proof__card { padding: 28px 20px; }
+      .tco__card { padding: 20px 16px; }
+
+      .terminal-mock__body { padding: 14px 16px; font-size: 11px; }
+      .doc-mock__body { padding: 16px; font-size: 13px; }
+    }
+
+    /* ===== ESTIMATE MODAL ===== */
+    .estimate-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .estimate-overlay.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .estimate-dialog {
+      background: var(--alef-white);
+      border-radius: 16px;
+      padding: 44px 40px 36px;
+      max-width: 440px;
+      width: 92%;
+      position: relative;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
+      transform: scale(0.95) translateY(12px);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .estimate-overlay.open .estimate-dialog {
+      transform: scale(1) translateY(0);
+    }
+
+    .estimate-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: rgba(42, 42, 42, 0.4);
+      font-size: 20px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      border: none;
+      line-height: 1;
+    }
+    .estimate-close:hover {
+      background: var(--alef-mist);
+      color: var(--alef-charcoal);
+    }
+
+    .estimate-dialog h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--alef-charcoal);
+      margin-bottom: 6px;
+    }
+    .estimate-dialog .estimate-sub {
+      font-size: 15px;
+      color: rgba(42, 42, 42, 0.6);
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .estimate-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .estimate-field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--alef-charcoal);
+      margin-bottom: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .estimate-field input,
+    .estimate-field select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid rgba(42, 42, 42, 0.12);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--alef-charcoal);
+      background: var(--alef-white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .estimate-field input:focus,
+    .estimate-field select:focus {
+      border-color: var(--alef-teal);
+      box-shadow: 0 0 0 3px rgba(122, 158, 159, 0.15);
+    }
+    .estimate-field input::placeholder {
+      color: rgba(42, 42, 42, 0.35);
+    }
+
+    .estimate-submit {
+      margin-top: 8px;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: var(--alef-orange);
+      color: var(--alef-white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .estimate-submit:hover {
+      background: #a35e34;
+      transform: translateY(-1px);
+    }
+    .estimate-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .estimate-success {
+      display: none;
+      text-align: center;
+      padding: 24px 0;
+    }
+    .estimate-success.show {
+      display: block;
+    }
+    .estimate-success .checkmark {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--alef-green);
+      color: var(--alef-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 16px;
+    }
+    .estimate-success h4 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--alef-charcoal);
+      margin-bottom: 6px;
+    }
+    .estimate-success p {
+      font-size: 15px;
+      color: rgba(42, 42, 42, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="#" class="header__logo" aria-label="Alef - Home">
+        <!-- Charcoal logo (visible when scrolled, white bg) -->
+        <svg class="logo-dark" viewBox="0 0 644.65 182.48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#B86D3E" d="M10.93,91.24c0,43.15,34.98,78.12,78.12,78.12s78.12-34.98,78.12-78.12S132.2,13.11,89.05,13.11,10.93,48.09,10.93,91.24Zm56.34-34.53l19.01,18.95c.33,.33,.51,.77,.52,1.23h0c0,.97-.78,1.76-1.75,1.76h-18.7c-.97,0-1.75,.78-1.75,1.75v13.36c0,.97,.78,1.75,1.75,1.75h24.74c.97,0,1.75-.78,1.75-1.75V58.19c0-.97,.78-1.75,1.75-1.75h25.1c.97,0,1.75,.78,1.75,1.75v63.9c0,1.56-1.89,2.34-2.99,1.24l-8.69-8.69c-.33-.33-.77-.51-1.24-.51h-3.32c-.97,0-1.75,.78-1.75,1.75v13.28c0,.97-.78,1.75-1.75,1.75h-20.77c-.46,0-.91-.18-1.24-.51l-32.22-32.26c-.33-.33-.51-.77-.51-1.24v-28.1c0-.49,.2-.96,.57-1.29l11.79-10.85c.32-.3,.75-.46,1.19-.46h5.52c.46,0,.91,.18,1.24,.51Z"/>
+          <path fill="#27292B" d="M227.29,47.27c3.95-12.54,14.26-18.55,25.08-18.55s21.3,6.01,25.25,18.55l30.58,99.29h-25.6l-6.7-23.71-46.9,.17-6.7,23.53h-25.6l30.58-99.29Zm8.25,53.25h33.84l-13.06-45.87c-.69-2.41-1.72-3.44-3.78-3.44-1.89,0-3.09,1.03-3.78,3.44l-13.23,45.87Z"/>
+          <path fill="#27292B" d="M359.91,123.37h53.94v23.19h-56.86c-15.98,0-22.16-8.25-22.16-21.47V30.96h25.08V123.37Z"/>
+          <path fill="#27292B" d="M458.33,146.56c-15.98,0-22.16-8.25-22.16-21.47V52.6c0-13.23,6.18-21.64,22.16-21.64h61.16v22.5h-58.23v24.05h54.63v22.5h-54.63v24.05h59.27v22.5h-62.19Z"/>
+          <path fill="#27292B" d="M550.75,146.56V52.6c0-13.23,6.36-21.64,22.16-21.64h60.81v23.19h-57.89v30.23h53.94v23.02h-53.94v39.17h-25.08Z"/>
+        </svg>
+        <!-- White logo (visible on hero, dark bg) -->
+        <svg class="logo-light" viewBox="0 0 644.65 182.48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#B86D3E" d="M10.93,91.24c0,43.15,34.98,78.12,78.12,78.12s78.12-34.98,78.12-78.12S132.2,13.11,89.05,13.11,10.93,48.09,10.93,91.24Zm56.34-34.53l19.01,18.95c.33,.33,.51,.77,.52,1.23h0c0,.97-.78,1.76-1.75,1.76h-18.7c-.97,0-1.75,.78-1.75,1.75v13.36c0,.97,.78,1.75,1.75,1.75h24.74c.97,0,1.75-.78,1.75-1.75V58.19c0-.97,.78-1.75,1.75-1.75h25.1c.97,0,1.75,.78,1.75,1.75v63.9c0,1.56-1.89,2.34-2.99,1.24l-8.69-8.69c-.33-.33-.77-.51-1.24-.51h-3.32c-.97,0-1.75,.78-1.75,1.75v13.28c0,.97-.78,1.75-1.75,1.75h-20.77c-.46,0-.91-.18-1.24-.51l-32.22-32.26c-.33-.33-.51-.77-.51-1.24v-28.1c0-.49,.2-.96,.57-1.29l11.79-10.85c.32-.3,.75-.46,1.19-.46h5.52c.46,0,.91,.18,1.24,.51Z"/>
+          <path fill="#FFFFFF" d="M227.29,47.27c3.95-12.54,14.26-18.55,25.08-18.55s21.3,6.01,25.25,18.55l30.58,99.29h-25.6l-6.7-23.71-46.9,.17-6.7,23.53h-25.6l30.58-99.29Zm8.25,53.25h33.84l-13.06-45.87c-.69-2.41-1.72-3.44-3.78-3.44-1.89,0-3.09,1.03-3.78,3.44l-13.23,45.87Z"/>
+          <path fill="#FFFFFF" d="M359.91,123.37h53.94v23.19h-56.86c-15.98,0-22.16-8.25-22.16-21.47V30.96h25.08V123.37Z"/>
+          <path fill="#FFFFFF" d="M458.33,146.56c-15.98,0-22.16-8.25-22.16-21.47V52.6c0-13.23,6.18-21.64,22.16-21.64h61.16v22.5h-58.23v24.05h54.63v22.5h-54.63v24.05h59.27v22.5h-62.19Z"/>
+          <path fill="#FFFFFF" d="M550.75,146.56V52.6c0-13.23,6.36-21.64,22.16-21.64h60.81v23.19h-57.89v30.23h53.94v23.02h-53.94v39.17h-25.08Z"/>
+        </svg>
+      </a>
+
+      <nav class="header__nav" aria-label="Main navigation">
+        <a href="#problem">Problem</a>
+        <a href="#how">How It Works</a>
+        <a href="#results">Results</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="header__cta">
+        <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get in touch</a>
+      </div>
+
+      <button class="header__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="#problem">Problem</a>
+    <a href="#how">How It Works</a>
+    <a href="#results">Results</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About</a>
+    <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get in touch</a>
+  </div>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-shape hero-shape--diamond"></div>
+      <div class="hero-shape hero-shape--circle"></div>
+      <div class="hero-shape hero-shape--hex"></div>
+
+      <div class="hero__content">
+        <h1>Your sales team closes deals.<br class="hero-br">We close contracts.</h1>
+
+        <p class="hero__sub">Send us your next contract. Get it back in 48 hours, reviewed, redlined, and ready to send.</p>
+
+        <div class="hero__actions">
+          <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-ghost">Get a Custom Estimate</a>
+        </div>
+        <p class="hero__pricing">Pay per result, not per hour.</p>
+      </div>
+    </section>
+
+    <!-- ===== PROBLEM ===== -->
+    <section class="problem" id="problem">
+      <div class="container">
+        <p class="section-label animate-in">The Problem</p>
+        <h2 class="animate-in">Legal is the #1 deal killer for growing companies.</h2>
+
+        <div class="problem__cards">
+          <div class="problem__card animate-in delay-1">
+            <div class="problem__stat">3+ weeks</div>
+            <h3>Per contract</h3>
+            <p>Your sales team closes in days. Legal takes weeks. The average B2B contract takes 3&ndash;4 weeks from first draft to signature.</p>
+            <span class="problem__source">World Commerce &amp; Contracting / Bind Legal</span>
+          </div>
+
+          <div class="problem__card animate-in delay-2">
+            <div class="problem__stat">9.2%</div>
+            <h3>Revenue lost annually</h3>
+            <p>Missed deadlines, stalled deals, value leakage after signature. At $5M revenue, that&rsquo;s $460K walking out the door every year.</p>
+            <span class="problem__source">World Commerce &amp; Contracting</span>
+          </div>
+
+          <div class="problem__card animate-in delay-3">
+            <div class="problem__stat">$500+/hr</div>
+            <h3>And climbing</h3>
+            <p>First-year startup legal costs average $80K. Every new deal, employee, or vendor adds to the bill.</p>
+            <span class="problem__source">ContractsCounsel / VentureBeat</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TWO PATHS ===== -->
+    <section class="paths" id="paths">
+      <div class="container">
+        <p class="section-label animate-in" style="text-align:center;">Two Paths</p>
+        <h2 class="animate-in">Whatever your setup, we can help.</h2>
+
+        <div class="paths__grid">
+          <div class="paths__card animate-in delay-1">
+            <div class="paths__icon">
+              <i data-lucide="clock" style="width:24px;height:24px;"></i>
+            </div>
+            <h3>Your deals are stalling in legal</h3>
+            <p>We implement your playbook and turn contracts around in 48 hours.</p>
+          </div>
+
+          <div class="paths__card animate-in delay-2">
+            <div class="paths__icon">
+              <i data-lucide="rocket" style="width:24px;height:24px;"></i>
+            </div>
+            <h3>You don&rsquo;t have a lawyer yet</h3>
+            <p>Send us any contract. Get it back in 48 hours. Pay per result.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS — SCROLL REEL ===== -->
+    <section class="reel" id="how">
+      <div class="reel__sticky">
+        <div class="reel__header">
+          <p class="section-label">How It Works</p>
+          <h2>Watch your contract move through our pipeline.</h2>
+        </div>
+
+        <div class="reel__track">
+
+          <!-- PANEL 1 — Slack Request -->
+          <div class="reel__panel reel__panel--slack-request">
+            <div class="slack-mock">
+              <div class="slack-mock__sidebar">
+                <div class="slack-mock__workspace">Acme Corp</div>
+                <ul class="slack-mock__channels">
+                  <li># general</li>
+                  <li># sales-team</li>
+                  <li class="active"># legal-requests</li>
+                  <li># engineering</li>
+                </ul>
+              </div>
+              <div class="slack-mock__main">
+                <div class="slack-mock__header"># legal-requests</div>
+                <div class="slack-mock__messages">
+                  <div class="slack-msg" data-reel-reveal="0">
+                    <div class="slack-msg__avatar" style="background:#E87B35;">SC</div>
+                    <div class="slack-msg__body">
+                      <div class="slack-msg__name">Sarah Chen <span>10:32 AM</span></div>
+                      <div class="slack-msg__text">Hey <span class="mention">@alef</span>, we need a redline on the Coca-Cola sales agreement before Thursday. Attached the latest draft.</div>
+                      <div class="slack-msg__file">Acme-CocaCola-SalesAgreement-v3.pdf</div>
+                    </div>
+                  </div>
+                  <div class="slack-msg" data-reel-reveal="1">
+                    <div class="slack-msg__avatar" style="background:var(--alef-green);">A</div>
+                    <div class="slack-msg__body">
+                      <div class="slack-msg__name">Alef <span>10:32 AM</span></div>
+                      <div class="slack-msg__text">Got it! I'll have this reviewed and redlined within 48 hours. Starting analysis now.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slack-typing" data-reel-reveal="2">
+                  <div class="slack-typing__dots"><span></span><span></span><span></span></div>
+                  Alef is analyzing...
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANEL 2 — AI Investigation -->
+          <div class="reel__panel reel__panel--ai-analysis">
+            <div class="terminal-mock">
+              <div class="terminal-mock__bar">
+                <span class="terminal-mock__dot terminal-mock__dot--red"></span>
+                <span class="terminal-mock__dot terminal-mock__dot--yellow"></span>
+                <span class="terminal-mock__dot terminal-mock__dot--green"></span>
+                <span class="terminal-mock__title">Alef AI: Contract Analysis</span>
+              </div>
+              <div class="terminal-mock__body">
+                <div class="terminal-line" data-reel-reveal="0"><span class="t-dim">$</span> <span class="t-white">Scanning contract...</span></div>
+                <div class="terminal-line" data-reel-reveal="1"><span class="t-green">✓</span> 47 clauses identified</div>
+                <div class="terminal-line" data-reel-reveal="2"><span class="t-green">✓</span> Comparing against client playbook</div>
+                <div class="terminal-line" data-reel-reveal="3"><span class="t-orange">⚠</span> <span class="t-orange">Indemnification:</span> uncapped liability detected</div>
+                <div class="terminal-line" data-reel-reveal="4"><span class="t-orange">⚠</span> <span class="t-orange">Payment terms:</span> Net-90 exceeds standard Net-30</div>
+                <div class="terminal-line" data-reel-reveal="5"><span class="t-green">✓</span> IP assignment clause: standard</div>
+                <div class="terminal-line" data-reel-reveal="6"><span class="t-green">✓</span> Confidentiality: mutual, no issues</div>
+                <div class="terminal-line" data-reel-reveal="7"><span class="t-dim">───</span></div>
+                <div class="terminal-line" data-reel-reveal="8"><span class="t-white">Generating redline markup...</span></div>
+              </div>
+              <div class="terminal-progress">
+                <div class="terminal-progress__fill"></div>
+              </div>
+              <div class="terminal-badge terminal-badge--risk" data-reel-reveal="badge">
+                2 high-risk · 3 medium-risk clauses flagged
+              </div>
+            </div>
+          </div>
+
+          <!-- PANEL 3 — Document with AI Comments -->
+          <div class="reel__panel reel__panel--ai-comments">
+            <div class="doc-mock">
+              <div class="doc-mock__topbar">
+                <div class="doc-mock__title">Acme Corp / Coca-Cola: Sales Agreement</div>
+                <div class="doc-mock__badge doc-mock__badge--ai">✓ AI Review Complete</div>
+              </div>
+              <div class="doc-mock__body">
+                <div class="doc-mock__clause" data-reel-reveal="0" style="position:relative;">
+                  <div class="doc-mock__clause-title">Section 8: Indemnification</div>
+                  <p>The Supplier shall indemnify, defend, and hold harmless the Buyer from any and all claims, damages, losses, and expenses <span class="doc-mock__highlight">without limitation as to amount or scope</span> arising from the Supplier's performance under this Agreement.</p>
+                  <div class="doc-comment doc-comment--ai" data-reel-reveal="comment-0" style="top:-8px;">
+                    <div class="doc-comment__author">🤖 Alef AI</div>
+                    Uncapped indemnification. Recommend: Cap at 2x annual contract value per industry standard.
+                  </div>
+                </div>
+                <div class="doc-mock__clause" data-reel-reveal="1" style="position:relative;">
+                  <div class="doc-mock__clause-title">Section 5: Payment Terms</div>
+                  <p>All invoices shall be payable within <span class="doc-mock__strike">ninety (90) days</span> <span class="doc-mock__insert">forty-five (45) days</span> of receipt of invoice.</p>
+                  <div class="doc-comment doc-comment--ai" data-reel-reveal="comment-1" style="top:-8px;">
+                    <div class="doc-comment__author">🤖 Alef AI</div>
+                    Net-90 exceeds your playbook standard of Net-30. Recommend counter: Net-45 as compromise.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANEL 4 — Lawyer Review -->
+          <div class="reel__panel reel__panel--lawyer-review">
+            <div class="doc-mock">
+              <div class="doc-mock__topbar">
+                <div class="doc-mock__title">Acme Corp / Coca-Cola: Sales Agreement</div>
+                <div class="doc-mock__badge doc-mock__badge--lawyer" data-reel-reveal="badge-lawyer">✓ Attorney Approved</div>
+              </div>
+              <div class="doc-mock__body">
+                <div class="doc-mock__clause" data-reel-reveal="0" style="position:relative;">
+                  <div class="doc-mock__clause-title">Section 8: Indemnification</div>
+                  <p>The Supplier shall indemnify, defend, and hold harmless the Buyer from any and all claims, damages, losses, and expenses <span class="doc-mock__highlight">capped at two times (2x) the annual contract value</span>, arising from the Supplier's performance under this Agreement, <span class="doc-mock__insert">excluding claims arising from gross negligence or willful misconduct</span>.</p>
+                  <div class="doc-comment doc-comment--lawyer" data-reel-reveal="comment-0" style="top:-8px;">
+                    <div class="doc-comment__author">Lex Luther, Esq.</div>
+                    Agreed with AI recommendation. Added carve-out for gross negligence. Ready to send.
+                    <div class="approval-buttons" data-reel-reveal="approve-0">
+                      <span class="approval-btn approval-btn--approve">✓</span>
+                      <span class="approval-btn approval-btn--review">◐</span>
+                      <span class="approval-btn approval-btn--reject">✗</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="doc-mock__clause" data-reel-reveal="1" style="position:relative;">
+                  <div class="doc-mock__clause-title">Section 5: Payment Terms</div>
+                  <p>All invoices shall be payable within <span class="doc-mock__insert">forty-five (45) days</span> of receipt of invoice.</p>
+                  <div class="doc-comment doc-comment--lawyer" data-reel-reveal="comment-1" style="top:-8px;">
+                    <div class="doc-comment__author">Lex Luther, Esq.</div>
+                    Agreed. Net-45 is a reasonable compromise. Flag for client review on payment cycle.
+                    <div class="approval-buttons" data-reel-reveal="approve-1">
+                      <span class="approval-btn approval-btn--approve">✓</span>
+                      <span class="approval-btn approval-btn--review">◐</span>
+                      <span class="approval-btn approval-btn--reject">✗</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lawyer-overlay" data-reel-reveal="lawyer">
+                <div class="lawyer-overlay__avatar">LL</div>
+                <div class="lawyer-overlay__info">
+                  <div class="lawyer-overlay__name">Lex Luther, Esq.</div>
+                  <div class="lawyer-overlay__status">Attorney review complete</div>
+                </div>
+                <div class="lawyer-overlay__stamp" data-reel-reveal="stamp">✓</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANEL 5 — Slack Delivery -->
+          <div class="reel__panel reel__panel--slack-delivery">
+            <div class="slack-mock">
+              <div class="slack-mock__sidebar">
+                <div class="slack-mock__workspace">Acme Corp</div>
+                <ul class="slack-mock__channels">
+                  <li># general</li>
+                  <li># sales-team</li>
+                  <li class="active"># legal-requests</li>
+                  <li># engineering</li>
+                </ul>
+              </div>
+              <div class="slack-mock__main">
+                <div class="slack-mock__header"># legal-requests</div>
+                <div class="slack-mock__messages">
+                  <div class="slack-msg" data-reel-reveal="0">
+                    <div class="slack-msg__avatar" style="background:var(--alef-green);">A</div>
+                    <div class="slack-msg__body">
+                      <div class="slack-msg__name">Alef <span>10:47 PM · Next Day</span></div>
+                      <div class="slack-msg__text">Redline complete! Here's your marked-up agreement with 5 recommended changes. 2 high-priority items flagged.</div>
+                      <div class="slack-msg__file">Acme-CocaCola-SalesAgreement-REDLINED.pdf</div>
+                      <div class="slack-reactions">
+                        <span class="slack-reaction" data-reel-reveal="react-0"><span class="slack-reaction__emoji">✅</span><span class="slack-reaction__count">1</span></span>
+                        <span class="slack-reaction" data-reel-reveal="react-1"><span class="slack-reaction__emoji">🚀</span><span class="slack-reaction__count">1</span></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slack-msg" data-reel-reveal="1">
+                    <div class="slack-msg__avatar" style="background:#E87B35;">SC</div>
+                    <div class="slack-msg__body">
+                      <div class="slack-msg__name">Sarah Chen <span>10:49 PM</span></div>
+                      <div class="slack-msg__text">This is incredible. 36 hours. Our last firm took 2 weeks. 🎉</div>
+                      <div class="slack-reactions">
+                        <span class="slack-reaction" data-reel-reveal="react-2"><span class="slack-reaction__emoji">🎉</span><span class="slack-reaction__count">3</span></span>
+                        <span class="slack-reaction" data-reel-reveal="react-3"><span class="slack-reaction__emoji">👏</span><span class="slack-reaction__count">2</span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.reel__track -->
+
+        <!-- Panel indicator dots -->
+        <div class="reel__dots">
+          <span class="reel__dot active" data-panel="0"></span>
+          <span class="reel__dot" data-panel="1"></span>
+          <span class="reel__dot" data-panel="2"></span>
+          <span class="reel__dot" data-panel="3"></span>
+          <span class="reel__dot" data-panel="4"></span>
+          <a href="#results" class="reel__skip">Skip ↓</a>
+        </div>
+      </div><!-- /.reel__sticky -->
+    </section>
+
+
+    <!-- ===== SOCIAL PROOF ===== -->
+    <section class="proof" id="results">
+      <div class="container">
+        <p class="section-label animate-in">Results</p>
+        <h2 class="animate-in">Already helping startups close faster.</h2>
+        <div class="proof__grid">
+          <div class="proof__card animate-in delay-1">
+            <div class="proof__stat">$120K</div>
+            <div class="proof__subline">deal closed in 48 hours</div>
+            <p>Full contract review, risk analysis, and negotiation-ready redline markup. Delivered in 2 days, not 2 weeks.</p>
+          </div>
+          <div class="proof__card animate-in delay-2">
+            <div class="proof__stat">$30K</div>
+            <div class="proof__subline">projected annual savings</div>
+            <p>Replaced traditional retainer model with outcome-based pricing. Complete commercial contract coverage at 33% lower total cost of ownership.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="services">
+      <div class="container">
+        <p class="section-label animate-in">What We Cover</p>
+        <h2 class="animate-in">From NDAs to DPAs. We cover the deal stack.</h2>
+
+        <div class="services__grid">
+          <div class="services__item animate-in delay-1"><i data-lucide="lock"></i> NDAs &amp; Confidentiality Agreements<span class="services__tooltip">Protect sensitive information before deals begin.</span></div>
+          <div class="services__item animate-in delay-1"><i data-lucide="file-text"></i> Master Service Agreements (MSAs)<span class="services__tooltip">Set the terms once, execute faster on every future deal.</span></div>
+          <div class="services__item animate-in delay-2"><i data-lucide="cloud"></i> SaaS / Subscription Agreements<span class="services__tooltip">Lock in licensing, usage rights, and renewal terms upfront.</span></div>
+          <div class="services__item animate-in delay-2"><i data-lucide="package"></i> Vendor &amp; Supplier Contracts<span class="services__tooltip">Control costs, delivery terms, and liability before you commit.</span></div>
+          <div class="services__item animate-in delay-1"><i data-lucide="briefcase"></i> Customer Contracts<span class="services__tooltip">Close revenue faster with airtight commercial terms.</span></div>
+          <div class="services__item animate-in delay-1"><i data-lucide="shield"></i> Data Processing Agreements (DPAs)<span class="services__tooltip">Stay compliant with GDPR, CCPA, and data privacy regulations.</span></div>
+          <div class="services__item animate-in delay-2"><i data-lucide="heart"></i> Business Associate Agreements (BAAs)<span class="services__tooltip">Required for any deal involving protected health information.</span></div>
+          <div class="services__item animate-in delay-2"><i data-lucide="search"></i> Security Reviews &amp; Questionnaires<span class="services__tooltip">Clear security and compliance gates that block procurement.</span></div>
+          <div class="services__item animate-in delay-1"><i data-lucide="book-open"></i> Terms of Service &amp; Privacy Policies<span class="services__tooltip">Protect your platform and users from day one.</span></div>
+          <div class="services__item animate-in delay-1"><i data-lucide="award"></i> Commercial Licensing Agreements<span class="services__tooltip">Define IP rights, usage scope, and royalties clearly.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <p class="section-label animate-in">Pricing</p>
+        <h2 class="animate-in">Pay per result. Not per hour.</h2>
+
+        <!-- Pricing menu -->
+        <div class="pricing__menu animate-in">
+          <div class="pricing__menu-item">
+            <div class="pricing__menu-price">$500</div>
+            <div class="pricing__menu-label">NDA Review</div>
+          </div>
+          <div class="pricing__menu-item">
+            <div class="pricing__menu-price">$2,000</div>
+            <div class="pricing__menu-label">Platform Legal Document</div>
+            <div class="pricing__menu-note">ToS, Privacy Policy, DPA</div>
+          </div>
+          <div class="pricing__menu-item">
+            <div class="pricing__menu-price">$2,000</div>
+            <div class="pricing__menu-label">Commercial Template</div>
+            <div class="pricing__menu-note">MSA, License, SaaS Agreement</div>
+          </div>
+        </div>
+        <div class="pricing__menu-row2 animate-in">
+          <div class="pricing__menu-item">
+            <div class="pricing__menu-price">$1,500</div>
+            <div class="pricing__menu-label">Success Fee</div>
+            <div class="pricing__menu-note">Per signed agreement</div>
+          </div>
+          <div class="pricing__menu-item">
+            <div class="pricing__menu-price">$325<span style="font-size:0.5em;font-weight:400;">/hr</span></div>
+            <div class="pricing__menu-label">Advisory &amp; Calls</div>
+            <div class="pricing__menu-note">Negotiation support, corporate counsel</div>
+          </div>
+        </div>
+
+        <!-- vs. retainer -->
+        <div class="pricing__versus animate-in">
+          <h3>Compare that to a typical retainer.</h3>
+          <p>$2,500/mo &bull; 20 hours included &bull; $350/hr overflow</p>
+        </div>
+
+        <div class="pricing__scenarios">
+          <div class="pricing__scenario animate-in delay-1">
+            <div class="pricing__scenario-label">Scenario A: Slow month</div>
+            <h3>You only needed 5 hours</h3>
+            <p>You&rsquo;re paying $2,500/mo for 20 hours. This month you used 5. Effective rate: $500/hr.</p>
+            <div class="usage-bar">
+              <div class="usage-bar__fill usage-bar__fill--waste" style="width: 25%;"></div>
+            </div>
+            <div class="pricing__effective">75% of your retainer wasted</div>
+            <div class="pricing__alef-line">With Alef: $0. You only pay when you need us.</div>
+          </div>
+
+          <div class="pricing__scenario animate-in delay-2">
+            <div class="pricing__scenario-label">Scenario B: Busy month</div>
+            <h3>You needed 30 hours</h3>
+            <p>You burned through your 20 hours by week 3. The remaining 10 hours cost $350/hr on top of the retainer.</p>
+            <div class="usage-bar">
+              <div class="usage-bar__fill usage-bar__fill--overflow" style="width: 100%;"></div>
+            </div>
+            <div class="pricing__effective">Total: $6,000, growth penalized</div>
+            <div class="pricing__alef-line">With Alef: flat per-deliverable pricing. No overflow.</div>
+          </div>
+        </div>
+
+        <div class="pricing__alef animate-in">
+          <h3>$0 when you don&rsquo;t need us. Flat pricing when you do.</h3>
+          <p>No retainer. No minimum. No overflow billing. Every deliverable reviewed by a licensed attorney before it reaches you.</p>
+        </div>
+
+        <div class="pricing__cta animate-in">
+          <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT / DNA ===== -->
+    <section class="dna" id="about">
+      <div class="container">
+        <p class="section-label animate-in">About</p>
+        <h2 class="animate-in">We&rsquo;ve managed thousands of contracts. Now we&rsquo;ve made it faster.</h2>
+
+        <p class="dna__body animate-in">30+ years of combined product, operations, and legal expertise.<br>Building, deploying, and scaling contract workflows across 150+ countries. We&rsquo;ve operated at every stage, from first commercial deal to IPO-ready compliance.</p>
+
+        <p class="dna__differentiator animate-in">Every deliverable reviewed by a licensed attorney. AI handles the pattern work.</p>
+
+        <p class="dna__logos-label animate-in">Our team has worked at</p>
+        <div class="dna__logos animate-in">
+          <div class="dna__logos-track">
+            <img class="dna__logo-img" src="../logos/deel.png" alt="Deel">
+            <img class="dna__logo-img" src="../logos/sp-global.png" alt="S&amp;P Global">
+            <img class="dna__logo-img" src="../logos/capital-one.png" alt="Capital One">
+            <img class="dna__logo-img" src="../logos/y-combinator.png" alt="Y Combinator">
+            <img class="dna__logo-img" src="../logos/endeavor.png" alt="Endeavor">
+            <img class="dna__logo-img" src="../logos/eversheds-sutherland.png" alt="Eversheds Sutherland">
+            <img class="dna__logo-img" src="../logos/morgan-morgan.png" alt="Morgan &amp; Morgan">
+            <img class="dna__logo-img" src="../logos/amazon.png" alt="Amazon">
+            <!-- duplicate for seamless loop -->
+            <img class="dna__logo-img" src="../logos/deel.png" alt="Deel">
+            <img class="dna__logo-img" src="../logos/sp-global.png" alt="S&amp;P Global">
+            <img class="dna__logo-img" src="../logos/capital-one.png" alt="Capital One">
+            <img class="dna__logo-img" src="../logos/y-combinator.png" alt="Y Combinator">
+            <img class="dna__logo-img" src="../logos/endeavor.png" alt="Endeavor">
+            <img class="dna__logo-img" src="../logos/eversheds-sutherland.png" alt="Eversheds Sutherland">
+            <img class="dna__logo-img" src="../logos/morgan-morgan.png" alt="Morgan &amp; Morgan">
+            <img class="dna__logo-img" src="../logos/amazon.png" alt="Amazon">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta-final">
+      <div class="container">
+        <h2 class="animate-in">Send us your next contract. Get it back in 48 hours.</h2>
+        <div class="cta-final__actions animate-in">
+          <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-inverted">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <!-- White logo on dark bg -->
+            <svg viewBox="0 0 644.65 182.48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill="#FFFFFF" d="M10.93,91.24c0,43.15,34.98,78.12,78.12,78.12s78.12-34.98,78.12-78.12S132.2,13.11,89.05,13.11,10.93,48.09,10.93,91.24Zm56.34-34.53l19.01,18.95c.33,.33,.51,.77,.52,1.23h0c0,.97-.78,1.76-1.75,1.76h-18.7c-.97,0-1.75,.78-1.75,1.75v13.36c0,.97,.78,1.75,1.75,1.75h24.74c.97,0,1.75-.78,1.75-1.75V58.19c0-.97,.78-1.75,1.75-1.75h25.1c.97,0,1.75,.78,1.75,1.75v63.9c0,1.56-1.89,2.34-2.99,1.24l-8.69-8.69c-.33-.33-.77-.51-1.24-.51h-3.32c-.97,0-1.75,.78-1.75,1.75v13.28c0,.97-.78,1.75-1.75,1.75h-20.77c-.46,0-.91-.18-1.24-.51l-32.22-32.26c-.33-.33-.51-.77-.51-1.24v-28.1c0-.49,.2-.96,.57-1.29l11.79-10.85c.32-.3,.75-.46,1.19-.46h5.52c.46,0,.91,.18,1.24,.51Z"/>
+              <path fill="#FFFFFF" d="M227.29,47.27c3.95-12.54,14.26-18.55,25.08-18.55s21.3,6.01,25.25,18.55l30.58,99.29h-25.6l-6.7-23.71-46.9,.17-6.7,23.53h-25.6l30.58-99.29Zm8.25,53.25h33.84l-13.06-45.87c-.69-2.41-1.72-3.44-3.78-3.44-1.89,0-3.09,1.03-3.78,3.44l-13.23,45.87Z"/>
+              <path fill="#FFFFFF" d="M359.91,123.37h53.94v23.19h-56.86c-15.98,0-22.16-8.25-22.16-21.47V30.96h25.08V123.37Z"/>
+              <path fill="#FFFFFF" d="M458.33,146.56c-15.98,0-22.16-8.25-22.16-21.47V52.6c0-13.23,6.18-21.64,22.16-21.64h61.16v22.5h-58.23v24.05h54.63v22.5h-54.63v24.05h59.27v22.5h-62.19Z"/>
+              <path fill="#FFFFFF" d="M550.75,146.56V52.6c0-13.23,6.36-21.64,22.16-21.64h60.81v23.19h-57.89v30.23h53.94v23.02h-53.94v39.17h-25.08Z"/>
+            </svg>
+          </div>
+          <p class="footer__tagline">AI-native legal for startups. Contracts reviewed in 48 hours. Every deliverable signed off by a licensed attorney.</p>
+        </div>
+
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="#how">How It Works</a>
+          <a href="#results">Results</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#about">About</a>
+          <a href="mailto:legal@alefcompute.com">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Alef Technologies Ltd.</span>
+        <a href="mailto:legal@alefcompute.com">legal@alefcompute.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // --- Header scroll behavior ---
+      var header = document.querySelector('.header');
+      var heroSection = document.getElementById('hero');
+
+      function onScroll() {
+        if (window.scrollY > 60) {
+          header.classList.add('scrolled');
+        } else if (header.dataset.navForced !== 'true') {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // --- Mobile menu toggle ---
+      var toggle = document.querySelector('.header__toggle');
+      var mobileNav = document.getElementById('mobileNav');
+
+      toggle.addEventListener('click', function () {
+        var isOpen = mobileNav.classList.toggle('open');
+        toggle.classList.toggle('active');
+        toggle.setAttribute('aria-expanded', isOpen);
+        // Lock body scroll when mobile nav is open
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+        // Force scrolled header style when nav is open on hero
+        if (isOpen && window.scrollY <= 60) {
+          header.classList.add('scrolled');
+          header.dataset.navForced = 'true';
+        }
+        if (!isOpen && header.dataset.navForced === 'true') {
+          header.dataset.navForced = '';
+          if (window.scrollY <= 60) {
+            header.classList.remove('scrolled');
+          }
+        }
+      });
+
+      // Close mobile nav on link click
+      mobileNav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobileNav.classList.remove('open');
+          toggle.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+          if (header.dataset.navForced === 'true') {
+            header.dataset.navForced = '';
+            if (window.scrollY <= 60) {
+              header.classList.remove('scrolled');
+            }
+          }
+        });
+      });
+
+      // --- Smooth scroll for anchor links ---
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            var offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72;
+            var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+
+      // --- Intersection Observer for scroll animations ---
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.animate-in').forEach(function (el) {
+        observer.observe(el);
+      });
+
+      // --- Usage bar animation on scroll ---
+      var barObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var bars = entry.target.querySelectorAll('.usage-bar__fill');
+            bars.forEach(function (bar) {
+              var w = bar.style.width;
+              bar.style.width = '0%';
+              requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                  bar.style.width = w;
+                });
+              });
+            });
+            barObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      document.querySelectorAll('.pricing__scenario').forEach(function (el) {
+        barObserver.observe(el);
+      });
+
+      // --- Initialize Lucide icons ---
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      // --- GSAP Scroll-Driven Reel ---
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && window.innerWidth > 768) {
+        gsap.registerPlugin(ScrollTrigger);
+
+        var reelTrack = document.querySelector('.reel__track');
+        var reelSection = document.querySelector('.reel');
+        var reelSticky = document.querySelector('.reel__sticky');
+        var panels = document.querySelectorAll('.reel__panel');
+        var dots = document.querySelectorAll('.reel__dot');
+
+        if (reelTrack && panels.length) {
+          var totalScroll = (panels.length - 1) * panels[0].offsetWidth;
+
+          // Set section height dynamically to ensure pin holds through all panels
+          reelSection.style.height = (totalScroll + window.innerHeight * 1.6) + 'px';
+
+          // Track which approval groups have already been auto-selected
+          var approvalAutoSelected = {};
+
+          // Priority-based ordering for reveal sequence
+          function getRevealPriority(idx) {
+            if (idx === 'badge' || idx === 'badge-lawyer') return 90;
+            if (idx === 'stamp') return 80;
+            if (idx === 'lawyer') return 70;
+            if (idx.indexOf('approve') === 0) return 50 + parseInt(idx.split('-')[1] || 0);
+            if (idx.indexOf('react') === 0) return 50 + parseInt(idx.split('-')[1] || 0);
+            if (idx.indexOf('comment') === 0) return 30 + parseInt(idx.split('-')[1] || 0);
+            return 10 + parseInt(idx);
+          }
+
+          // Precompute thresholds: distribute each panel's elements evenly
+          // Panel 2 (idx 1) uses tighter range so all animations finish before fade
+          panels.forEach(function(panel, panelIdx) {
+            var items = Array.from(panel.querySelectorAll('[data-reel-reveal]'));
+            items.sort(function(a, b) {
+              return getRevealPriority(a.getAttribute('data-reel-reveal')) - getRevealPriority(b.getAttribute('data-reel-reveal'));
+            });
+            var n = items.length;
+            var maxT = (panelIdx === 1) ? 0.30 : 0.85;
+            items.forEach(function(el, i) {
+              el._revealThreshold = 0.02 + (i / Math.max(n - 1, 1)) * (maxT - 0.02);
+            });
+          });
+
+          // Helper: reveal elements inside a panel based on scroll progress within that panel
+          function revealPanelElements(panel, panelProgress) {
+            var items = panel.querySelectorAll('[data-reel-reveal]');
+            items.forEach(function(el) {
+              if (panelProgress >= el._revealThreshold) {
+                if (!el.classList.contains('revealed')) {
+                  el.classList.add('revealed');
+
+                  var idx = el.getAttribute('data-reel-reveal');
+                  // Auto-select approval buttons after reveal
+                  if (idx.indexOf('approve') === 0 && !approvalAutoSelected[idx]) {
+                    approvalAutoSelected[idx] = true;
+                    var btns = el.querySelectorAll('.approval-btn');
+                    var selectIdx = (idx === 'approve-0') ? 0 : 1;
+                    setTimeout(function() {
+                      btns.forEach(function(btn, i) {
+                        if (i === selectIdx) btn.classList.add('auto-selected');
+                        else btn.classList.add('auto-faded');
+                      });
+                    }, 400);
+                  }
+                }
+              }
+            });
+          }
+
+          // Progress bar fill for Panel 2
+          var progressFill = document.querySelector('.terminal-progress__fill');
+
+          var reelTL = gsap.timeline({
+            scrollTrigger: {
+              trigger: reelSection,
+              start: 'top top',
+              end: function() { return '+=' + (totalScroll + window.innerHeight); },
+              pin: reelSticky,
+              scrub: 1,
+              anticipatePin: 1,
+              onUpdate: function(self) {
+                var progress = self.progress;
+                var numPanels = panels.length;
+                var activeIndex = Math.min(Math.floor(progress * numPanels), numPanels - 1);
+
+                // Update dots
+                dots.forEach(function(dot, i) {
+                  dot.classList.toggle('active', i === activeIndex);
+                });
+
+                // Per-panel sub-animations + fade
+                panels.forEach(function(panel, i) {
+                  var panelStart = i / numPanels;
+                  var panelEnd = (i + 1) / numPanels;
+                  if (progress >= panelStart && progress <= panelEnd) {
+                    var panelProgress = (progress - panelStart) / (panelEnd - panelStart);
+                    revealPanelElements(panel, panelProgress);
+
+                    // Fade out in last 30% of panel scroll (except last panel)
+                    if (panelProgress > 0.7 && i < numPanels - 1) {
+                      panel.style.opacity = String(Math.max(0, 1 - (panelProgress - 0.7) / 0.3));
+                    } else {
+                      panel.style.opacity = '1';
+                    }
+
+                    // Progress bar for panel 2 (AI analysis)
+                    if (i === 1 && progressFill) {
+                      progressFill.style.width = Math.min(panelProgress * 350, 100) + '%';
+                    }
+                  } else if (progress > panelEnd) {
+                    panel.style.opacity = '0';
+                  } else {
+                    panel.style.opacity = '1';
+                  }
+                });
+              }
+            }
+          });
+
+          // Main horizontal movement
+          reelTL.to(reelTrack, { x: -totalScroll, ease: 'none' });
+
+          // Clickable dots — scroll to the corresponding panel
+          var st = reelTL.scrollTrigger;
+          dots.forEach(function(dot) {
+            dot.addEventListener('click', function() {
+              var panelIdx = parseInt(this.getAttribute('data-panel'));
+              var targetProgress = panelIdx / panels.length;
+              var targetScroll = st.start + targetProgress * (st.end - st.start);
+              window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+            });
+          });
+
+          // Skip link — scroll past the reel to Results
+          var skipLink = document.querySelector('.reel__skip');
+          if (skipLink) {
+            skipLink.addEventListener('click', function(e) {
+              e.preventDefault();
+              window.scrollTo({ top: st.end + 100, behavior: 'smooth' });
+            });
+          }
+
+          // Reveal first panel's elements on load
+          setTimeout(function() {
+            revealPanelElements(panels[0], 1);
+          }, 600);
+        }
+      } else {
+        // Mobile: make all reel elements visible immediately
+        document.querySelectorAll('[data-reel-reveal]').forEach(function(el) {
+          el.classList.add('revealed');
+        });
+      }
+    });
+  </script>
+
+  <!-- ===== ESTIMATE MODAL ===== -->
+  <div class="estimate-overlay" id="estimateModal" role="dialog" aria-modal="true" aria-label="Get a custom estimate">
+    <div class="estimate-dialog">
+      <button class="estimate-close" onclick="closeEstimateModal()" aria-label="Close">&times;</button>
+
+      <div id="estimateFormWrap">
+        <h3>Get a custom estimate</h3>
+        <p class="estimate-sub">Tell us a bit about your needs. We'll get back to you within 24 hours.</p>
+
+        <form class="estimate-form" onsubmit="submitEstimate(event)">
+          <div class="estimate-field">
+            <label for="est-name">Name</label>
+            <input type="text" id="est-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="estimate-field">
+            <label for="est-email">Email</label>
+            <input type="email" id="est-email" name="email" placeholder="you@company.com" required>
+          </div>
+          <div class="estimate-field">
+            <label for="est-contracts">Contracts per month</label>
+            <select id="est-contracts" name="contracts" required>
+              <option value="" disabled selected>Select volume</option>
+              <option value="1-5">1 &ndash; 5</option>
+              <option value="6-10">6 &ndash; 10</option>
+              <option value="10-20">10 &ndash; 20</option>
+              <option value="20-50">20 &ndash; 50</option>
+              <option value="50+">50+</option>
+            </select>
+          </div>
+          <button type="submit" class="estimate-submit" id="estimateBtn">Get my estimate</button>
+        </form>
+      </div>
+
+      <div class="estimate-success" id="estimateSuccess">
+        <div class="checkmark">&#10003;</div>
+        <h4>Sent!</h4>
+        <p>We'll be in touch within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // --- EmailJS init (replace placeholders with your keys) ---
+    var EMAILJS_PUBLIC_KEY  = 'YOUR_EMAILJS_PUBLIC_KEY';
+    var EMAILJS_SERVICE_ID  = 'YOUR_EMAILJS_SERVICE_ID';
+    var EMAILJS_TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID';
+
+    if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY') {
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+
+    // --- Modal open / close ---
+    function openEstimateModal() {
+      var modal = document.getElementById('estimateModal');
+      // Reset to form view
+      document.getElementById('estimateFormWrap').style.display = '';
+      document.getElementById('estimateSuccess').classList.remove('show');
+      document.getElementById('estimateBtn').disabled = false;
+      document.getElementById('estimateBtn').textContent = 'Get my estimate';
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      // Close mobile nav if open
+      var mobileNav = document.getElementById('mobileNav');
+      if (mobileNav && mobileNav.classList.contains('open')) {
+        mobileNav.classList.remove('open');
+        var toggle = document.querySelector('.header__toggle');
+        if (toggle) {
+          toggle.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+    }
+
+    function closeEstimateModal() {
+      var modal = document.getElementById('estimateModal');
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Close on backdrop click
+    document.getElementById('estimateModal').addEventListener('click', function(e) {
+      if (e.target === this) closeEstimateModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeEstimateModal();
+    });
+
+    // --- Form submission ---
+    function submitEstimate(e) {
+      e.preventDefault();
+      var btn = document.getElementById('estimateBtn');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      var params = {
+        name:      document.getElementById('est-name').value,
+        email:     document.getElementById('est-email').value,
+        contracts: document.getElementById('est-contracts').value
+      };
+
+      // If EmailJS is configured, send the email
+      if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY') {
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
+          .then(function() { showSuccess(); })
+          .catch(function() {
+            btn.disabled = false;
+            btn.textContent = 'Get my estimate';
+            alert('Something went wrong. Please try again or email legal@alefcompute.com.');
+          });
+      } else {
+        // Fallback: mailto with pre-filled data
+        var subject = encodeURIComponent('Estimate Request from ' + params.name);
+        var body = encodeURIComponent(
+          'Name: ' + params.name + '\n' +
+          'Email: ' + params.email + '\n' +
+          'Contracts/month: ' + params.contracts
+        );
+        window.location.href = 'mailto:legal@alefcompute.com?subject=' + subject + '&body=' + body;
+        showSuccess();
+      }
+    }
+
+    function showSuccess() {
+      document.getElementById('estimateFormWrap').style.display = 'none';
+      document.getElementById('estimateSuccess').classList.add('show');
+      setTimeout(closeEstimateModal, 2000);
+    }
+  </script>
+
+</body>
+</html>
