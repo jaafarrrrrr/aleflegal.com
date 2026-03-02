@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alef | AI-Native Legal Services</title>
+  <title>Alef | AI-Native Legal for Startups</title>
   <meta name="description" content="AI-powered contract review with licensed attorney oversight. 48-hour turnaround. Pay per result, not per hour.">
   <meta property="og:title" content="Alef | AI-Native Legal for Startups">
   <meta property="og:description" content="Your sales team closes deals. We close contracts. 48-hour turnaround.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alef.legal">
 
-  <!-- Favicon (Alef icon mark - orange) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 328 328'%3E%3Cpath fill='%23D4632A' d='M108.41,42.96l62.51,62.3c1.08,1.07,1.69,2.53,1.69,4.06h0c.01,3.19-2.57,5.78-5.76,5.78h-61.46c-3.18,0-5.76,2.58-5.76,5.76v43.93c0,3.18,2.58,5.76,5.76,5.76h81.32c3.18,0,5.76-2.58,5.76-5.76V47.85c0-3.18,2.58-5.76,5.76-5.76h82.51c3.18,0,5.76,2.58,5.76,5.76v210.05c0,5.13-6.2,7.7-9.83,4.07l-28.56-28.56c-1.08-1.08-2.54-1.69-4.07-1.69h-10.9c-3.18,0-5.76,2.58-5.76,5.76v43.65c0,3.18-2.58,5.76-5.76,5.76h-68.28c-1.53,0-2.99-.61-4.07-1.69L43.36,179.17c-1.08-1.08-1.68-2.54-1.68-4.07V82.72c0-1.61.67-3.15,1.86-4.24l38.75-35.68c1.06-.98,2.46-1.52,3.9-1.52h18.16c1.52,0,2.99.6,4.06,1.68Z'/%3E%3C/svg%3E">
+  <!-- Favicon (Alef icon mark - green) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 328 328'%3E%3Cpath fill='%2374A662' d='M108.41,42.96l62.51,62.3c1.08,1.07,1.69,2.53,1.69,4.06h0c.01,3.19-2.57,5.78-5.76,5.78h-61.46c-3.18,0-5.76,2.58-5.76,5.76v43.93c0,3.18,2.58,5.76,5.76,5.76h81.32c3.18,0,5.76-2.58,5.76-5.76V47.85c0-3.18,2.58-5.76,5.76-5.76h82.51c3.18,0,5.76,2.58,5.76,5.76v210.05c0,5.13-6.2,7.7-9.83,4.07l-28.56-28.56c-1.08-1.08-2.54-1.69-4.07-1.69h-10.9c-3.18,0-5.76,2.58-5.76,5.76v43.65c0,3.18-2.58,5.76-5.76,5.76h-68.28c-1.53,0-2.99-.61-4.07-1.69L43.36,179.17c-1.08-1.08-1.68-2.54-1.68-4.07V82.72c0-1.61.67-3.15,1.86-4.24l38.75-35.68c1.06-.98,2.46-1.52,3.9-1.52h18.16c1.52,0,2.99.6,4.06,1.68Z'/%3E%3C/svg%3E">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -241,7 +241,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #1A1A1A url('../images/hero-bg.png') center/cover no-repeat;
+      background: #1A1A1A url('images/hero-bg.png') center/cover no-repeat;
       overflow: hidden;
       text-align: center;
       color: var(--alef-white);
@@ -1768,169 +1768,6 @@
       .terminal-mock__body { padding: 14px 16px; font-size: 11px; }
       .doc-mock__body { padding: 16px; font-size: 13px; }
     }
-
-    /* ===== ESTIMATE MODAL ===== */
-    .estimate-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: rgba(0, 0, 0, 0.55);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-    .estimate-overlay.open {
-      display: flex;
-      opacity: 1;
-    }
-
-    .estimate-dialog {
-      background: var(--alef-white);
-      border-radius: 16px;
-      padding: 44px 40px 36px;
-      max-width: 440px;
-      width: 92%;
-      position: relative;
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
-      transform: scale(0.95) translateY(12px);
-      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .estimate-overlay.open .estimate-dialog {
-      transform: scale(1) translateY(0);
-    }
-
-    .estimate-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      color: rgba(42, 42, 42, 0.4);
-      font-size: 20px;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      border: none;
-      line-height: 1;
-    }
-    .estimate-close:hover {
-      background: var(--alef-mist);
-      color: var(--alef-charcoal);
-    }
-
-    .estimate-dialog h3 {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      color: var(--alef-charcoal);
-      margin-bottom: 6px;
-    }
-    .estimate-dialog .estimate-sub {
-      font-size: 15px;
-      color: rgba(42, 42, 42, 0.6);
-      margin-bottom: 28px;
-      line-height: 1.5;
-    }
-
-    .estimate-form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .estimate-field label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--alef-charcoal);
-      margin-bottom: 6px;
-      letter-spacing: 0.3px;
-    }
-
-    .estimate-field input,
-    .estimate-field select {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1.5px solid rgba(42, 42, 42, 0.12);
-      border-radius: 8px;
-      font-family: var(--font-body);
-      font-size: 15px;
-      color: var(--alef-charcoal);
-      background: var(--alef-white);
-      transition: border-color 0.2s, box-shadow 0.2s;
-      outline: none;
-      -webkit-appearance: none;
-    }
-    .estimate-field input:focus,
-    .estimate-field select:focus {
-      border-color: var(--alef-teal);
-      box-shadow: 0 0 0 3px rgba(122, 158, 159, 0.15);
-    }
-    .estimate-field input::placeholder {
-      color: rgba(42, 42, 42, 0.35);
-    }
-
-    .estimate-submit {
-      margin-top: 8px;
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 8px;
-      background: var(--alef-orange);
-      color: var(--alef-white);
-      font-family: var(--font-body);
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .estimate-submit:hover {
-      background: #a35e34;
-      transform: translateY(-1px);
-    }
-    .estimate-submit:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .estimate-success {
-      display: none;
-      text-align: center;
-      padding: 24px 0;
-    }
-    .estimate-success.show {
-      display: block;
-    }
-    .estimate-success .checkmark {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--alef-green);
-      color: var(--alef-white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      margin: 0 auto 16px;
-    }
-    .estimate-success h4 {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      color: var(--alef-charcoal);
-      margin-bottom: 6px;
-    }
-    .estimate-success p {
-      font-size: 15px;
-      color: rgba(42, 42, 42, 0.6);
-    }
   </style>
 </head>
 <body>
@@ -1938,7 +1775,7 @@
   <!-- ===== HEADER ===== -->
   <header class="header" role="banner">
     <div class="header__inner">
-      <a href="#" class="header__logo" aria-label="Alef - Home">
+      <a href="#" class="header__logo" aria-label="Alef — Home">
         <!-- Charcoal logo (visible when scrolled, white bg) -->
         <svg class="logo-dark" viewBox="0 0 644.65 182.48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path fill="#B86D3E" d="M10.93,91.24c0,43.15,34.98,78.12,78.12,78.12s78.12-34.98,78.12-78.12S132.2,13.11,89.05,13.11,10.93,48.09,10.93,91.24Zm56.34-34.53l19.01,18.95c.33,.33,.51,.77,.52,1.23h0c0,.97-.78,1.76-1.75,1.76h-18.7c-.97,0-1.75,.78-1.75,1.75v13.36c0,.97,.78,1.75,1.75,1.75h24.74c.97,0,1.75-.78,1.75-1.75V58.19c0-.97,.78-1.75,1.75-1.75h25.1c.97,0,1.75,.78,1.75,1.75v63.9c0,1.56-1.89,2.34-2.99,1.24l-8.69-8.69c-.33-.33-.77-.51-1.24-.51h-3.32c-.97,0-1.75,.78-1.75,1.75v13.28c0,.97-.78,1.75-1.75,1.75h-20.77c-.46,0-.91-.18-1.24-.51l-32.22-32.26c-.33-.33-.51-.77-.51-1.24v-28.1c0-.49,.2-.96,.57-1.29l11.79-10.85c.32-.3,.75-.46,1.19-.46h5.52c.46,0,.91,.18,1.24,.51Z"/>
@@ -1966,7 +1803,7 @@
       </nav>
 
       <div class="header__cta">
-        <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get in touch</a>
+        <a href="https://cal.com/jaafar/connect-with-jaafar?duration=30" target="_blank" rel="noopener" class="btn btn-primary">Book a Call</a>
       </div>
 
       <button class="header__toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -1982,7 +1819,7 @@
     <a href="#results">Results</a>
     <a href="#pricing">Pricing</a>
     <a href="#about">About</a>
-    <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get in touch</a>
+    <a href="https://cal.com/jaafar/connect-with-jaafar?duration=30" target="_blank" rel="noopener" class="btn btn-primary">Book a Call</a>
   </div>
 
   <main>
@@ -1999,7 +1836,7 @@
         <p class="hero__sub">Send us your next contract. Get it back in 48 hours, reviewed, redlined, and ready to send.</p>
 
         <div class="hero__actions">
-          <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-ghost">Get a Custom Estimate</a>
+          <a href="mailto:legal@alefcompute.com?subject=Pricing%20Estimate%20Request&body=Hi%20Alef%2C%0A%0AI'd%20like%20a%20custom%20pricing%20estimate.%20Here's%20some%20context%3A%0A%0ACompany%3A%20%0AAvg.%20contracts%20per%20month%3A%20%0ATypes%20of%20contracts%3A%20%0A%0AThanks!" class="btn btn-ghost">Get a Custom Estimate</a>
         </div>
         <p class="hero__pricing">Pay per result, not per hour.</p>
       </div>
@@ -2049,6 +1886,7 @@
             </div>
             <h3>Your deals are stalling in legal</h3>
             <p>We implement your playbook and turn contracts around in 48 hours.</p>
+            <a href="https://cal.com/jaafar/connect-with-jaafar?duration=30" target="_blank" rel="noopener" class="btn btn-outline">Accelerate your pipeline</a>
           </div>
 
           <div class="paths__card animate-in delay-2">
@@ -2057,6 +1895,7 @@
             </div>
             <h3>You don&rsquo;t have a lawyer yet</h3>
             <p>Send us any contract. Get it back in 48 hours. Pay per result.</p>
+            <a href="https://cal.com/jaafar/connect-with-jaafar?duration=30" target="_blank" rel="noopener" class="btn btn-primary">Get started</a>
           </div>
         </div>
       </div>
@@ -2091,7 +1930,7 @@
                     <div class="slack-msg__avatar" style="background:#E87B35;">SC</div>
                     <div class="slack-msg__body">
                       <div class="slack-msg__name">Sarah Chen <span>10:32 AM</span></div>
-                      <div class="slack-msg__text">Hey <span class="mention">@alef</span>, we need a redline on the Coca-Cola sales agreement before Thursday. Attached the latest draft.</div>
+                      <div class="slack-msg__text">Hey <span class="mention">@alef</span> — we need a redline on the Coca-Cola sales agreement before Thursday. Attached the latest draft.</div>
                       <div class="slack-msg__file">Acme-CocaCola-SalesAgreement-v3.pdf</div>
                     </div>
                   </div>
@@ -2118,7 +1957,7 @@
                 <span class="terminal-mock__dot terminal-mock__dot--red"></span>
                 <span class="terminal-mock__dot terminal-mock__dot--yellow"></span>
                 <span class="terminal-mock__dot terminal-mock__dot--green"></span>
-                <span class="terminal-mock__title">Alef AI: Contract Analysis</span>
+                <span class="terminal-mock__title">Alef AI — Contract Analysis</span>
               </div>
               <div class="terminal-mock__body">
                 <div class="terminal-line" data-reel-reveal="0"><span class="t-dim">$</span> <span class="t-white">Scanning contract...</span></div>
@@ -2126,8 +1965,8 @@
                 <div class="terminal-line" data-reel-reveal="2"><span class="t-green">✓</span> Comparing against client playbook</div>
                 <div class="terminal-line" data-reel-reveal="3"><span class="t-orange">⚠</span> <span class="t-orange">Indemnification:</span> uncapped liability detected</div>
                 <div class="terminal-line" data-reel-reveal="4"><span class="t-orange">⚠</span> <span class="t-orange">Payment terms:</span> Net-90 exceeds standard Net-30</div>
-                <div class="terminal-line" data-reel-reveal="5"><span class="t-green">✓</span> IP assignment clause: standard</div>
-                <div class="terminal-line" data-reel-reveal="6"><span class="t-green">✓</span> Confidentiality: mutual, no issues</div>
+                <div class="terminal-line" data-reel-reveal="5"><span class="t-green">✓</span> IP assignment clause — standard</div>
+                <div class="terminal-line" data-reel-reveal="6"><span class="t-green">✓</span> Confidentiality — mutual, no issues</div>
                 <div class="terminal-line" data-reel-reveal="7"><span class="t-dim">───</span></div>
                 <div class="terminal-line" data-reel-reveal="8"><span class="t-white">Generating redline markup...</span></div>
               </div>
@@ -2144,12 +1983,12 @@
           <div class="reel__panel reel__panel--ai-comments">
             <div class="doc-mock">
               <div class="doc-mock__topbar">
-                <div class="doc-mock__title">Acme Corp / Coca-Cola: Sales Agreement</div>
+                <div class="doc-mock__title">Acme Corp / Coca-Cola — Sales Agreement</div>
                 <div class="doc-mock__badge doc-mock__badge--ai">✓ AI Review Complete</div>
               </div>
               <div class="doc-mock__body">
                 <div class="doc-mock__clause" data-reel-reveal="0" style="position:relative;">
-                  <div class="doc-mock__clause-title">Section 8: Indemnification</div>
+                  <div class="doc-mock__clause-title">Section 8 — Indemnification</div>
                   <p>The Supplier shall indemnify, defend, and hold harmless the Buyer from any and all claims, damages, losses, and expenses <span class="doc-mock__highlight">without limitation as to amount or scope</span> arising from the Supplier's performance under this Agreement.</p>
                   <div class="doc-comment doc-comment--ai" data-reel-reveal="comment-0" style="top:-8px;">
                     <div class="doc-comment__author">🤖 Alef AI</div>
@@ -2157,7 +1996,7 @@
                   </div>
                 </div>
                 <div class="doc-mock__clause" data-reel-reveal="1" style="position:relative;">
-                  <div class="doc-mock__clause-title">Section 5: Payment Terms</div>
+                  <div class="doc-mock__clause-title">Section 5 — Payment Terms</div>
                   <p>All invoices shall be payable within <span class="doc-mock__strike">ninety (90) days</span> <span class="doc-mock__insert">forty-five (45) days</span> of receipt of invoice.</p>
                   <div class="doc-comment doc-comment--ai" data-reel-reveal="comment-1" style="top:-8px;">
                     <div class="doc-comment__author">🤖 Alef AI</div>
@@ -2172,12 +2011,12 @@
           <div class="reel__panel reel__panel--lawyer-review">
             <div class="doc-mock">
               <div class="doc-mock__topbar">
-                <div class="doc-mock__title">Acme Corp / Coca-Cola: Sales Agreement</div>
+                <div class="doc-mock__title">Acme Corp / Coca-Cola — Sales Agreement</div>
                 <div class="doc-mock__badge doc-mock__badge--lawyer" data-reel-reveal="badge-lawyer">✓ Attorney Approved</div>
               </div>
               <div class="doc-mock__body">
                 <div class="doc-mock__clause" data-reel-reveal="0" style="position:relative;">
-                  <div class="doc-mock__clause-title">Section 8: Indemnification</div>
+                  <div class="doc-mock__clause-title">Section 8 — Indemnification</div>
                   <p>The Supplier shall indemnify, defend, and hold harmless the Buyer from any and all claims, damages, losses, and expenses <span class="doc-mock__highlight">capped at two times (2x) the annual contract value</span>, arising from the Supplier's performance under this Agreement, <span class="doc-mock__insert">excluding claims arising from gross negligence or willful misconduct</span>.</p>
                   <div class="doc-comment doc-comment--lawyer" data-reel-reveal="comment-0" style="top:-8px;">
                     <div class="doc-comment__author">Lex Luther, Esq.</div>
@@ -2190,7 +2029,7 @@
                   </div>
                 </div>
                 <div class="doc-mock__clause" data-reel-reveal="1" style="position:relative;">
-                  <div class="doc-mock__clause-title">Section 5: Payment Terms</div>
+                  <div class="doc-mock__clause-title">Section 5 — Payment Terms</div>
                   <p>All invoices shall be payable within <span class="doc-mock__insert">forty-five (45) days</span> of receipt of invoice.</p>
                   <div class="doc-comment doc-comment--lawyer" data-reel-reveal="comment-1" style="top:-8px;">
                     <div class="doc-comment__author">Lex Luther, Esq.</div>
@@ -2281,7 +2120,7 @@
           <div class="proof__card animate-in delay-1">
             <div class="proof__stat">$120K</div>
             <div class="proof__subline">deal closed in 48 hours</div>
-            <p>Full contract review, risk analysis, and negotiation-ready redline markup. Delivered in 2 days, not 2 weeks.</p>
+            <p>Full contract review, risk analysis, and negotiation-ready redline markup&mdash;delivered in 2 days, not 2 weeks.</p>
           </div>
           <div class="proof__card animate-in delay-2">
             <div class="proof__stat">$30K</div>
@@ -2300,7 +2139,7 @@
 
         <div class="services__grid">
           <div class="services__item animate-in delay-1"><i data-lucide="lock"></i> NDAs &amp; Confidentiality Agreements<span class="services__tooltip">Protect sensitive information before deals begin.</span></div>
-          <div class="services__item animate-in delay-1"><i data-lucide="file-text"></i> Master Service Agreements (MSAs)<span class="services__tooltip">Set the terms once, execute faster on every future deal.</span></div>
+          <div class="services__item animate-in delay-1"><i data-lucide="file-text"></i> Master Service Agreements (MSAs)<span class="services__tooltip">Set the terms once — execute faster on every future deal.</span></div>
           <div class="services__item animate-in delay-2"><i data-lucide="cloud"></i> SaaS / Subscription Agreements<span class="services__tooltip">Lock in licensing, usage rights, and renewal terms upfront.</span></div>
           <div class="services__item animate-in delay-2"><i data-lucide="package"></i> Vendor &amp; Supplier Contracts<span class="services__tooltip">Control costs, delivery terms, and liability before you commit.</span></div>
           <div class="services__item animate-in delay-1"><i data-lucide="briefcase"></i> Customer Contracts<span class="services__tooltip">Close revenue faster with airtight commercial terms.</span></div>
@@ -2357,7 +2196,7 @@
 
         <div class="pricing__scenarios">
           <div class="pricing__scenario animate-in delay-1">
-            <div class="pricing__scenario-label">Scenario A: Slow month</div>
+            <div class="pricing__scenario-label">Scenario A &mdash; Slow month</div>
             <h3>You only needed 5 hours</h3>
             <p>You&rsquo;re paying $2,500/mo for 20 hours. This month you used 5. Effective rate: $500/hr.</p>
             <div class="usage-bar">
@@ -2368,13 +2207,13 @@
           </div>
 
           <div class="pricing__scenario animate-in delay-2">
-            <div class="pricing__scenario-label">Scenario B: Busy month</div>
+            <div class="pricing__scenario-label">Scenario B &mdash; Busy month</div>
             <h3>You needed 30 hours</h3>
             <p>You burned through your 20 hours by week 3. The remaining 10 hours cost $350/hr on top of the retainer.</p>
             <div class="usage-bar">
               <div class="usage-bar__fill usage-bar__fill--overflow" style="width: 100%;"></div>
             </div>
-            <div class="pricing__effective">Total: $6,000, growth penalized</div>
+            <div class="pricing__effective">Total: $6,000 &mdash; growth penalized</div>
             <div class="pricing__alef-line">With Alef: flat per-deliverable pricing. No overflow.</div>
           </div>
         </div>
@@ -2385,7 +2224,8 @@
         </div>
 
         <div class="pricing__cta animate-in">
-          <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get in touch</a>
+          <a href="https://cal.com/jaafar/connect-with-jaafar?duration=30" target="_blank" rel="noopener" class="btn btn-primary">Book a Call</a>
+          <a href="mailto:legal@alefcompute.com?subject=Pricing%20Estimate%20Request&body=Hi%20Alef%2C%0A%0AI'd%20like%20a%20custom%20pricing%20estimate.%20Here's%20some%20context%3A%0A%0ACompany%3A%20%0AAvg.%20contracts%20per%20month%3A%20%0ATypes%20of%20contracts%3A%20%0A%0AThanks!" class="btn btn-outline">Get a Custom Estimate</a>
         </div>
       </div>
     </section>
@@ -2403,23 +2243,23 @@
         <p class="dna__logos-label animate-in">Our team has worked at</p>
         <div class="dna__logos animate-in">
           <div class="dna__logos-track">
-            <img class="dna__logo-img" src="../logos/deel.png" alt="Deel">
-            <img class="dna__logo-img" src="../logos/sp-global.png" alt="S&amp;P Global">
-            <img class="dna__logo-img" src="../logos/capital-one.png" alt="Capital One">
-            <img class="dna__logo-img" src="../logos/y-combinator.png" alt="Y Combinator">
-            <img class="dna__logo-img" src="../logos/endeavor.png" alt="Endeavor">
-            <img class="dna__logo-img" src="../logos/eversheds-sutherland.png" alt="Eversheds Sutherland">
-            <img class="dna__logo-img" src="../logos/morgan-morgan.png" alt="Morgan &amp; Morgan">
-            <img class="dna__logo-img" src="../logos/amazon.png" alt="Amazon">
+            <img class="dna__logo-img" src="logos/deel.png" alt="Deel">
+            <img class="dna__logo-img" src="logos/sp-global.png" alt="S&amp;P Global">
+            <img class="dna__logo-img" src="logos/capital-one.png" alt="Capital One">
+            <img class="dna__logo-img" src="logos/y-combinator.png" alt="Y Combinator">
+            <img class="dna__logo-img" src="logos/endeavor.png" alt="Endeavor">
+            <img class="dna__logo-img" src="logos/eversheds-sutherland.png" alt="Eversheds Sutherland">
+            <img class="dna__logo-img" src="logos/morgan-morgan.png" alt="Morgan &amp; Morgan">
+            <img class="dna__logo-img" src="logos/amazon.png" alt="Amazon">
             <!-- duplicate for seamless loop -->
-            <img class="dna__logo-img" src="../logos/deel.png" alt="Deel">
-            <img class="dna__logo-img" src="../logos/sp-global.png" alt="S&amp;P Global">
-            <img class="dna__logo-img" src="../logos/capital-one.png" alt="Capital One">
-            <img class="dna__logo-img" src="../logos/y-combinator.png" alt="Y Combinator">
-            <img class="dna__logo-img" src="../logos/endeavor.png" alt="Endeavor">
-            <img class="dna__logo-img" src="../logos/eversheds-sutherland.png" alt="Eversheds Sutherland">
-            <img class="dna__logo-img" src="../logos/morgan-morgan.png" alt="Morgan &amp; Morgan">
-            <img class="dna__logo-img" src="../logos/amazon.png" alt="Amazon">
+            <img class="dna__logo-img" src="logos/deel.png" alt="Deel">
+            <img class="dna__logo-img" src="logos/sp-global.png" alt="S&amp;P Global">
+            <img class="dna__logo-img" src="logos/capital-one.png" alt="Capital One">
+            <img class="dna__logo-img" src="logos/y-combinator.png" alt="Y Combinator">
+            <img class="dna__logo-img" src="logos/endeavor.png" alt="Endeavor">
+            <img class="dna__logo-img" src="logos/eversheds-sutherland.png" alt="Eversheds Sutherland">
+            <img class="dna__logo-img" src="logos/morgan-morgan.png" alt="Morgan &amp; Morgan">
+            <img class="dna__logo-img" src="logos/amazon.png" alt="Amazon">
           </div>
         </div>
       </div>
@@ -2430,7 +2270,8 @@
       <div class="container">
         <h2 class="animate-in">Send us your next contract. Get it back in 48 hours.</h2>
         <div class="cta-final__actions animate-in">
-          <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-inverted">Get in touch</a>
+          <a href="https://cal.com/jaafar/connect-with-jaafar?duration=30" target="_blank" rel="noopener" class="btn btn-inverted">Book a Call</a>
+          <a href="mailto:legal@alefcompute.com?subject=Pricing%20Estimate%20Request&body=Hi%20Alef%2C%0A%0AI'd%20like%20a%20custom%20pricing%20estimate.%20Here's%20some%20context%3A%0A%0ACompany%3A%20%0AAvg.%20contracts%20per%20month%3A%20%0ATypes%20of%20contracts%3A%20%0A%0AThanks!" class="btn btn-ghost">Get a Custom Estimate</a>
         </div>
       </div>
     </section>
@@ -2737,139 +2578,6 @@
         });
       }
     });
-  </script>
-
-  <!-- ===== ESTIMATE MODAL ===== -->
-  <div class="estimate-overlay" id="estimateModal" role="dialog" aria-modal="true" aria-label="Get a custom estimate">
-    <div class="estimate-dialog">
-      <button class="estimate-close" onclick="closeEstimateModal()" aria-label="Close">&times;</button>
-
-      <div id="estimateFormWrap">
-        <h3>Get a custom estimate</h3>
-        <p class="estimate-sub">Tell us a bit about your needs. We'll get back to you within 24 hours.</p>
-
-        <form class="estimate-form" onsubmit="submitEstimate(event)">
-          <div class="estimate-field">
-            <label for="est-name">Name</label>
-            <input type="text" id="est-name" name="name" placeholder="Your name" required>
-          </div>
-          <div class="estimate-field">
-            <label for="est-email">Email</label>
-            <input type="email" id="est-email" name="email" placeholder="you@company.com" required>
-          </div>
-          <div class="estimate-field">
-            <label for="est-contracts">Contracts per month</label>
-            <select id="est-contracts" name="contracts" required>
-              <option value="" disabled selected>Select volume</option>
-              <option value="1-5">1 &ndash; 5</option>
-              <option value="6-10">6 &ndash; 10</option>
-              <option value="10-20">10 &ndash; 20</option>
-              <option value="20-50">20 &ndash; 50</option>
-              <option value="50+">50+</option>
-            </select>
-          </div>
-          <button type="submit" class="estimate-submit" id="estimateBtn">Get my estimate</button>
-        </form>
-      </div>
-
-      <div class="estimate-success" id="estimateSuccess">
-        <div class="checkmark">&#10003;</div>
-        <h4>Sent!</h4>
-        <p>We'll be in touch within 24 hours.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    // --- EmailJS init (replace placeholders with your keys) ---
-    var EMAILJS_PUBLIC_KEY  = 'YOUR_EMAILJS_PUBLIC_KEY';
-    var EMAILJS_SERVICE_ID  = 'YOUR_EMAILJS_SERVICE_ID';
-    var EMAILJS_TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID';
-
-    if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY') {
-      emailjs.init(EMAILJS_PUBLIC_KEY);
-    }
-
-    // --- Modal open / close ---
-    function openEstimateModal() {
-      var modal = document.getElementById('estimateModal');
-      // Reset to form view
-      document.getElementById('estimateFormWrap').style.display = '';
-      document.getElementById('estimateSuccess').classList.remove('show');
-      document.getElementById('estimateBtn').disabled = false;
-      document.getElementById('estimateBtn').textContent = 'Get my estimate';
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      // Close mobile nav if open
-      var mobileNav = document.getElementById('mobileNav');
-      if (mobileNav && mobileNav.classList.contains('open')) {
-        mobileNav.classList.remove('open');
-        var toggle = document.querySelector('.header__toggle');
-        if (toggle) {
-          toggle.classList.remove('active');
-          toggle.setAttribute('aria-expanded', 'false');
-        }
-      }
-    }
-
-    function closeEstimateModal() {
-      var modal = document.getElementById('estimateModal');
-      modal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    // Close on backdrop click
-    document.getElementById('estimateModal').addEventListener('click', function(e) {
-      if (e.target === this) closeEstimateModal();
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeEstimateModal();
-    });
-
-    // --- Form submission ---
-    function submitEstimate(e) {
-      e.preventDefault();
-      var btn = document.getElementById('estimateBtn');
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-
-      var params = {
-        name:      document.getElementById('est-name').value,
-        email:     document.getElementById('est-email').value,
-        contracts: document.getElementById('est-contracts').value
-      };
-
-      // If EmailJS is configured, send the email
-      if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY') {
-        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
-          .then(function() { showSuccess(); })
-          .catch(function() {
-            btn.disabled = false;
-            btn.textContent = 'Get my estimate';
-            alert('Something went wrong. Please try again or email legal@alefcompute.com.');
-          });
-      } else {
-        // Fallback: mailto with pre-filled data
-        var subject = encodeURIComponent('Estimate Request from ' + params.name);
-        var body = encodeURIComponent(
-          'Name: ' + params.name + '\n' +
-          'Email: ' + params.email + '\n' +
-          'Contracts/month: ' + params.contracts
-        );
-        window.location.href = 'mailto:legal@alefcompute.com?subject=' + subject + '&body=' + body;
-        showSuccess();
-      }
-    }
-
-    function showSuccess() {
-      document.getElementById('estimateFormWrap').style.display = 'none';
-      document.getElementById('estimateSuccess').classList.add('show');
-      setTimeout(closeEstimateModal, 2000);
-    }
   </script>
 
 </body>
