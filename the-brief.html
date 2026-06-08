@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Brief | Alef</title>
+  <meta name="description" content="Notes and opinions on the legal and regulatory shifts that affect regulated companies. From the team at Alef.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 328 328'%3E%3Cpath fill='%23CA4C28' d='M108.41,42.96l62.51,62.3c1.08,1.07,1.69,2.53,1.69,4.06h0c.01,3.19-2.57,5.78-5.76,5.78h-61.46c-3.18,0-5.76,2.58-5.76,5.76v43.93c0,3.18,2.58,5.76,5.76,5.76h81.32c3.18,0,5.76-2.58,5.76-5.76V47.85c0-3.18,2.58-5.76,5.76-5.76h82.51c3.18,0,5.76,2.58,5.76,5.76v210.05c0,5.13-6.2,7.7-9.83,4.07l-28.56-28.56c-1.08-1.08-2.54-1.69-4.07-1.69h-10.9c-3.18,0-5.76,2.58-5.76,5.76v43.65c0,3.18-2.58,5.76-5.76,5.76h-68.28c-1.53,0-2.99-.61-4.07-1.69L43.36,179.17c-1.08-1.08-1.68-2.54-1.68-4.07V82.72c0-1.61.67-3.15,1.86-4.24l38.75-35.68c1.06-.98,2.46-1.52,3.9-1.52h18.16c1.52,0,2.99.6,4.06,1.68Z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --alef-orange: #CA4C28;
+      --alef-charcoal: #27292B;
+      --alef-light: #FFFAEC;
+      --alef-mist: #F5EEDB;
+      --font-display: 'Space Grotesk', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-display);
+      background: var(--alef-light);
+      color: var(--alef-charcoal);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; }
+    .brief__logo img { height: 30px; width: auto; margin-bottom: 56px; }
+    .brief__label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--alef-orange);
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: rgba(42, 42, 42, 0.7);
+      max-width: 480px;
+      margin-bottom: 40px;
+    }
+    .brief__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--alef-orange);
+      border: 1.5px solid rgba(202, 76, 40, 0.35);
+      padding: 12px 26px;
+      border-radius: 9px;
+      transition: all 0.2s;
+    }
+    .brief__back:hover { background: rgba(202, 76, 40, 0.07); border-color: var(--alef-orange); }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="brief__logo" aria-label="Alef - Home">
+    <img src="brand/alef-horizontal-rust.svg" alt="Alef">
+  </a>
+  <p class="brief__label">The Brief</p>
+  <h1>Coming soon.</h1>
+  <p>Notes and opinions on the legal and regulatory shifts that affect regulated companies. Written by the team at Alef.</p>
+  <a href="index.html" class="brief__back">&larr; Back to home</a>
+</body>
+</html>
