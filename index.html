@@ -35,7 +35,7 @@
   <style>
     /* ===== RESET ===== */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
     body { overflow-x: hidden; }
     img, svg { display: block; }
     a { text-decoration: none; color: inherit; }
@@ -2493,6 +2493,122 @@
       font-size: 15px;
       color: rgba(42, 42, 42, 0.6);
     }
+    /* ===== PRACTICES (two-practice overview) ===== */
+    .practices { padding: var(--section-py) 0; background: var(--alef-light); }
+    .practices__head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+    .practices__head h2 { margin-bottom: 16px; }
+    .practices__head p { color: var(--alef-slate); font-size: 1.05rem; line-height: 1.6; }
+    .practices__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .practice-card {
+      position: relative; background: var(--alef-white);
+      border: 1px solid var(--alef-mist); border-radius: 18px; padding: 40px 36px;
+      display: flex; flex-direction: column;
+    }
+    .practice-card__eyebrow {
+      font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; display: flex; align-items: center; gap: 9px; margin-bottom: 18px;
+    }
+    .practice-card__dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+    .practice-card--compliance { border-top: 4px solid var(--alef-orange); }
+    .practice-card--compliance .practice-card__eyebrow { color: var(--alef-orange); }
+    .practice-card--compliance .practice-card__dot { background: var(--alef-orange); }
+    .practice-card--legal { border-top: 4px solid var(--alef-teal); }
+    .practice-card--legal .practice-card__eyebrow { color: var(--alef-teal); }
+    .practice-card--legal .practice-card__dot { background: var(--alef-teal); }
+    .practice-card h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); margin-bottom: 14px; color: var(--alef-charcoal); }
+    .practice-card__desc { color: var(--alef-slate); line-height: 1.6; margin-bottom: 22px; }
+    .practice-card__list { display: flex; flex-direction: column; gap: 11px; margin-bottom: 28px; }
+    .practice-card__list li { display: flex; align-items: flex-start; gap: 10px; color: var(--alef-charcoal); font-size: 0.97rem; }
+    .practice-card__list svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; }
+    .practice-card--compliance .practice-card__list svg { color: var(--alef-orange); }
+    .practice-card--legal .practice-card__list svg { color: var(--alef-teal); }
+    .practice-card__cta { margin-top: auto; align-self: flex-start; font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 6px; }
+    .practice-card--compliance .practice-card__cta { color: var(--alef-orange); }
+    .practice-card--legal .practice-card__cta { color: var(--alef-teal); }
+    .practice-card__cta svg { width: 16px; height: 16px; transition: transform 0.2s; }
+    .practice-card__cta:hover svg { transform: translateX(4px); }
+
+    /* ===== COMPLIANCE DEEP-DIVE ===== */
+    .deepdive { padding: var(--section-py) 0; background: var(--alef-mist); }
+    .deepdive__head { max-width: 760px; margin-bottom: 52px; }
+    .deepdive__head h2 { margin-bottom: 16px; }
+    .deepdive__head p { color: var(--alef-slate); font-size: 1.05rem; line-height: 1.65; }
+    .deepdive__matrix { display: flex; flex-direction: column; gap: 24px; }
+    .ddomain { background: var(--alef-white); border: 1px solid #E7DEC8; border-radius: 18px; padding: 34px 34px 30px; }
+    .ddomain__head { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+    .ddomain__icon { width: 44px; height: 44px; border-radius: 11px; background: var(--alef-pale-cyan); color: var(--alef-teal); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ddomain__icon svg { width: 22px; height: 22px; }
+    .ddomain__head h3 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); color: var(--alef-charcoal); }
+    .ddomain__regions { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .dd-region__label { font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--alef-orange); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--alef-mist); }
+    .dd-region p { color: var(--alef-slate); line-height: 1.6; font-size: 0.96rem; }
+    .dd-region strong { color: var(--alef-charcoal); font-weight: 600; }
+    .deepdive__hook {
+      margin-top: 24px; background: var(--alef-charcoal); color: var(--alef-white);
+      border-radius: 18px; padding: 34px 38px; display: flex; align-items: center; gap: 20px;
+    }
+    .deepdive__hook svg { width: 34px; height: 34px; color: var(--alef-orange); flex-shrink: 0; }
+    .deepdive__hook p { line-height: 1.6; font-size: 1.05rem; }
+    .deepdive__hook strong { color: #F2B49E; }
+
+    /* ===== HOW WE FIT ===== */
+    .fit { padding: var(--section-py) 0; background: var(--alef-light); }
+    .fit__head { text-align: center; max-width: 680px; margin: 0 auto 52px; }
+    .fit__head h2 { margin-bottom: 14px; }
+    .fit__head p { color: var(--alef-slate); font-size: 1.05rem; line-height: 1.6; }
+    .fit__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 920px; margin: 0 auto; }
+    .fit__col { border-radius: 18px; padding: 36px 34px; }
+    .fit__col--you { background: var(--alef-white); border: 1px solid var(--alef-mist); }
+    .fit__col--alef { background: var(--alef-teal); color: var(--alef-white); }
+    .fit__col h3 { font-size: 1.25rem; margin-bottom: 22px; display: flex; align-items: center; gap: 10px; }
+    .fit__col--you h3 { color: var(--alef-charcoal); }
+    .fit__col ul { display: flex; flex-direction: column; gap: 14px; }
+    .fit__col li { display: flex; align-items: flex-start; gap: 11px; line-height: 1.5; }
+    .fit__col li svg { width: 19px; height: 19px; flex-shrink: 0; margin-top: 1px; }
+    .fit__col--you li { color: var(--alef-charcoal); }
+    .fit__col--you li svg { color: var(--alef-teal); }
+    .fit__col--alef li svg { color: var(--alef-pale-cyan); }
+    .fit__close { text-align: center; max-width: 720px; margin: 44px auto 0; font-size: 1.15rem; line-height: 1.6; color: var(--alef-charcoal); }
+    .fit__close strong { color: var(--alef-orange); }
+
+    /* ===== WHO IT'S FOR ===== */
+    .whofor { padding: var(--section-py) 0; background: var(--alef-mist); }
+    .whofor__head { max-width: 640px; margin-bottom: 48px; }
+    .whofor__head h2 { margin-bottom: 12px; }
+    .whofor__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .whofor__item { background: var(--alef-white); border: 1px solid #E7DEC8; border-radius: 14px; padding: 26px 28px; display: flex; gap: 16px; align-items: flex-start; }
+    .whofor__item svg { width: 24px; height: 24px; color: var(--alef-orange); flex-shrink: 0; margin-top: 3px; }
+    .whofor__item h4 { font-size: 1.05rem; color: var(--alef-charcoal); margin-bottom: 5px; }
+    .whofor__item p { color: var(--alef-slate); font-size: 0.93rem; line-height: 1.5; }
+    .whofor__foot { margin-top: 30px; text-align: center; font-family: var(--font-mono); font-size: 0.9rem; letter-spacing: 0.5px; color: var(--alef-teal); }
+
+    /* ===== GET STARTED FORM (branching) ===== */
+    .gs-group-label { font-weight: 600; color: var(--alef-charcoal); margin-bottom: 10px; font-size: 0.95rem; }
+    .gs-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .gs-check { position: relative; cursor: pointer; }
+    .gs-check input { position: absolute; opacity: 0; pointer-events: none; }
+    .gs-check__box { display: flex; flex-direction: column; gap: 4px; border: 1.5px solid var(--alef-mist); border-radius: 12px; padding: 14px 16px; transition: border-color 0.2s, background 0.2s; }
+    .gs-check__box strong { font-size: 0.97rem; color: var(--alef-charcoal); display: flex; align-items: center; gap: 8px; }
+    .gs-check__box span { font-size: 0.8rem; color: var(--alef-slate); }
+    .gs-check input:checked + .gs-check__box { border-color: var(--alef-teal); background: rgba(31,107,110,0.06); }
+    .gs-check input:focus-visible + .gs-check__box { outline: 2px solid var(--alef-teal); outline-offset: 2px; }
+    .gs-conditional { display: none; margin-top: 6px; padding-top: 18px; border-top: 1px dashed var(--alef-mist); animation: gsFade 0.25s ease; }
+    .gs-conditional.is-shown { display: block; }
+    @keyframes gsFade { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+    .gs-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .gs-pill { cursor: pointer; }
+    .gs-pill input { position: absolute; opacity: 0; pointer-events: none; }
+    .gs-pill span { display: inline-block; border: 1.5px solid var(--alef-mist); border-radius: 999px; padding: 7px 15px; font-size: 0.86rem; color: var(--alef-charcoal); transition: all 0.15s; }
+    .gs-pill input:checked + span { border-color: var(--alef-teal); background: var(--alef-teal); color: #fff; }
+    .gs-options { display: flex; flex-direction: column; gap: 9px; }
+    .gs-opt { display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.9rem; color: var(--alef-charcoal); }
+    .gs-opt input { width: 17px; height: 17px; accent-color: var(--alef-orange); flex-shrink: 0; }
+    .gs-opt--sep { margin-top: 4px; padding-top: 10px; border-top: 1px solid var(--alef-mist); }
+
+    @media (max-width: 860px) {
+      .practices__grid, .ddomain__regions, .fit__grid, .whofor__grid, .gs-checks { grid-template-columns: 1fr; }
+      .deepdive__hook { flex-direction: column; align-items: flex-start; gap: 14px; padding: 26px; }
+    }
   </style>
 </head>
 <body>
@@ -2506,14 +2622,15 @@
       </a>
 
       <nav class="header__nav" aria-label="Main navigation">
-        <div class="nav-item"><a href="#hero">Home</a></div>
-        <div class="nav-item"><a href="#industries">Industries</a></div>
+        <div class="nav-item"><a href="#compliance">Compliance</a></div>
+        <div class="nav-item"><a href="#legal">Legal</a></div>
+        <div class="nav-item"><a href="#process">How it works</a></div>
         <div class="nav-item nav-item--dropdown">
           <button type="button" aria-haspopup="true" aria-expanded="false">Resources <i data-lucide="chevron-down" class="nav-item__caret"></i></button>
           <div class="nav-dropdown" role="menu">
             <a href="#pricing" role="menuitem">
               <span class="nav-dropdown__title">Pricing</span>
-              <span class="nav-dropdown__desc">Outcome-based rates for legal and regulatory work</span>
+              <span class="nav-dropdown__desc">Outcome-based rates for legal and compliance work</span>
             </a>
             <a href="the-brief.html" role="menuitem">
               <span class="nav-dropdown__title">The Brief</span>
@@ -2524,7 +2641,7 @@
       </nav>
 
       <div class="header__cta">
-        <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get a custom estimate</a>
+        <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get started</a>
       </div>
 
       <button class="header__toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -2535,14 +2652,15 @@
 
   <!-- Mobile nav drawer -->
   <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
-    <a href="#hero">Home</a>
-    <a href="#industries">Industries</a>
+    <a href="#compliance">Compliance</a>
+    <a href="#legal">Legal</a>
+    <a href="#process">How it works</a>
     <div class="mobile-nav__group">
       <span class="mobile-nav__group-label">Resources</span>
       <a href="#pricing">Pricing</a>
       <a href="the-brief.html">The Brief</a>
     </div>
-    <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get a custom estimate</a>
+    <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get started</a>
   </div>
 
   <main>
@@ -2634,75 +2752,132 @@
       </div>
     </section>
 
-    <!-- ===== INDUSTRIES / REGULATORY ===== -->
-    <section class="industries" id="industries">
+    <!-- ===== PRACTICES (two practices, one spine) ===== -->
+    <section class="practices" id="practices">
+      <div class="container">
+        <div class="practices__head">
+          <p class="section-label animate-in">What We Do</p>
+          <h2 class="animate-in">Two practices. One standard.</h2>
+          <p class="animate-in">Every deliverable is attorney-signed, on time, and built to in-house quality. Compliance leads &mdash; but our legal practice runs to the same bar.</p>
+        </div>
+
+        <div class="practices__grid">
+          <div class="practice-card practice-card--compliance animate-in">
+            <p class="practice-card__eyebrow"><span class="practice-card__dot"></span>Compliance</p>
+            <h3>Regulatory filing &amp; license management</h3>
+            <p class="practice-card__desc">We become the operational owner of your regulatory calendar. Every return, every renewal, every filing &mdash; pulled from your systems, prepared, and ready to submit. Your compliance officer keeps the judgment and the sign-off. We carry the assembly.</p>
+            <ul class="practice-card__list">
+              <li><i data-lucide="check"></i> Regulatory filings &amp; periodic returns</li>
+              <li><i data-lucide="check"></i> License applications, renewals &amp; maintenance</li>
+              <li><i data-lucide="check"></i> AML / KYC policy filings</li>
+              <li><i data-lucide="check"></i> Regulator information requests (RFIs)</li>
+              <li><i data-lucide="check"></i> The obligation calendar itself &mdash; owned end to end</li>
+            </ul>
+            <a href="#compliance" class="practice-card__cta">See what we file <i data-lucide="arrow-right"></i></a>
+          </div>
+
+          <div class="practice-card practice-card--legal animate-in delay-1">
+            <p class="practice-card__eyebrow"><span class="practice-card__dot"></span>Legal</p>
+            <h3>Your fractional general counsel</h3>
+            <p class="practice-card__desc">We extend your legal team&rsquo;s capacity. Contract review, drafting, and negotiation &mdash; turned around in under 24 hours, implementing your playbook rather than reinventing it. Signed off by a licensed attorney.</p>
+            <ul class="practice-card__list">
+              <li><i data-lucide="check"></i> Contract review &amp; redlines</li>
+              <li><i data-lucide="check"></i> Drafting (ToS, Privacy, MSA, DPA, BAA)</li>
+              <li><i data-lucide="check"></i> Negotiation support</li>
+              <li><i data-lucide="check"></i> Playbook development</li>
+              <li><i data-lucide="check"></i> Research memos &amp; judgment calls</li>
+            </ul>
+            <a href="#legal" class="practice-card__cta">See how we work <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMPLIANCE DEEP-DIVE ===== -->
+    <section class="deepdive" id="compliance">
+      <div class="container">
+        <div class="deepdive__head animate-in">
+          <p class="section-label">Compliance, in depth</p>
+          <h2>We know the filings because we file them.</h2>
+          <p>Two industries. Two regions. The same promise: we pull the data from your systems, prepare every submission, and an attorney signs off before it goes out. Here is the work we own.</p>
+        </div>
+
+        <div class="deepdive__matrix">
+          <div class="ddomain animate-in">
+            <div class="ddomain__head">
+              <span class="ddomain__icon"><i data-lucide="landmark"></i></span>
+              <h3>Financial Services</h3>
+            </div>
+            <div class="ddomain__regions">
+              <div class="dd-region">
+                <p class="dd-region__label">United States</p>
+                <p>Quarterly <strong>Call Reports</strong>. <strong>Money transmitter licenses</strong> across all 50 states &mdash; plus the quarterly NMLS MSB Call Report and annual renewals. <strong>SAR</strong> and <strong>CTR</strong> filings on FinCEN&rsquo;s clock. <strong>HMDA</strong> every March. We track them, prepare them, and keep the bonds and net-worth tests current.</p>
+              </div>
+              <div class="dd-region">
+                <p class="dd-region__label">GCC</p>
+                <p><strong>CBUAE</strong> prudential returns and <strong>goAML</strong> reporting in the UAE. The <strong>DFSA Annual AML Return</strong> in the DIFC. <strong>ADGM</strong> prudential filings through EPRS. <strong>SAMA</strong> and <strong>CMA</strong> reporting in Saudi Arabia. Four regulators, five systems &mdash; one team that knows each one.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="ddomain animate-in">
+            <div class="ddomain__head">
+              <span class="ddomain__icon"><i data-lucide="building-2"></i></span>
+              <h3>Real Estate &amp; Development</h3>
+            </div>
+            <div class="ddomain__regions">
+              <div class="dd-region">
+                <p class="dd-region__label">GCC</p>
+                <p>In Dubai: <strong>developer registration, project and escrow registration, Oqood, Trakheesi</strong> permits, and <strong>annual broker cards</strong> through DLD and RERA. In Abu Dhabi: <strong>ADREC</strong> licensing and escrow. In Saudi Arabia: <strong>Wafi</strong> off-plan licensing and <strong>Etnam</strong> developer registration.</p>
+              </div>
+              <div class="dd-region">
+                <p class="dd-region__label">United States</p>
+                <p><strong>State contractor licensing</strong> and renewals, <strong>subdivision and master-plan</strong> approvals, and the <strong>trade licenses every subcontractor</strong> must hold and maintain &mdash; tracked across boards and municipalities.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="deepdive__hook animate-in">
+          <i data-lucide="layers"></i>
+          <p><strong>One project can carry dozens of licenses &mdash; across subcontractors you don&rsquo;t directly control.</strong> We keep every one current, and tell you what&rsquo;s coming due before it&rsquo;s due.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW ALEF WORKS (the spine) ===== -->
+    <section class="industries" id="process">
       <div class="container">
         <div class="industries__head">
-          <p class="section-label animate-in">Industries</p>
-          <h2 class="animate-in">Your legal team, extended.</h2>
-          <p class="animate-in">Regulated companies do not have a capacity problem. They have a focus problem. Your in-house team should spend its hours on the decisions that move the business, not on assembling filings or turning standard contracts. <span class="industries__lead-em">Alef handles the rest.</span> Legal services and regulatory filing prep, with a licensed attorney signing off on every deliverable.</p>
+          <p class="section-label animate-in">How It Works</p>
+          <h2 class="animate-in">One process. Every filing, license, and contract.</h2>
+          <p class="animate-in">The same four steps carry both practices. Your in-house team should spend its hours on the decisions that move the business, not on assembling submissions or turning standard contracts. <span class="industries__lead-em">Alef handles the assembly.</span> A licensed attorney signs off on every deliverable.</p>
         </div>
 
         <div class="industries__steps">
           <div class="industries__step animate-in">
             <div class="industries__step-num">01</div>
-            <h4>Organize your data</h4>
-            <p>We pull your contracts, policies, and records into one structured, filing-ready system.</p>
+            <h4>Map your obligations</h4>
+            <p>We build the full calendar of every filing, license, and renewal you owe &mdash; by jurisdiction and deadline. You see the whole year on one page.</p>
           </div>
           <div class="industries__step animate-in delay-1">
             <div class="industries__step-num">02</div>
-            <h4>Prepare the filing</h4>
-            <p>We assemble the submission the regulator expects. Formatted, complete, and ready to send.</p>
+            <h4>Organize your data</h4>
+            <p>We pull your contracts, policies, and records from across your ERP, CRM, and finance systems into one structured, filing-ready source.</p>
           </div>
           <div class="industries__step animate-in delay-2">
             <div class="industries__step-num">03</div>
-            <h4>Recommend the judgment call</h4>
-            <p>We flag the decisions only you can make and give you a clear recommendation for each.</p>
+            <h4>Prepare the submission</h4>
+            <p>We assemble exactly what the regulator expects &mdash; formatted, complete, and ready to send. For contracts, redlined and ready to sign.</p>
           </div>
           <div class="industries__step animate-in delay-3">
             <div class="industries__step-num">04</div>
             <h4>Attorney signs off</h4>
-            <p>A licensed attorney reviews every deliverable before it reaches you or the regulator.</p>
+            <p>A licensed attorney reviews every deliverable before it reaches you or the regulator. Every time.</p>
           </div>
         </div>
 
-        <div class="industries__verticals">
-          <div class="industry-card animate-in">
-            <div class="industry-card__icon"><i data-lucide="landmark"></i></div>
-            <h3>Financial Services</h3>
-            <p class="industry-card__pain">SVF, EMI, and lending licenses come with reporting cycles that never stop.</p>
-            <ul class="industry-card__list">
-              <li><i data-lucide="check"></i> AML and KYC policy filings</li>
-              <li><i data-lucide="check"></i> Periodic compliance returns</li>
-              <li><i data-lucide="check"></i> Regulator information requests</li>
-              <li><i data-lucide="check"></i> License application and renewal prep</li>
-            </ul>
-          </div>
-          <div class="industry-card animate-in delay-1">
-            <div class="industry-card__icon"><i data-lucide="building-2"></i></div>
-            <h3>Real Estate &amp; Development</h3>
-            <p class="industry-card__pain">Entitlements, permits, and disclosures stall projects the moment a filing slips.</p>
-            <ul class="industry-card__list">
-              <li><i data-lucide="check"></i> Entitlement and permit filing prep</li>
-              <li><i data-lucide="check"></i> Regulatory disclosures</li>
-              <li><i data-lucide="check"></i> Zoning and land submissions</li>
-              <li><i data-lucide="check"></i> Development compliance filings</li>
-            </ul>
-          </div>
-          <div class="industry-card animate-in delay-2">
-            <div class="industry-card__icon"><i data-lucide="heart-pulse"></i></div>
-            <h3>Health-Tech</h3>
-            <p class="industry-card__pain">Health data rules shift fast and carry real penalties for getting them wrong.</p>
-            <ul class="industry-card__list">
-              <li><i data-lucide="check"></i> Health-data compliance filings</li>
-              <li><i data-lucide="check"></i> BAA and DPA packages</li>
-              <li><i data-lucide="check"></i> Health-authority registrations</li>
-              <li><i data-lucide="check"></i> Privacy impact assessments</li>
-            </ul>
-          </div>
-        </div>
-
-        <p class="industries__note animate-in">You keep every playbook and template we build. <strong>No hiring risk. No retainer. Cancel anytime.</strong></p>
+        <p class="industries__note animate-in">You keep every playbook, template, and calendar we build. <strong>No hiring risk. No retainer. Cancel anytime.</strong></p>
       </div>
     </section>
 
@@ -2973,6 +3148,81 @@
     </section>
 
 
+    <!-- ===== HOW WE FIT YOUR TEAM ===== -->
+    <section class="fit" id="fit">
+      <div class="container">
+        <div class="fit__head animate-in">
+          <p class="section-label">How We Fit</p>
+          <h2>You keep control. We carry the load.</h2>
+          <p>Alef doesn&rsquo;t replace your compliance officer or your GC. We plug in alongside them &mdash; taking the assembly, tracking, and preparation, while every call that matters stays with your team.</p>
+        </div>
+
+        <div class="fit__grid">
+          <div class="fit__col fit__col--you animate-in">
+            <h3>Your team keeps</h3>
+            <ul>
+              <li><i data-lucide="check"></i> The judgment calls</li>
+              <li><i data-lucide="check"></i> Sign-off authority</li>
+              <li><i data-lucide="check"></i> The regulator relationships</li>
+              <li><i data-lucide="check"></i> Final say on every position</li>
+            </ul>
+          </div>
+          <div class="fit__col fit__col--alef animate-in delay-1">
+            <h3>Alef owns</h3>
+            <ul>
+              <li><i data-lucide="check"></i> Tracking every deadline</li>
+              <li><i data-lucide="check"></i> Pulling and organizing the data</li>
+              <li><i data-lucide="check"></i> Preparing every submission</li>
+              <li><i data-lucide="check"></i> Managing renewals before they lapse</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="fit__close animate-in">We give your team back its hours &mdash; and a licensed attorney stands behind <strong>everything</strong> we hand over.</p>
+      </div>
+    </section>
+
+    <!-- ===== WHO IT'S FOR ===== -->
+    <section class="whofor" id="whofor">
+      <div class="container">
+        <div class="whofor__head animate-in">
+          <p class="section-label">Who We&rsquo;re For</p>
+          <h2>Built for the teams carrying the load.</h2>
+        </div>
+        <div class="whofor__grid">
+          <div class="whofor__item animate-in">
+            <i data-lucide="shield-check"></i>
+            <div>
+              <h4>Heads of Compliance &amp; CCOs</h4>
+              <p>Who can&rsquo;t hire fast enough for the filing volume.</p>
+            </div>
+          </div>
+          <div class="whofor__item animate-in delay-1">
+            <i data-lucide="scale"></i>
+            <div>
+              <h4>General Counsel</h4>
+              <p>Who need contract capacity without adding headcount.</p>
+            </div>
+          </div>
+          <div class="whofor__item animate-in">
+            <i data-lucide="landmark"></i>
+            <div>
+              <h4>Fintechs &amp; financial institutions</h4>
+              <p>Juggling licenses across states and regulators.</p>
+            </div>
+          </div>
+          <div class="whofor__item animate-in delay-1">
+            <i data-lucide="building-2"></i>
+            <div>
+              <h4>Property developers</h4>
+              <p>Managing licenses across projects and subcontractors.</p>
+            </div>
+          </div>
+        </div>
+        <p class="whofor__foot animate-in">Operating in the US, the GCC, or both.</p>
+      </div>
+    </section>
+
     <!-- ===== SOCIAL PROOF ===== -->
     <section class="proof" id="results">
       <div class="container">
@@ -2991,10 +3241,10 @@
       </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
-    <section class="services" id="services">
+    <!-- ===== SERVICES (Legal practice) ===== -->
+    <section class="services" id="legal">
       <div class="container">
-        <p class="section-label animate-in">What We Cover</p>
+        <p class="section-label animate-in">Legal Practice</p>
         <h2 class="animate-in">From NDAs to DPAs. We cover the deal stack.</h2>
 
         <div class="services__grid">
@@ -3021,12 +3271,12 @@
 
         <!-- Tabs -->
         <div class="pricing__tabs animate-in" role="tablist" aria-label="Pricing categories">
-          <button class="pricing__tab is-active" data-tab="legal" role="tab" aria-selected="true">Legal</button>
-          <button class="pricing__tab" data-tab="regulatory" role="tab" aria-selected="false">Regulatory</button>
+          <button class="pricing__tab is-active" data-tab="compliance" role="tab" aria-selected="true">Compliance</button>
+          <button class="pricing__tab" data-tab="legal" role="tab" aria-selected="false">Legal</button>
         </div>
 
         <!-- ===== LEGAL PANEL ===== -->
-        <div class="pricing__panel is-active" data-panel="legal">
+        <div class="pricing__panel" data-panel="legal">
           <div class="ptier-grid">
             <div class="ptier">
               <div class="ptier__name">Quick Review</div>
@@ -3148,83 +3398,75 @@
           </div>
         </div>
 
-        <!-- ===== REGULATORY PANEL ===== -->
-        <div class="pricing__panel" data-panel="regulatory">
-          <p class="pricing__panel-lead">Filing prep and regulatory judgment for regulated companies. We organize your data, prepare the submission, and recommend the calls only you can make. Pricing is scoped to your filing and volume. Talk to us for a quote.</p>
+        <!-- ===== COMPLIANCE PANEL ===== -->
+        <div class="pricing__panel is-active" data-panel="compliance">
+          <p class="pricing__panel-lead">We own your regulatory calendar and prepare every submission &mdash; you keep the judgment and the sign-off. Pricing is scoped to your filings, jurisdictions, and volume. Tell us what you carry and we&rsquo;ll quote it.</p>
 
           <div class="pricing__detail">
             <details class="pgroup" open>
-              <summary class="pgroup__summary">Cross-Industry <span class="pgroup__count">3 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary>
+              <summary class="pgroup__summary">Cross-industry <span class="pgroup__count">4 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary>
               <div class="pitem">
-                <span class="pitem__label">Filing-readiness and data-organization assessment</span>
+                <span class="pitem__label">Obligation calendar build (every filing, license &amp; renewal you owe)</span>
                 <span class="pitem__price pitem__price--blank">&mdash;</span>
               </div>
               <div class="pitem">
-                <span class="pitem__label">Judgment memo (recommended positions to file)</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">Ongoing regulatory monitoring</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-            </details>
-
-            <details class="pgroup">
-              <summary class="pgroup__summary">Financial Services <span class="pgroup__count">4 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary>
-              <div class="pitem">
-                <span class="pitem__label">License and regulator filing prep (SVF, EMI, lending)</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">AML and KYC policy filings</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">Periodic compliance returns</span>
+                <span class="pitem__label">Ongoing renewal &amp; deadline management</span>
                 <span class="pitem__price pitem__price--blank">&mdash;</span>
               </div>
               <div class="pitem">
                 <span class="pitem__label">Regulator information request (RFI) response</span>
                 <span class="pitem__price pitem__price--blank">&mdash;</span>
               </div>
-            </details>
-
-            <details class="pgroup">
-              <summary class="pgroup__summary">Real Estate &amp; Development <span class="pgroup__count">4 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary>
               <div class="pitem">
-                <span class="pitem__label">Entitlement and permit filing prep</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">Regulatory disclosure filings</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">Zoning and land submissions</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">Development compliance filings</span>
+                <span class="pitem__label">Judgment memo (recommended positions to file)</span>
                 <span class="pitem__price pitem__price--blank">&mdash;</span>
               </div>
             </details>
 
             <details class="pgroup">
-              <summary class="pgroup__summary">Health-Tech <span class="pgroup__count">4 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary>
+              <summary class="pgroup__summary">Financial services <span class="pgroup__count">5 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary>
               <div class="pitem">
-                <span class="pitem__label">Health-data compliance filings</span>
+                <span class="pitem__label">Bank Call Report preparation (FFIEC 031 / 041 / 051)</span>
                 <span class="pitem__price pitem__price--blank">&mdash;</span>
               </div>
               <div class="pitem">
-                <span class="pitem__label">BAA and DPA packages</span>
+                <span class="pitem__label">Money-transmitter licensing &amp; 50-state renewals (incl. NMLS MSB Call Report)</span>
                 <span class="pitem__price pitem__price--blank">&mdash;</span>
               </div>
               <div class="pitem">
-                <span class="pitem__label">Health-authority registrations</span>
+                <span class="pitem__label">BSA/AML program support (SAR / CTR filings)</span>
                 <span class="pitem__price pitem__price--blank">&mdash;</span>
               </div>
               <div class="pitem">
-                <span class="pitem__label">Privacy impact assessment</span>
+                <span class="pitem__label">GCC prudential &amp; AML returns (CBUAE, DFSA, ADGM, SAMA)</span>
+                <span class="pitem__price pitem__price--blank">&mdash;</span>
+              </div>
+              <div class="pitem">
+                <span class="pitem__label">License application &amp; renewal prep (payments, EMI, lending)</span>
+                <span class="pitem__price pitem__price--blank">&mdash;</span>
+              </div>
+            </details>
+
+            <details class="pgroup">
+              <summary class="pgroup__summary">Real estate &amp; development <span class="pgroup__count">5 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary>
+              <div class="pitem">
+                <span class="pitem__label">Developer &amp; project registration (DLD/RERA, ADREC, REGA/Wafi)</span>
+                <span class="pitem__price pitem__price--blank">&mdash;</span>
+              </div>
+              <div class="pitem">
+                <span class="pitem__label">Escrow / trust account registration &amp; milestone reporting</span>
+                <span class="pitem__price pitem__price--blank">&mdash;</span>
+              </div>
+              <div class="pitem">
+                <span class="pitem__label">Off-plan registration (Oqood) &amp; marketing permits (Trakheesi)</span>
+                <span class="pitem__price pitem__price--blank">&mdash;</span>
+              </div>
+              <div class="pitem">
+                <span class="pitem__label">Broker-card &amp; contractor-license renewals</span>
+                <span class="pitem__price pitem__price--blank">&mdash;</span>
+              </div>
+              <div class="pitem">
+                <span class="pitem__label">US contractor &amp; subcontractor license maintenance</span>
                 <span class="pitem__price pitem__price--blank">&mdash;</span>
               </div>
             </details>
@@ -3232,7 +3474,7 @@
         </div>
 
         <div class="pricing__cta animate-in">
-          <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get a custom estimate</a>
+          <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get started</a>
         </div>
       </div>
     </section>
@@ -3275,9 +3517,9 @@
     <!-- ===== FINAL CTA ===== -->
     <section class="cta-final">
       <div class="container">
-        <h2 class="animate-in">Send us your next contract. Get it back in under 24 hours.</h2>
+        <h2 class="animate-in">Bring us your next filing &mdash; or your next contract.</h2>
         <div class="cta-final__actions animate-in">
-          <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-inverted">Get in touch</a>
+          <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-inverted">Get started</a>
         </div>
       </div>
     </section>
@@ -3292,12 +3534,13 @@
           <div class="footer__logo">
             <img src="brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
           </div>
-          <p class="footer__tagline">We extend your legal team's capacity. Legal and regulatory work for regulated companies, signed off by a licensed attorney.</p>
+          <p class="footer__tagline">We extend your compliance and legal teams. Regulatory filing, license management, and contract work for regulated companies &mdash; signed off by a licensed attorney.</p>
         </div>
 
         <nav class="footer__links" aria-label="Footer navigation">
-          <a href="#industries">Industries</a>
-          <a href="#how">How It Works</a>
+          <a href="#compliance">Compliance</a>
+          <a href="#legal">Legal</a>
+          <a href="#process">How It Works</a>
           <a href="#pricing">Pricing</a>
           <a href="the-brief.html">The Brief</a>
           <a href="mailto:legal@alefcompute.com">Contact</a>
@@ -3663,13 +3906,13 @@
   </script>
 
   <!-- ===== ESTIMATE MODAL ===== -->
-  <div class="estimate-overlay" id="estimateModal" role="dialog" aria-modal="true" aria-label="Get a custom estimate">
+  <div class="estimate-overlay" id="estimateModal" role="dialog" aria-modal="true" aria-label="Get started">
     <div class="estimate-dialog">
       <button class="estimate-close" onclick="closeEstimateModal()" aria-label="Close">&times;</button>
 
       <div id="estimateFormWrap">
-        <h3>Get a custom estimate</h3>
-        <p class="estimate-sub">Tell us a bit about your needs. We'll get back to you within 24 hours.</p>
+        <h3>Get started</h3>
+        <p class="estimate-sub">Tell us who you are and what you need. We'll be in touch within one business day.</p>
 
         <form class="estimate-form" onsubmit="submitEstimate(event)">
           <div class="estimate-field">
@@ -3677,21 +3920,61 @@
             <input type="text" id="est-name" name="name" placeholder="Your name" required>
           </div>
           <div class="estimate-field">
-            <label for="est-email">Email</label>
-            <input type="email" id="est-email" name="email" placeholder="you@company.com" required>
+            <label for="est-role">Role</label>
+            <input type="text" id="est-role" name="role" placeholder="e.g. Head of Compliance, General Counsel" required>
           </div>
           <div class="estimate-field">
-            <label for="est-contracts">Contracts per month</label>
-            <select id="est-contracts" name="contracts" required>
-              <option value="" disabled selected>Select volume</option>
-              <option value="1-5">1 to 5</option>
-              <option value="6-10">6 to 10</option>
-              <option value="10-20">10 to 20</option>
-              <option value="20-50">20 to 50</option>
-              <option value="50+">50+</option>
-            </select>
+            <label for="est-email">Work email</label>
+            <input type="email" id="est-email" name="email" placeholder="you@company.com" required>
           </div>
-          <button type="submit" class="estimate-submit" id="estimateBtn">Get my estimate</button>
+
+          <div class="estimate-field">
+            <p class="gs-group-label">What can we help with?</p>
+            <div class="gs-checks">
+              <label class="gs-check">
+                <input type="checkbox" id="gs-compliance" name="practice" value="compliance">
+                <span class="gs-check__box">
+                  <strong><i data-lucide="shield-check"></i> Compliance</strong>
+                  <span>Regulatory filing &amp; license management</span>
+                </span>
+              </label>
+              <label class="gs-check">
+                <input type="checkbox" id="gs-legal" name="practice" value="legal">
+                <span class="gs-check__box">
+                  <strong><i data-lucide="scale"></i> Legal</strong>
+                  <span>Contracts &amp; fractional GC</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Conditional: Legal -->
+          <div class="gs-conditional" id="gs-legal-fields">
+            <p class="gs-group-label">Roughly how many contracts a month?</p>
+            <div class="gs-pills">
+              <label class="gs-pill"><input type="radio" name="contracts" value="0-5"><span>0&ndash;5</span></label>
+              <label class="gs-pill"><input type="radio" name="contracts" value="6-20"><span>6&ndash;20</span></label>
+              <label class="gs-pill"><input type="radio" name="contracts" value="20-50"><span>20&ndash;50</span></label>
+              <label class="gs-pill"><input type="radio" name="contracts" value="50+"><span>50+</span></label>
+            </div>
+          </div>
+
+          <!-- Conditional: Compliance -->
+          <div class="gs-conditional" id="gs-compliance-fields">
+            <p class="gs-group-label">Which filings do you work on?</p>
+            <div class="gs-options">
+              <label class="gs-opt"><input type="checkbox" name="filings" value="call-reports"> Bank Call Reports</label>
+              <label class="gs-opt"><input type="checkbox" name="filings" value="mtl"> Money transmitter licensing &amp; renewals</label>
+              <label class="gs-opt"><input type="checkbox" name="filings" value="sar-ctr"> SAR / CTR (AML) filings</label>
+              <label class="gs-opt"><input type="checkbox" name="filings" value="hmda"> HMDA</label>
+              <label class="gs-opt"><input type="checkbox" name="filings" value="gcc"> GCC prudential / AML returns (CBUAE, DFSA, ADGM, SAMA)</label>
+              <label class="gs-opt"><input type="checkbox" name="filings" value="re-registration"> Real estate developer / project / escrow registration</label>
+              <label class="gs-opt"><input type="checkbox" name="filings" value="license-maint"> Broker / contractor license maintenance</label>
+              <label class="gs-opt gs-opt--sep"><input type="checkbox" name="filings" value="not-sure"> Not sure</label>
+            </div>
+          </div>
+
+          <button type="submit" class="estimate-submit" id="estimateBtn">Get started</button>
         </form>
       </div>
 
@@ -3722,7 +4005,11 @@
       document.getElementById('estimateFormWrap').style.display = '';
       document.getElementById('estimateSuccess').classList.remove('show');
       document.getElementById('estimateBtn').disabled = false;
-      document.getElementById('estimateBtn').textContent = 'Get my estimate';
+      document.getElementById('estimateBtn').textContent = 'Get started';
+      var form = modal.querySelector('.estimate-form');
+      if (form) form.reset();
+      document.getElementById('gs-legal-fields').classList.remove('is-shown');
+      document.getElementById('gs-compliance-fields').classList.remove('is-shown');
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
       // Close mobile nav if open
@@ -3753,17 +4040,46 @@
       if (e.key === 'Escape') closeEstimateModal();
     });
 
+    // --- Branching: show conditional fields based on selected practice ---
+    (function () {
+      var legalCb = document.getElementById('gs-legal');
+      var compCb = document.getElementById('gs-compliance');
+      function sync() {
+        document.getElementById('gs-legal-fields').classList.toggle('is-shown', legalCb.checked);
+        document.getElementById('gs-compliance-fields').classList.toggle('is-shown', compCb.checked);
+      }
+      if (legalCb && compCb) {
+        legalCb.addEventListener('change', sync);
+        compCb.addEventListener('change', sync);
+      }
+    })();
+
     // --- Form submission ---
     function submitEstimate(e) {
       e.preventDefault();
       var btn = document.getElementById('estimateBtn');
+
+      var practices = Array.prototype.map.call(
+        document.querySelectorAll('input[name="practice"]:checked'), function (i) { return i.value; });
+      if (practices.length === 0) {
+        alert('Please choose at least one: Compliance or Legal.');
+        return;
+      }
+
       btn.disabled = true;
       btn.textContent = 'Sending...';
 
+      var contractsEl = document.querySelector('input[name="contracts"]:checked');
+      var filings = Array.prototype.map.call(
+        document.querySelectorAll('input[name="filings"]:checked'), function (i) { return i.value; });
+
       var params = {
         name:      document.getElementById('est-name').value,
+        role:      document.getElementById('est-role').value,
         email:     document.getElementById('est-email').value,
-        contracts: document.getElementById('est-contracts').value
+        practice:  practices.join(', '),
+        contracts: contractsEl ? contractsEl.value : '',
+        filings:   filings.join(', ')
       };
 
       // If EmailJS is configured, send the email
@@ -3772,16 +4088,19 @@
           .then(function() { showSuccess(); })
           .catch(function() {
             btn.disabled = false;
-            btn.textContent = 'Get my estimate';
+            btn.textContent = 'Get started';
             alert('Something went wrong. Please try again or email legal@alefcompute.com.');
           });
       } else {
         // Fallback: mailto with pre-filled data
-        var subject = encodeURIComponent('Estimate Request from ' + params.name);
+        var subject = encodeURIComponent('Get started request from ' + params.name);
         var body = encodeURIComponent(
           'Name: ' + params.name + '\n' +
+          'Role: ' + params.role + '\n' +
           'Email: ' + params.email + '\n' +
-          'Contracts/month: ' + params.contracts
+          'Interested in: ' + params.practice + '\n' +
+          (params.contracts ? 'Contracts/month: ' + params.contracts + '\n' : '') +
+          (params.filings ? 'Filings: ' + params.filings + '\n' : '')
         );
         window.location.href = 'mailto:legal@alefcompute.com?subject=' + subject + '&body=' + body;
         showSuccess();
