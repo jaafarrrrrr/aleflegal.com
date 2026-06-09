@@ -8,6 +8,18 @@
 > Principle (from the teardown): **one spine, two practices.** Own ONE job at the top, then Compliance and
 > Legal as two symmetrical practices off the same spine. Make "extend, don't replace" an explicit named section.
 
+### ★ CORE VALUE PROP (locked by founder — everything keys off this)
+> Regulatory and contract data is **scattered across the client's systems** — ERP, CRM, accounting/finance
+> software. **Alef codifies that scattered data, organizes it, and prepares it into submission-ready filings**,
+> so the client's **compliance and legal teams focus on the work that matters** (judgment, decisions, relationships)
+> instead of the assembly. We **extend existing teams — we never replace them.** A **licensed attorney signs off**
+> on everything.
+>
+> NOT "you miss deadlines" — that wrongly assumes the client is failing. The pain is the *data wrangling and
+> assembly*, not incompetence. Lead with the transformation (scattered data → filing-ready) and the freed-up team.
+> Both practices are strong — never phrase legal as the lesser ("...too"), never imply Alef is the team
+> (we work *with* the existing team). Verticals: **Financial Services + Real Estate only** (Health-Tech dropped).
+
 ---
 
 ## Page flow at a glance (new order)
@@ -32,7 +44,7 @@
 ---
 
 ## 0. Navigation
-`Compliance · Legal · How it works · Industries · Pricing · About · [Book a working session]`
+`Compliance · Legal · How it works · Industries · Pricing · About · [Get started]`
 - Compliance first = the compliance-forward signal. One CTA only.
 - Optional: "Practices ▾" dropdown nesting Compliance + Legal, so the two-practice structure is visible in nav.
 
@@ -43,20 +55,23 @@
 **Visual:** keep the clean current hero (geometric shapes, lots of whitespace). One headline, one subline,
 one CTA, one reassurance line. No clutter — Zest-clean.
 
-**Headline (recommended):**
-> ### Never miss a regulatory filing or a license renewal again.
+**Angle:** scattered data across systems → organized, filing-ready → team focuses on what matters. Extend, not replace.
 
-**Subline:**
-> Alef is the compliance and legal extension of your in-house team. We track every deadline, prepare every
-> submission, and a licensed attorney signs off before it reaches the regulator — across financial services
-> and real estate, in the US and the GCC.
+**Headline menu (pick one — all in the corrected value-prop direction):**
+- **R1 (recommended):** *"The data behind every filing is scattered across your systems. We make it submission-ready."*
+- R2: *"Your compliance and legal teams focus on what matters. We prepare everything behind the filing."*
+- R3: *"Regulatory data lives in your ERP, your CRM, your finance stack. We turn it into filings your team can sign."*
+- R4: *"Your team's expertise belongs on the judgment calls — not on assembling the filing. So that's the part we do."*
+- R5: *"Pulled from your systems. Organized by Alef. Signed off by an attorney. Ready for the regulator."*
+- R6: *"We organize the regulatory data buried across your systems — so your team works on what matters."*
 
-**CTA:** `Book a working session`   ·   reassurance line: *No retainer. You keep control. We carry the load.*
+**Subline (pairs with any headline):**
+> Alef extends your compliance and legal teams. We pull the data scattered across your ERP, CRM and finance
+> systems, organize it, and prepare every regulatory filing and contract — submission-ready, and signed off by
+> a licensed attorney. Your team keeps the judgment. We handle the assembly. Financial services and real estate,
+> across the US and the GCC.
 
-**Alt headline options (if we want the "extension" noun up front instead of the outcome):**
-- A: *"The filings and licenses you can't afford to miss. Handled."*
-- B: *"Your compliance team, extended. Your legal team, too."*
-- C: *"One team for every filing, license, and contract your business owes."*
+**CTA:** `Get started`   ·   reassurance line: *No retainer. You keep control. Every deliverable attorney-signed.*
 
 ---
 
@@ -72,21 +87,22 @@ exactly where the comparables put it.
 
 **Section label:** The Problem
 **Headline:**
-> ### Regulated companies don't have a capacity problem. They have a deadline problem.
+> ### The hard part isn't knowing the rules. It's assembling the filing.
 
 **Body:**
-> Every license you hold comes with filings that never stop. A single fintech can owe quarterly Call Reports,
-> 50-state money-transmitter renewals, and suspicious-activity reports — all year, every year. A single
-> development can carry dozens of licenses across its subcontractors. Miss one deadline and you can't transact.
-> Your team's hours should go to judgment calls, not assembling submissions. **Alef handles the rest.**
+> Your compliance team knows exactly what every regulator wants. The work is getting there: the numbers live in
+> your finance system, the customer records in your CRM, the transactions in your ERP, the policies in a dozen
+> folders. Every filing means pulling it together, formatting it, and reconciling it — before anyone can apply
+> judgment. **That assembly is what Alef takes off your team's plate.** We pull the data, organize it, and prepare
+> the submission. Your team does what only your team can do.
 
-**Three cards (plain-language, concrete):**
-1. **50 states, one deadline each** — "A money transmitter renews its license in every state it operates,
-   files a quarterly NMLS MSB Call Report, and tracks bonds and net worth in each one. The patchwork is the work."
+**Three cards (plain-language, concrete — the scale of the assembly, not "you're failing"):**
+1. **Data in a dozen systems** — "One filing pulls from your ERP, your CRM, your accounting stack and your
+   policy library. We reconcile it into one submission-ready record."
 2. **4 regulators, 5 systems** — "In the GCC, the same firm reports to CBUAE, DFSA, ADGM and SAMA — each with
-   its own portal, its own deadlines, its own AML rail. We know all of them."
-3. **Dozens of renewals per project** — "One master-planned development means developer, project, escrow,
-   marketing and broker licenses — plus a trade license for every subcontractor. Each renews on its own clock."
+   its own portal, its own format, its own AML rail. We prepare for all of them."
+3. **Dozens of licenses per project** — "One master-planned development carries developer, project, escrow,
+   marketing and broker licenses — plus a trade license for every subcontractor. We keep them all current."
 
 *(Optional: keep the original legal stat cards — 3+ weeks/contract, 9.2% revenue lost — as a Legal-practice
 sub-row, so both pains show. Compliance leads.)*
@@ -180,9 +196,9 @@ This is where specificity = confidence. Plain-language intros; named filings und
 
 **The hook (callout box):**
 > **One project can carry dozens of licenses — across subcontractors you don't directly control.**
-> Miss a single renewal and you can't sell. We track every one, and tell you what's due before it's due.
+> We keep every one current, and tell you what's coming due before it's due.
 
-*(Health-Tech can remain a smaller third vertical lower down, as today, so we don't lose it.)*
+*(Verticals scoped to Financial Services + Real Estate. Health-Tech removed — tighter, more confident story.)*
 
 ---
 
@@ -269,7 +285,39 @@ across 150+ countries."*
 
 ## 13. Final CTA  *(KEEP, broaden)*
 > ### Bring us your next filing — or your next contract.
-**CTA:** `Book a working session`
+**CTA:** `Get started`
+
+---
+
+## CTA — "Get started" form (replaces the current estimate modal)
+
+One CTA verb everywhere: **`Get started`** → opens a popup form. Branching, short, qualifies the lead.
+
+**Step 1 — always shown**
+- Name (text)
+- Role / title (text)
+- Work email (email)
+- *"What can we help with?"* — checkboxes (multi-select): **☐ Compliance / regulatory  ☐ Legal / contracts**
+
+**Step 2 — conditional fields based on the checkboxes**
+
+*If **Legal / contracts** is checked:*
+- *"Roughly how many contracts a month?"* (single-select): **0–5 · 6–20 · 20–50 · 50+**
+
+*If **Compliance / regulatory** is checked:*
+- *"Which filings do you work on?"* (multi-select; tailored, with an out at the bottom):
+  - Bank Call Reports
+  - Money transmitter licensing & renewals
+  - SAR / CTR (AML) filings
+  - HMDA
+  - GCC prudential / AML returns (CBUAE · DFSA · ADGM · SAMA)
+  - Real estate developer / project / escrow registration
+  - Broker / contractor license maintenance
+  - **Not sure** ← always last
+
+**Submit:** `Get started` → success state ("We'll be in touch within one business day.").
+*Implementation note:* current modal posts to a handler — reuse it; add the conditional logic + new fields.
+Keep it to two visible steps so it never feels long.
 
 ---
 
@@ -284,9 +332,16 @@ across 150+ countries."*
    "annual / per-project / on the regulator's clock" instead of a specific figure. Date any regulatory content;
    flag US items that shifted in 2025–26 (CTA/BOI, §1071, SAR FAQs).
 
-## Open questions for sign-off
-- Hero: go with the **outcome headline** ("Never miss a regulatory filing or a license renewal again") or an
-  **extension-noun headline** (Alt B: "Your compliance team, extended. Your legal team, too.")?
-- Keep **Health-Tech** as a third vertical, or drop it to stay tightly focused on FS + Real Estate?
-- Do we have any **real metrics** (turnaround, volume, time saved, clients served) to anchor the proof section?
-- One CTA verb everywhere — **"Book a working session"** vs "Get a custom estimate" (current) vs "Talk to Alef"?
+## Decisions locked
+- ✅ **Compliance-forward**, extreme confidence in both practices.
+- ✅ **Value prop = codify scattered data → filing-ready** (not "you miss deadlines"). Extend, never replace.
+- ✅ **Drop Health-Tech.** Focus: Financial Services + Real Estate.
+- ✅ **CTA = "Get started"** → branching popup form (spec above).
+- ✅ Proof anchored on **volume/scale** + **time/cost saved** metrics.
+
+## Still needed from founder
+- **Hero headline:** pick R1–R6 (R1 recommended).
+- **Real metrics** for the proof section — actual numbers only:
+  - Volume/scale: e.g. contracts managed, filings handled, clients served, countries, $ assets touched.
+  - Time/cost saved: e.g. hours saved per filing, "X days → Y days," cost vs. a hire.
+- Confirm the form's regulatory-filing list matches what real prospects actually say.
