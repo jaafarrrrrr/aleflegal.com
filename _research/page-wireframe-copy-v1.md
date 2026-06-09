@@ -1,5 +1,17 @@
 # Alef — Page Wireframe + Copy (v1, compliance-forward)
 
+> **BUILD LOG — Increment 1 shipped (branch `claude/hello-y0bgxp`):**
+> - **New hero** in `index.html`: "The future of legal & compliance is here." — giant type on near-black,
+>   terracotta accent on "is here.", GSAP staggered word reveal on load (+ reduced-motion fallback),
+>   subline = value prop, CTA = "Get started".
+> - **New proof stat band** (after client reel) with animated count-up: Compliance trio (50 states+4 GCC · 75%
+>   less time · 100% attorney-signed) + Legal trio (<24h turnaround · 150+ countries · 33% lower cost).
+>   Compliance numbers are **placeholders** to replace with verified figures.
+> - **Turnaround harmonized to sub-24h** site-wide (hero/CTA/reel/two-paths/final-CTA); Results section
+>   converted to qualitative testimonials; DNA "150+ countries" de-duplicated.
+> - Still TODO (next increments): full section restructure (two-practice cards, compliance deep-dive,
+>   "how we fit your team", who-it's-for) + the branching "Get started" form.
+
 > Working doc for sign-off. NOT published (`_research/` is Jekyll-ignored).
 > Decisions baked in: **compliance-forward**, **extreme confidence in BOTH practices**, **wireframe/copy before code**.
 > Writing standard: the **Zest/Bretton clarity bar** — a non-expert grasps it instantly; short sentences;

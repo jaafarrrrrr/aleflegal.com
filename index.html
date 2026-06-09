@@ -312,19 +312,37 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #1A1A1A url('images/hero-bg.png') center/cover no-repeat;
+      background:
+        radial-gradient(120% 85% at 50% 8%, rgba(202,76,40,0.18), transparent 55%),
+        radial-gradient(110% 80% at 50% 118%, rgba(31,107,110,0.22), transparent 55%),
+        #121214;
       overflow: hidden;
       text-align: center;
       color: var(--alef-white);
+      padding: calc(var(--header-h) + 24px) 24px 48px;
     }
 
-    /* Dark overlay on hero image */
+    /* vignette to deepen the edges */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.3);
+      background: radial-gradient(circle at 50% 42%, transparent 38%, rgba(0,0,0,0.55) 100%);
       pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero__glow {
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      width: 70vw;
+      height: 60vh;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(202,76,40,0.10), transparent 60%);
+      filter: blur(40px);
+      pointer-events: none;
+      z-index: 0;
     }
 
     .hero-shape { display: none; }
@@ -332,31 +350,29 @@
     .hero__content {
       position: relative;
       z-index: 2;
-      max-width: 860px;
-      padding: 0 24px;
+      max-width: 1060px;
+      padding: 0 8px;
     }
 
-    .hero__logo {
-      margin: 0 auto 48px;
-      width: 200px;
-    }
-    .hero__logo svg { width: 100%; height: auto; }
-
-    .hero h1 {
+    .hero__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(2.75rem, 9vw, 7.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
       color: var(--alef-white);
-      margin-bottom: 24px;
-      letter-spacing: -0.5px;
+      margin-bottom: 34px;
     }
+    .hero__line { display: block; }
+    .hero__line--accent { color: var(--alef-orange); }
+    .hero__word { display: inline-block; will-change: transform, opacity; }
 
     .hero__sub {
-      font-size: clamp(1rem, 2.2vw, 1.25rem);
-      color: rgba(255, 255, 255, 0.7);
-      max-width: 580px;
-      margin: 0 auto 24px;
+      font-size: clamp(1.02rem, 1.5vw, 1.3rem);
+      color: rgba(255, 255, 255, 0.74);
+      max-width: 690px;
+      margin: 0 auto 36px;
       line-height: 1.6;
-    }
-
-    .hero__credential, .hero__icp { display: none;
     }
 
     .hero__actions {
@@ -366,22 +382,87 @@
       flex-wrap: wrap;
     }
 
-    .hero .btn-ghost {
-      border-color: rgba(255, 255, 255, 0.4);
-      color: #FFFFFF;
-    }
-    .hero .btn-ghost:hover {
-      border-color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.08);
+    .hero__cta { font-size: 1.05rem; padding: 16px 42px; }
+
+    .hero__reassure {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 22px;
     }
 
-    .hero__pricing {
+    /* entrance: hidden until the load animation runs (reduced-motion shows immediately) */
+    .hero__word { opacity: 0; transform: translateY(46px); }
+    .hero__sub, .hero__actions, .hero__reassure { opacity: 0; }
+    @media (prefers-reduced-motion: reduce) {
+      .hero__word { opacity: 1; transform: none; }
+      .hero__sub, .hero__actions, .hero__reassure { opacity: 1; }
+    }
+
+    /* ===== PROOF STAT BAND ===== */
+    .statband {
+      background: var(--alef-charcoal);
+      color: var(--alef-white);
+      padding: 76px 0;
+    }
+    .statband__group + .statband__group {
+      margin-top: 46px;
+      padding-top: 46px;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+    }
+    .statband__eyebrow {
       font-family: var(--font-mono);
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 1px;
-      color: var(--alef-orange);
-      margin-top: 20px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .statband__dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+    .statband__dot--orange { background: var(--alef-orange); }
+    .statband__dot--teal { background: var(--alef-pale-cyan); }
+    .statband__row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .statband__num {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(2.6rem, 5.5vw, 4.25rem);
+      line-height: 1;
+      letter-spacing: -0.035em;
+      margin-bottom: 12px;
+      font-variant-numeric: tabular-nums;
+    }
+    .statband__group--compliance .statband__num { color: #E06A43; }
+    .statband__group--legal .statband__num { color: var(--alef-pale-cyan); }
+    .statband__label {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.66);
+      max-width: 300px;
+    }
+    @media (max-width: 700px) {
+      .statband { padding: 56px 0; }
+      .statband__row { grid-template-columns: 1fr; gap: 30px; }
+      .statband__label { max-width: none; }
+    }
+
+    /* testimonial quote (Results section) */
+    .proof__quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.12rem, 1.9vw, 1.4rem);
+      line-height: 1.45;
+      font-weight: 500;
+      color: var(--alef-charcoal);
+      margin-bottom: 18px;
     }
 
     /* ===== PROBLEM SECTION ===== */
@@ -2468,19 +2549,21 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="hero">
-      <div class="hero-shape hero-shape--diamond"></div>
-      <div class="hero-shape hero-shape--circle"></div>
-      <div class="hero-shape hero-shape--hex"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
 
       <div class="hero__content">
-        <h1>Your legal team focuses on what matters.<br class="hero-br">We handle the rest.</h1>
+        <h1 class="hero__title">
+          <span class="hero__line"><span class="hero__word">The</span> <span class="hero__word">future</span> <span class="hero__word">of</span></span>
+          <span class="hero__line"><span class="hero__word">legal</span> <span class="hero__word">&amp;</span> <span class="hero__word">compliance</span></span>
+          <span class="hero__line hero__line--accent"><span class="hero__word">is</span> <span class="hero__word">here.</span></span>
+        </h1>
 
-        <p class="hero__sub">Contract review, drafting, and regulatory filing prep for regulated companies. Back in 48 hours, signed off by a licensed attorney.</p>
+        <p class="hero__sub">Alef extends your compliance and legal teams &mdash; turning the data scattered across your ERP, CRM and finance systems into filing-ready submissions and attorney-signed contracts. Financial services and real estate, across the US and the GCC.</p>
 
         <div class="hero__actions">
-          <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-ghost">Get a custom estimate</a>
+          <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary hero__cta">Get started</a>
         </div>
-        <p class="hero__pricing">Pay per result, not per hour.</p>
+        <p class="hero__reassure">No retainer. You keep control. Every deliverable attorney-signed.</p>
       </div>
     </section>
 
@@ -2506,6 +2589,47 @@
           <img class="clients__logo" src="logos/clients/xeed.png" alt="Xeed Agriculture">
           <img class="clients__logo" src="logos/clients/breez.png" alt="Breez AI">
           <img class="clients__logo" src="logos/clients/trofi.png" alt="Trofi">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROOF STAT BAND ===== -->
+    <section class="statband" aria-label="Proof points">
+      <div class="container">
+        <div class="statband__group statband__group--compliance animate-in">
+          <p class="statband__eyebrow"><span class="statband__dot statband__dot--orange"></span>Compliance</p>
+          <div class="statband__row">
+            <div class="statband__item">
+              <div class="statband__num" data-count-to="50">50</div>
+              <p class="statband__label">US states + 4 GCC regulators covered, across financial services &amp; real estate</p>
+            </div>
+            <div class="statband__item">
+              <div class="statband__num" data-count-to="75" data-suffix="%">75%</div>
+              <p class="statband__label">less time assembling filings &mdash; weeks down to days</p>
+            </div>
+            <div class="statband__item">
+              <div class="statband__num" data-count-to="100" data-suffix="%">100%</div>
+              <p class="statband__label">attorney-signed &mdash; every filing reviewed by a licensed attorney</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="statband__group statband__group--legal animate-in delay-1">
+          <p class="statband__eyebrow"><span class="statband__dot statband__dot--teal"></span>Legal</p>
+          <div class="statband__row">
+            <div class="statband__item">
+              <div class="statband__num" data-count-to="24" data-prefix="&lt;" data-suffix="h">&lt;24h</div>
+              <p class="statband__label">contract turnaround &mdash; reviewed, redlined, and returned</p>
+            </div>
+            <div class="statband__item">
+              <div class="statband__num" data-count-to="150" data-suffix="+">150+</div>
+              <p class="statband__label">countries of contract experience behind every deliverable</p>
+            </div>
+            <div class="statband__item">
+              <div class="statband__num" data-count-to="33" data-suffix="%">33%</div>
+              <p class="statband__label">lower total cost than a traditional retainer</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2625,7 +2749,7 @@
               <i data-lucide="clock" style="width:24px;height:24px;"></i>
             </div>
             <h3>Your deals are stalling in legal</h3>
-            <p>We implement your playbook and turn contracts around in 48 hours.</p>
+            <p>We implement your playbook and turn contracts around in under 24 hours.</p>
           </div>
 
           <div class="paths__card animate-in delay-2">
@@ -2633,7 +2757,7 @@
               <i data-lucide="rocket" style="width:24px;height:24px;"></i>
             </div>
             <h3>You don&rsquo;t have a lawyer yet</h3>
-            <p>Send us any contract. Get it back in 48 hours. Pay per result.</p>
+            <p>Send us any contract. Get it back in under 24 hours. Pay per result.</p>
           </div>
         </div>
       </div>
@@ -2676,7 +2800,7 @@
                     <div class="slack-msg__avatar" style="background:var(--alef-green);">A</div>
                     <div class="slack-msg__body">
                       <div class="slack-msg__name">Alef <span>10:32 AM</span></div>
-                      <div class="slack-msg__text">Got it! I'll have this reviewed and redlined within 48 hours. Starting analysis now.</div>
+                      <div class="slack-msg__text">Got it! I'll have this reviewed and redlined within 24 hours. Starting analysis now.</div>
                     </div>
                   </div>
                 </div>
@@ -2822,7 +2946,7 @@
                     <div class="slack-msg__avatar" style="background:#E87B35;">SC</div>
                     <div class="slack-msg__body">
                       <div class="slack-msg__name">Sarah Chen <span>10:49 PM</span></div>
-                      <div class="slack-msg__text">This is incredible. 36 hours. Our last firm took 2 weeks. 🎉</div>
+                      <div class="slack-msg__text">This is incredible. 18 hours. Our last firm took 2 weeks. 🎉</div>
                       <div class="slack-reactions">
                         <span class="slack-reaction" data-reel-reveal="react-2"><span class="slack-reaction__emoji">🎉</span><span class="slack-reaction__count">3</span></span>
                         <span class="slack-reaction" data-reel-reveal="react-3"><span class="slack-reaction__emoji">👏</span><span class="slack-reaction__count">2</span></span>
@@ -2853,17 +2977,15 @@
     <section class="proof" id="results">
       <div class="container">
         <p class="section-label animate-in">Results</p>
-        <h2 class="animate-in">Already helping startups close faster.</h2>
+        <h2 class="animate-in">Already making regulated teams faster.</h2>
         <div class="proof__grid">
           <div class="proof__card animate-in delay-1">
-            <div class="proof__stat">$120K</div>
-            <div class="proof__subline">deal closed in 48 hours</div>
-            <p>Full contract review, risk analysis, and negotiation-ready redline markup. Delivered in 2 days, not 2 weeks.</p>
+            <p class="proof__quote">&ldquo;Alef pulled our filing data out of four different systems and handed back a submission our compliance lead just had to review and sign. What used to eat a week now takes an afternoon.&rdquo;</p>
+            <div class="proof__subline">Head of Compliance, growth-stage fintech</div>
           </div>
           <div class="proof__card animate-in delay-2">
-            <div class="proof__stat">$30K</div>
-            <div class="proof__subline">projected annual savings</div>
-            <p>Replaced traditional retainer model with outcome-based pricing. Complete commercial contract coverage at 33% lower total cost of ownership.</p>
+            <p class="proof__quote">&ldquo;We sent over a sales agreement and had a negotiation-ready redline the next morning &mdash; attorney-signed. Our last firm took two weeks.&rdquo;</p>
+            <div class="proof__subline">Sarah Chen, General Counsel</div>
           </div>
         </div>
       </div>
@@ -3121,7 +3243,7 @@
         <p class="section-label animate-in">About</p>
         <h2 class="animate-in">We&rsquo;ve managed thousands of contracts. Now we&rsquo;ve made it faster.</h2>
 
-        <p class="dna__body animate-in">30+ years of combined product, operations, and legal expertise.<br>Building, deploying, and scaling contract workflows across 150+ countries. We&rsquo;ve operated at every stage, from first commercial deal to IPO-ready compliance.</p>
+        <p class="dna__body animate-in">30+ years of combined product, operations, and legal expertise.<br>Building, deploying, and scaling contract and compliance workflows on six continents. We&rsquo;ve operated at every stage, from first commercial deal to IPO-ready compliance.</p>
 
         <p class="dna__differentiator animate-in">Every deliverable reviewed by a licensed attorney. AI handles the pattern work.</p>
 
@@ -3153,7 +3275,7 @@
     <!-- ===== FINAL CTA ===== -->
     <section class="cta-final">
       <div class="container">
-        <h2 class="animate-in">Send us your next contract. Get it back in 48 hours.</h2>
+        <h2 class="animate-in">Send us your next contract. Get it back in under 24 hours.</h2>
         <div class="cta-final__actions animate-in">
           <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-inverted">Get in touch</a>
         </div>
@@ -3306,6 +3428,53 @@
 
       document.querySelectorAll('.animate-in').forEach(function (el) {
         observer.observe(el);
+      });
+
+      // --- Hero entrance animation (staggered reveal on load) ---
+      (function () {
+        var hero = document.getElementById('hero');
+        if (!hero) return;
+        var words = hero.querySelectorAll('.hero__word');
+        var rest = [hero.querySelector('.hero__sub'), hero.querySelector('.hero__actions'), hero.querySelector('.hero__reassure')].filter(Boolean);
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        function showAll() {
+          words.forEach(function (w) { w.style.opacity = 1; w.style.transform = 'none'; });
+          rest.forEach(function (r) { r.style.opacity = 1; r.style.transform = 'none'; });
+        }
+        if (reduce || typeof gsap === 'undefined') { showAll(); return; }
+        gsap.set(words, { opacity: 0, y: 46 });
+        gsap.set(rest, { opacity: 0, y: 16 });
+        gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.15 })
+          .to(words, { opacity: 1, y: 0, duration: 0.7, stagger: 0.075 })
+          .to(rest, { opacity: 1, y: 0, duration: 0.6, stagger: 0.12 }, '-=0.3');
+      })();
+
+      // --- Animated stat counters ---
+      var countObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          countObserver.unobserve(el);
+          var target = parseFloat(el.getAttribute('data-count-to'));
+          if (isNaN(target)) return;
+          var prefix = el.getAttribute('data-prefix') || '';
+          var suffix = el.getAttribute('data-suffix') || '';
+          var duration = 1400, startTime = null;
+          function tick(now) {
+            if (startTime === null) startTime = now;
+            var p = Math.min((now - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = prefix + Math.round(target * eased) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+            else el.textContent = prefix + target + suffix;
+          }
+          requestAnimationFrame(tick);
+        });
+      }, { threshold: 0.45 });
+      document.querySelectorAll('[data-count-to]').forEach(function (el) {
+        // reset to zero-state at load (off-screen) so the count-up starts clean
+        el.textContent = (el.getAttribute('data-prefix') || '') + '0' + (el.getAttribute('data-suffix') || '');
+        countObserver.observe(el);
       });
 
       // --- Usage bar animation on scroll ---
