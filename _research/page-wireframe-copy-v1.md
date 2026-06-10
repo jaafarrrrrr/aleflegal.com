@@ -1,5 +1,28 @@
 # Alef — Page Wireframe + Copy (v1, compliance-forward)
 
+## ✅ BUILD STATUS (shipped to index.html on branch claude/hello-y0bgxp)
+Built and verified; published to `main` → alef.legal.
+- **Hero:** "The future of legal & compliance is here." (founder's choice over R1–R6). Giant type, near-black,
+  terracotta accent on "is here.", GSAP word-by-word reveal with reduced-motion / no-GSAP fallback.
+- **Proof stat band** (animated count-up): Compliance 50 / 75% / 100% · Legal <24h / 150+ / 33% (placeholders).
+- **Turnaround harmonized to under 24 hours** site-wide (hero/CTA/reel/results); reel testimonial now "18 hours".
+- **Sections built:** two-practice overview (#practices) · compliance deep-dive (#compliance, named filings ×
+  US/GCC × FS/Real-estate + hook) · "How Alef works" spine (#process, led by "Map your obligations") ·
+  how-we-fit (#fit) · who-it's-for (#whofor).
+- **Nav** → Compliance / Legal / How it works / Resources / Get started (desktop + mobile + footer).
+- **Pricing:** Compliance tab default; named line items; Health-Tech group dropped.
+- **Get-started form:** branching (Compliance/Legal checkboxes → contract-volume pills / filing-type list w/ "Not sure").
+- **Verified:** 8/8 anchors resolve, no broken links, no JS errors, form branching works. Icons/animations
+  render live (Lucide/GSAP CDNs are blocked only in the screenshot sandbox; code degrades gracefully if a CDN fails).
+
+### Not yet done (follow-ups)
+- Legacy **Problem ("deal-killer")** + **Two Paths** sections still legal-only, kept as-is (could fold into the
+  Legal block / reframe later).
+- Compliance **placeholder metrics** still need real, verified numbers.
+- EmailJS keys are still placeholders (form falls back to mailto).
+
+---
+
 > **BUILD LOG — Increment 1 shipped (branch `claude/hello-y0bgxp`):**
 > - **New hero** in `index.html`: "The future of legal & compliance is here." — giant type on near-black,
 >   terracotta accent on "is here.", GSAP staggered word reveal on load (+ reduced-motion fallback),
