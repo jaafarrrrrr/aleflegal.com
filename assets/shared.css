@@ -1847,6 +1847,12 @@
       opacity: 1;
       filter: grayscale(0%);
     }
+    /* Reform's logo art is white, so render it dark to match the others on the light background. */
+    .clients__logo[src*="reform"],
+    .clients__logo[src*="reform"]:hover {
+      filter: brightness(0);
+      opacity: 0.55;
+    }
 
     /* ===== INDUSTRIES / REGULATORY ===== */
     .industries {
