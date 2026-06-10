@@ -1824,18 +1824,29 @@
     }
     .clients__reel {
       overflow: hidden;
-      mask-image: linear-gradient(90deg, transparent, black 16%, black 84%, transparent);
-      -webkit-mask-image: linear-gradient(90deg, transparent, black 16%, black 84%, transparent);
+      mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
     }
     .clients__track {
       display: flex;
       align-items: center;
-      gap: 84px;
-      animation: logo-scroll 40s linear infinite;
+      gap: 56px;
+      animation: logo-scroll 30s linear infinite;
       width: max-content;
     }
-    .clients__logo { height: 26px; max-width: 116px; width: auto; object-fit: contain; flex-shrink: 0; opacity: 0.6; filter: grayscale(100%); transition: opacity 0.3s, filter 0.3s; }
-    .clients__logo:hover { opacity: 1; filter: grayscale(0%); }
+    .clients__logo {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+      opacity: 0.55;
+      filter: grayscale(100%);
+      transition: opacity 0.3s, filter 0.3s;
+    }
+    .clients__logo:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+    }
 
     /* ===== INDUSTRIES / REGULATORY ===== */
     .industries {
