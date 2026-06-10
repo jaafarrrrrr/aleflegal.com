@@ -39,19 +39,19 @@
   <!-- ===== HEADER ===== -->
   <header class="header" role="banner">
     <div class="header__inner">
-      <a href="#hero" class="header__logo" aria-label="Alef - Home">
+      <a href="index.html" class="header__logo" aria-label="Alef - Home" data-home>
         <img class="logo-dark" src="brand/alef-horizontal-rust.svg" alt="Alef" width="784" height="192">
         <img class="logo-light" src="brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
       </a>
 
       <nav class="header__nav" aria-label="Main navigation">
-        <div class="nav-item"><a href="#compliance">Compliance</a></div>
-        <div class="nav-item"><a href="#legal">Legal</a></div>
-        <div class="nav-item"><a href="#process">How it works</a></div>
+        <div class="nav-item"><a href="compliance.html">Compliance</a></div>
+        <div class="nav-item"><a href="legal.html">Legal</a></div>
+        <div class="nav-item"><a href="index.html#process">How it works</a></div>
         <div class="nav-item nav-item--dropdown">
           <button type="button" aria-haspopup="true" aria-expanded="false">Resources <i data-lucide="chevron-down" class="nav-item__caret"></i></button>
           <div class="nav-dropdown" role="menu">
-            <a href="#pricing" role="menuitem">
+            <a href="index.html#pricing" role="menuitem">
               <span class="nav-dropdown__title">Pricing</span>
               <span class="nav-dropdown__desc">Outcome-based rates for legal and compliance work</span>
             </a>
@@ -75,19 +75,18 @@
 
   <!-- Mobile nav drawer -->
   <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
-    <a href="#compliance">Compliance</a>
-    <a href="#legal">Legal</a>
-    <a href="#process">How it works</a>
+    <a href="compliance.html">Compliance</a>
+    <a href="legal.html">Legal</a>
+    <a href="index.html#process">How it works</a>
     <div class="mobile-nav__group">
       <span class="mobile-nav__group-label">Resources</span>
-      <a href="#pricing">Pricing</a>
+      <a href="index.html#pricing">Pricing</a>
       <a href="the-brief.html">The Brief</a>
     </div>
     <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get started</a>
   </div>
 
   <main>
-
     <!-- ===== HERO ===== -->
     <section class="hero" id="hero">
       <div class="hero__glow" aria-hidden="true"></div>
@@ -99,7 +98,7 @@
           <span class="hero__line hero__line--accent"><span class="hero__word">is</span> <span class="hero__word">here.</span></span>
         </h1>
 
-        <p class="hero__sub">Alef extends your compliance and legal teams &mdash; turning the data scattered across your ERP, CRM and finance systems into filing-ready submissions and attorney-signed contracts. Financial services and real estate, across the US and the GCC.</p>
+        <p class="hero__sub">Alef extends your compliance and legal teams.<br>We pull the data scattered across your finance systems, ledgers, and spreadsheets &mdash;<br>and turn it into filing-ready submissions and attorney-signed contracts.</p>
 
         <div class="hero__actions">
           <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary hero__cta">Get started</a>
@@ -146,7 +145,7 @@
             </div>
             <div class="statband__item">
               <div class="statband__num" data-count-to="75" data-suffix="%">75%</div>
-              <p class="statband__label">less time assembling filings &mdash; weeks down to days</p>
+              <p class="statband__label">less time assembling filings, so your team focuses on the work that matters</p>
             </div>
             <div class="statband__item">
               <div class="statband__num" data-count-to="100" data-suffix="%">100%</div>
@@ -196,7 +195,7 @@
               <li><i data-lucide="check"></i> Regulator information requests (RFIs)</li>
               <li><i data-lucide="check"></i> The obligation calendar itself &mdash; owned end to end</li>
             </ul>
-            <a href="#compliance" class="practice-card__cta">See what we file <i data-lucide="arrow-right"></i></a>
+            <a href="compliance.html" class="practice-card__cta">See what we file <i data-lucide="arrow-right"></i></a>
           </div>
 
           <div class="practice-card practice-card--legal animate-in delay-1">
@@ -210,60 +209,8 @@
               <li><i data-lucide="check"></i> Playbook development</li>
               <li><i data-lucide="check"></i> Research memos &amp; judgment calls</li>
             </ul>
-            <a href="#legal" class="practice-card__cta">See how we work <i data-lucide="arrow-right"></i></a>
+            <a href="legal.html" class="practice-card__cta">See how we work <i data-lucide="arrow-right"></i></a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== COMPLIANCE DEEP-DIVE ===== -->
-    <section class="deepdive" id="compliance">
-      <div class="container">
-        <div class="deepdive__head animate-in">
-          <p class="section-label">Compliance, in depth</p>
-          <h2>We know the filings because we file them.</h2>
-          <p>Two industries. Two regions. The same promise: we pull the data from your systems, prepare every submission, and an attorney signs off before it goes out. Here is the work we own.</p>
-        </div>
-
-        <div class="deepdive__matrix">
-          <div class="ddomain animate-in">
-            <div class="ddomain__head">
-              <span class="ddomain__icon"><i data-lucide="landmark"></i></span>
-              <h3>Financial Services</h3>
-            </div>
-            <div class="ddomain__regions">
-              <div class="dd-region">
-                <p class="dd-region__label">United States</p>
-                <p>Quarterly <strong>Call Reports</strong>. <strong>Money transmitter licenses</strong> across all 50 states &mdash; plus the quarterly NMLS MSB Call Report and annual renewals. <strong>SAR</strong> and <strong>CTR</strong> filings on FinCEN&rsquo;s clock. <strong>HMDA</strong> every March. We track them, prepare them, and keep the bonds and net-worth tests current.</p>
-              </div>
-              <div class="dd-region">
-                <p class="dd-region__label">GCC</p>
-                <p><strong>CBUAE</strong> prudential returns and <strong>goAML</strong> reporting in the UAE. The <strong>DFSA Annual AML Return</strong> in the DIFC. <strong>ADGM</strong> prudential filings through EPRS. <strong>SAMA</strong> and <strong>CMA</strong> reporting in Saudi Arabia. Four regulators, five systems &mdash; one team that knows each one.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="ddomain animate-in">
-            <div class="ddomain__head">
-              <span class="ddomain__icon"><i data-lucide="building-2"></i></span>
-              <h3>Real Estate &amp; Development</h3>
-            </div>
-            <div class="ddomain__regions">
-              <div class="dd-region">
-                <p class="dd-region__label">GCC</p>
-                <p>In Dubai: <strong>developer registration, project and escrow registration, Oqood, Trakheesi</strong> permits, and <strong>annual broker cards</strong> through DLD and RERA. In Abu Dhabi: <strong>ADREC</strong> licensing and escrow. In Saudi Arabia: <strong>Wafi</strong> off-plan licensing and <strong>Etnam</strong> developer registration.</p>
-              </div>
-              <div class="dd-region">
-                <p class="dd-region__label">United States</p>
-                <p><strong>State contractor licensing</strong> and renewals, <strong>subdivision and master-plan</strong> approvals, and the <strong>trade licenses every subcontractor</strong> must hold and maintain &mdash; tracked across boards and municipalities.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="deepdive__hook animate-in">
-          <i data-lucide="layers"></i>
-          <p><strong>One project can carry dozens of licenses &mdash; across subcontractors you don&rsquo;t directly control.</strong> We keep every one current, and tell you what&rsquo;s coming due before it&rsquo;s due.</p>
         </div>
       </div>
     </section>
@@ -286,7 +233,7 @@
           <div class="industries__step animate-in delay-1">
             <div class="industries__step-num">02</div>
             <h4>Organize your data</h4>
-            <p>We pull your contracts, policies, and records from across your ERP, CRM, and finance systems into one structured, filing-ready source.</p>
+            <p>We pull your contracts, policies, and records from across your finance systems, ledgers, and records into one structured, filing-ready source.</p>
           </div>
           <div class="industries__step animate-in delay-2">
             <div class="industries__step-num">03</div>
@@ -303,273 +250,6 @@
         <p class="industries__note animate-in">You keep every playbook, template, and calendar we build. <strong>No hiring risk. No retainer. Cancel anytime.</strong></p>
       </div>
     </section>
-
-    <!-- ===== PROBLEM ===== -->
-    <section class="problem" id="problem">
-      <div class="container">
-        <p class="section-label animate-in">The Problem</p>
-        <h2 class="animate-in">Legal is the #1 deal killer for growing companies.</h2>
-
-        <div class="problem__cards">
-          <div class="problem__card animate-in delay-1">
-            <div class="problem__stat">3+ weeks</div>
-            <h3>Per contract</h3>
-            <p>Your sales team closes in days. Legal takes weeks. The average B2B contract takes 3 to 4 weeks from first draft to signature.</p>
-            <span class="problem__source">World Commerce &amp; Contracting / Bind Legal</span>
-          </div>
-
-          <div class="problem__card animate-in delay-2">
-            <div class="problem__stat">9.2%</div>
-            <h3>Revenue lost annually</h3>
-            <p>Missed deadlines, stalled deals, value leakage after signature. At $5M revenue, that&rsquo;s $460K walking out the door every year.</p>
-            <span class="problem__source">World Commerce &amp; Contracting</span>
-          </div>
-
-          <div class="problem__card animate-in delay-3">
-            <div class="problem__stat">$500+/hr</div>
-            <h3>And climbing</h3>
-            <p>First-year startup legal costs average $80K. Every new deal, employee, or vendor adds to the bill.</p>
-            <span class="problem__source">ContractsCounsel / VentureBeat</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== TWO PATHS ===== -->
-    <section class="paths" id="paths">
-      <div class="container">
-        <p class="section-label animate-in" style="text-align:center;">Two Paths</p>
-        <h2 class="animate-in">Whatever your setup, we can help.</h2>
-
-        <div class="paths__grid">
-          <div class="paths__card animate-in delay-1">
-            <div class="paths__icon">
-              <i data-lucide="clock" style="width:24px;height:24px;"></i>
-            </div>
-            <h3>Your deals are stalling in legal</h3>
-            <p>We implement your playbook and turn contracts around in under 24 hours.</p>
-          </div>
-
-          <div class="paths__card animate-in delay-2">
-            <div class="paths__icon">
-              <i data-lucide="rocket" style="width:24px;height:24px;"></i>
-            </div>
-            <h3>You don&rsquo;t have a lawyer yet</h3>
-            <p>Send us any contract. Get it back in under 24 hours. Pay per result.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== HOW IT WORKS — SCROLL REEL ===== -->
-    <section class="reel" id="how">
-      <div class="reel__sticky">
-        <div class="reel__header">
-          <p class="section-label">How It Works</p>
-          <h2>Watch your contract move through our pipeline.</h2>
-        </div>
-
-        <div class="reel__track">
-
-          <!-- PANEL 1 — Slack Request -->
-          <div class="reel__panel reel__panel--slack-request">
-            <div class="slack-mock">
-              <div class="slack-mock__sidebar">
-                <div class="slack-mock__workspace">Acme Corp</div>
-                <ul class="slack-mock__channels">
-                  <li># general</li>
-                  <li># sales-team</li>
-                  <li class="active"># legal-requests</li>
-                  <li># engineering</li>
-                </ul>
-              </div>
-              <div class="slack-mock__main">
-                <div class="slack-mock__header"># legal-requests</div>
-                <div class="slack-mock__messages">
-                  <div class="slack-msg" data-reel-reveal="0">
-                    <div class="slack-msg__avatar" style="background:#E87B35;">SC</div>
-                    <div class="slack-msg__body">
-                      <div class="slack-msg__name">Sarah Chen <span>10:32 AM</span></div>
-                      <div class="slack-msg__text">Hey <span class="mention">@alef</span>, we need a redline on the Coca-Cola sales agreement before Thursday. Attached the latest draft.</div>
-                      <div class="slack-msg__file">Acme-CocaCola-SalesAgreement-v3.pdf</div>
-                    </div>
-                  </div>
-                  <div class="slack-msg" data-reel-reveal="1">
-                    <div class="slack-msg__avatar" style="background:var(--alef-green);">A</div>
-                    <div class="slack-msg__body">
-                      <div class="slack-msg__name">Alef <span>10:32 AM</span></div>
-                      <div class="slack-msg__text">Got it! I'll have this reviewed and redlined within 24 hours. Starting analysis now.</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="slack-typing" data-reel-reveal="2">
-                  <div class="slack-typing__dots"><span></span><span></span><span></span></div>
-                  Alef is analyzing...
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- PANEL 2 — AI Investigation -->
-          <div class="reel__panel reel__panel--ai-analysis">
-            <div class="terminal-mock">
-              <div class="terminal-mock__bar">
-                <span class="terminal-mock__dot terminal-mock__dot--red"></span>
-                <span class="terminal-mock__dot terminal-mock__dot--yellow"></span>
-                <span class="terminal-mock__dot terminal-mock__dot--green"></span>
-                <span class="terminal-mock__title">Alef AI: Contract Analysis</span>
-              </div>
-              <div class="terminal-mock__body">
-                <div class="terminal-line" data-reel-reveal="0"><span class="t-dim">$</span> <span class="t-white">Scanning contract...</span></div>
-                <div class="terminal-line" data-reel-reveal="1"><span class="t-green">✓</span> 47 clauses identified</div>
-                <div class="terminal-line" data-reel-reveal="2"><span class="t-green">✓</span> Comparing against client playbook</div>
-                <div class="terminal-line" data-reel-reveal="3"><span class="t-orange">⚠</span> <span class="t-orange">Indemnification:</span> uncapped liability detected</div>
-                <div class="terminal-line" data-reel-reveal="4"><span class="t-orange">⚠</span> <span class="t-orange">Payment terms:</span> Net-90 exceeds standard Net-30</div>
-                <div class="terminal-line" data-reel-reveal="5"><span class="t-green">✓</span> IP assignment clause: standard</div>
-                <div class="terminal-line" data-reel-reveal="6"><span class="t-green">✓</span> Confidentiality: mutual, no issues</div>
-                <div class="terminal-line" data-reel-reveal="7"><span class="t-dim">───</span></div>
-                <div class="terminal-line" data-reel-reveal="8"><span class="t-white">Generating redline markup...</span></div>
-              </div>
-              <div class="terminal-progress">
-                <div class="terminal-progress__fill"></div>
-              </div>
-              <div class="terminal-badge terminal-badge--risk" data-reel-reveal="badge">
-                2 high-risk · 3 medium-risk clauses flagged
-              </div>
-            </div>
-          </div>
-
-          <!-- PANEL 3 — Document with AI Comments -->
-          <div class="reel__panel reel__panel--ai-comments">
-            <div class="doc-mock">
-              <div class="doc-mock__topbar">
-                <div class="doc-mock__title">Acme Corp / Coca-Cola: Sales Agreement</div>
-                <div class="doc-mock__badge doc-mock__badge--ai">✓ AI Review Complete</div>
-              </div>
-              <div class="doc-mock__body">
-                <div class="doc-mock__clause" data-reel-reveal="0" style="position:relative;">
-                  <div class="doc-mock__clause-title">Section 8: Indemnification</div>
-                  <p>The Supplier shall indemnify, defend, and hold harmless the Buyer from any and all claims, damages, losses, and expenses <span class="doc-mock__highlight">without limitation as to amount or scope</span> arising from the Supplier's performance under this Agreement.</p>
-                  <div class="doc-comment doc-comment--ai" data-reel-reveal="comment-0" style="top:-8px;">
-                    <div class="doc-comment__author">🤖 Alef AI</div>
-                    Uncapped indemnification. Recommend: Cap at 2x annual contract value per industry standard.
-                  </div>
-                </div>
-                <div class="doc-mock__clause" data-reel-reveal="1" style="position:relative;">
-                  <div class="doc-mock__clause-title">Section 5: Payment Terms</div>
-                  <p>All invoices shall be payable within <span class="doc-mock__strike">ninety (90) days</span> <span class="doc-mock__insert">forty-five (45) days</span> of receipt of invoice.</p>
-                  <div class="doc-comment doc-comment--ai" data-reel-reveal="comment-1" style="top:-8px;">
-                    <div class="doc-comment__author">🤖 Alef AI</div>
-                    Net-90 exceeds your playbook standard of Net-30. Recommend counter: Net-45 as compromise.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- PANEL 4 — Lawyer Review -->
-          <div class="reel__panel reel__panel--lawyer-review">
-            <div class="doc-mock">
-              <div class="doc-mock__topbar">
-                <div class="doc-mock__title">Acme Corp / Coca-Cola: Sales Agreement</div>
-                <div class="doc-mock__badge doc-mock__badge--lawyer" data-reel-reveal="badge-lawyer">✓ Attorney Approved</div>
-              </div>
-              <div class="doc-mock__body">
-                <div class="doc-mock__clause" data-reel-reveal="0" style="position:relative;">
-                  <div class="doc-mock__clause-title">Section 8: Indemnification</div>
-                  <p>The Supplier shall indemnify, defend, and hold harmless the Buyer from any and all claims, damages, losses, and expenses <span class="doc-mock__highlight">capped at two times (2x) the annual contract value</span>, arising from the Supplier's performance under this Agreement, <span class="doc-mock__insert">excluding claims arising from gross negligence or willful misconduct</span>.</p>
-                  <div class="doc-comment doc-comment--lawyer" data-reel-reveal="comment-0" style="top:-8px;">
-                    <div class="doc-comment__author">Lex Luther, Esq.</div>
-                    Agreed with AI recommendation. Added carve-out for gross negligence. Ready to send.
-                    <div class="approval-buttons" data-reel-reveal="approve-0">
-                      <span class="approval-btn approval-btn--approve">✓</span>
-                      <span class="approval-btn approval-btn--review">◐</span>
-                      <span class="approval-btn approval-btn--reject">✗</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="doc-mock__clause" data-reel-reveal="1" style="position:relative;">
-                  <div class="doc-mock__clause-title">Section 5: Payment Terms</div>
-                  <p>All invoices shall be payable within <span class="doc-mock__insert">forty-five (45) days</span> of receipt of invoice.</p>
-                  <div class="doc-comment doc-comment--lawyer" data-reel-reveal="comment-1" style="top:-8px;">
-                    <div class="doc-comment__author">Lex Luther, Esq.</div>
-                    Agreed. Net-45 is a reasonable compromise. Flag for client review on payment cycle.
-                    <div class="approval-buttons" data-reel-reveal="approve-1">
-                      <span class="approval-btn approval-btn--approve">✓</span>
-                      <span class="approval-btn approval-btn--review">◐</span>
-                      <span class="approval-btn approval-btn--reject">✗</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="lawyer-overlay" data-reel-reveal="lawyer">
-                <div class="lawyer-overlay__avatar">LL</div>
-                <div class="lawyer-overlay__info">
-                  <div class="lawyer-overlay__name">Lex Luther, Esq.</div>
-                  <div class="lawyer-overlay__status">Attorney review complete</div>
-                </div>
-                <div class="lawyer-overlay__stamp" data-reel-reveal="stamp">✓</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- PANEL 5 — Slack Delivery -->
-          <div class="reel__panel reel__panel--slack-delivery">
-            <div class="slack-mock">
-              <div class="slack-mock__sidebar">
-                <div class="slack-mock__workspace">Acme Corp</div>
-                <ul class="slack-mock__channels">
-                  <li># general</li>
-                  <li># sales-team</li>
-                  <li class="active"># legal-requests</li>
-                  <li># engineering</li>
-                </ul>
-              </div>
-              <div class="slack-mock__main">
-                <div class="slack-mock__header"># legal-requests</div>
-                <div class="slack-mock__messages">
-                  <div class="slack-msg" data-reel-reveal="0">
-                    <div class="slack-msg__avatar" style="background:var(--alef-green);">A</div>
-                    <div class="slack-msg__body">
-                      <div class="slack-msg__name">Alef <span>10:47 PM · Next Day</span></div>
-                      <div class="slack-msg__text">Redline complete! Here's your marked-up agreement with 5 recommended changes. 2 high-priority items flagged.</div>
-                      <div class="slack-msg__file">Acme-CocaCola-SalesAgreement-REDLINED.pdf</div>
-                      <div class="slack-reactions">
-                        <span class="slack-reaction" data-reel-reveal="react-0"><span class="slack-reaction__emoji">✅</span><span class="slack-reaction__count">1</span></span>
-                        <span class="slack-reaction" data-reel-reveal="react-1"><span class="slack-reaction__emoji">🚀</span><span class="slack-reaction__count">1</span></span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="slack-msg" data-reel-reveal="1">
-                    <div class="slack-msg__avatar" style="background:#E87B35;">SC</div>
-                    <div class="slack-msg__body">
-                      <div class="slack-msg__name">Sarah Chen <span>10:49 PM</span></div>
-                      <div class="slack-msg__text">This is incredible. 18 hours. Our last firm took 2 weeks. 🎉</div>
-                      <div class="slack-reactions">
-                        <span class="slack-reaction" data-reel-reveal="react-2"><span class="slack-reaction__emoji">🎉</span><span class="slack-reaction__count">3</span></span>
-                        <span class="slack-reaction" data-reel-reveal="react-3"><span class="slack-reaction__emoji">👏</span><span class="slack-reaction__count">2</span></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /.reel__track -->
-
-        <!-- Panel indicator dots -->
-        <div class="reel__dots">
-          <span class="reel__dot active" data-panel="0"></span>
-          <span class="reel__dot" data-panel="1"></span>
-          <span class="reel__dot" data-panel="2"></span>
-          <span class="reel__dot" data-panel="3"></span>
-          <span class="reel__dot" data-panel="4"></span>
-          <a href="#results" class="reel__skip">Skip ↓</a>
-        </div>
-      </div><!-- /.reel__sticky -->
-    </section>
-
 
     <!-- ===== HOW WE FIT YOUR TEAM ===== -->
     <section class="fit" id="fit">
@@ -660,27 +340,6 @@
             <p class="proof__quote">&ldquo;We sent over a sales agreement and had a negotiation-ready redline the next morning &mdash; attorney-signed. Our last firm took two weeks.&rdquo;</p>
             <div class="proof__subline">Sarah Chen, General Counsel</div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SERVICES (Legal practice) ===== -->
-    <section class="services" id="legal">
-      <div class="container">
-        <p class="section-label animate-in">Legal Practice</p>
-        <h2 class="animate-in">From NDAs to DPAs. We cover the deal stack.</h2>
-
-        <div class="services__grid">
-          <div class="services__item animate-in delay-1"><i data-lucide="lock"></i> NDAs &amp; Confidentiality Agreements<span class="services__tooltip">Protect sensitive information before deals begin.</span></div>
-          <div class="services__item animate-in delay-1"><i data-lucide="file-text"></i> Master Service Agreements (MSAs)<span class="services__tooltip">Set the terms once, execute faster on every future deal.</span></div>
-          <div class="services__item animate-in delay-2"><i data-lucide="cloud"></i> SaaS / Subscription Agreements<span class="services__tooltip">Lock in licensing, usage rights, and renewal terms upfront.</span></div>
-          <div class="services__item animate-in delay-2"><i data-lucide="package"></i> Vendor &amp; Supplier Contracts<span class="services__tooltip">Control costs, delivery terms, and liability before you commit.</span></div>
-          <div class="services__item animate-in delay-1"><i data-lucide="briefcase"></i> Customer Contracts<span class="services__tooltip">Close revenue faster with airtight commercial terms.</span></div>
-          <div class="services__item animate-in delay-1"><i data-lucide="shield"></i> Data Processing Agreements (DPAs)<span class="services__tooltip">Stay compliant with GDPR, CCPA, and data privacy regulations.</span></div>
-          <div class="services__item animate-in delay-2"><i data-lucide="heart"></i> Business Associate Agreements (BAAs)<span class="services__tooltip">Required for any deal involving protected health information.</span></div>
-          <div class="services__item animate-in delay-2"><i data-lucide="search"></i> Security Reviews &amp; Questionnaires<span class="services__tooltip">Clear security and compliance gates that block procurement.</span></div>
-          <div class="services__item animate-in delay-1"><i data-lucide="book-open"></i> Terms of Service &amp; Privacy Policies<span class="services__tooltip">Protect your platform and users from day one.</span></div>
-          <div class="services__item animate-in delay-1"><i data-lucide="award"></i> Commercial Licensing Agreements<span class="services__tooltip">Define IP rights, usage scope, and royalties clearly.</span></div>
         </div>
       </div>
     </section>
@@ -825,75 +484,7 @@
         <div class="pricing__panel is-active" data-panel="compliance">
           <p class="pricing__panel-lead">We own your regulatory calendar and prepare every submission &mdash; you keep the judgment and the sign-off. Pricing is scoped to your filings, jurisdictions, and volume. Tell us what you carry and we&rsquo;ll quote it.</p>
 
-          <div class="pricing__detail">
-            <details class="pgroup" open>
-              <summary class="pgroup__summary">Cross-industry <span class="pgroup__count">4 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary>
-              <div class="pitem">
-                <span class="pitem__label">Obligation calendar build (every filing, license &amp; renewal you owe)</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">Ongoing renewal &amp; deadline management</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">Regulator information request (RFI) response</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">Judgment memo (recommended positions to file)</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-            </details>
-
-            <details class="pgroup">
-              <summary class="pgroup__summary">Financial services <span class="pgroup__count">5 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary>
-              <div class="pitem">
-                <span class="pitem__label">Bank Call Report preparation (FFIEC 031 / 041 / 051)</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">Money-transmitter licensing &amp; 50-state renewals (incl. NMLS MSB Call Report)</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">BSA/AML program support (SAR / CTR filings)</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">GCC prudential &amp; AML returns (CBUAE, DFSA, ADGM, SAMA)</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">License application &amp; renewal prep (payments, EMI, lending)</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-            </details>
-
-            <details class="pgroup">
-              <summary class="pgroup__summary">Real estate &amp; development <span class="pgroup__count">5 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary>
-              <div class="pitem">
-                <span class="pitem__label">Developer &amp; project registration (DLD/RERA, ADREC, REGA/Wafi)</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">Escrow / trust account registration &amp; milestone reporting</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">Off-plan registration (Oqood) &amp; marketing permits (Trakheesi)</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">Broker-card &amp; contractor-license renewals</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-              <div class="pitem">
-                <span class="pitem__label">US contractor &amp; subcontractor license maintenance</span>
-                <span class="pitem__price pitem__price--blank">&mdash;</span>
-              </div>
-            </details>
-          </div>
+          <div class="pricing__detail"><details class="pgroup" open><summary class="pgroup__summary">Cross-industry <span class="pgroup__count">4 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary><div class="pitem"><span class="pitem__label">Obligation calendar build<span class="pitem__sub">One-time</span></span><span class="pitem__price">from $2,500</span></div><div class="pitem"><span class="pitem__label">Ongoing renewal &amp; deadline management<span class="pitem__sub">Monthly</span></span><span class="pitem__price">from $1,500/mo</span></div><div class="pitem"><span class="pitem__label">Regulator information request (RFI) response<span class="pitem__sub">Per request</span></span><span class="pitem__price">from $3,500</span></div><div class="pitem"><span class="pitem__label">Judgment memo (recommended positions to file)<span class="pitem__sub">Per memo</span></span><span class="pitem__price">from $2,500</span></div></details><details class="pgroup"><summary class="pgroup__summary">Financial services <span class="pgroup__count">9 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary><div class="pitem"><span class="pitem__label">Bank Call Report prep (FFIEC 031/041/051)<span class="pitem__sub">Per quarter</span></span><span class="pitem__price">$6,000</span></div><div class="pitem"><span class="pitem__label">Money transmitter license application<span class="pitem__sub">Per state</span></span><span class="pitem__price">$8,000</span></div><div class="pitem"><span class="pitem__label">Money transmitter license renewal<span class="pitem__sub">Per state / yr</span></span><span class="pitem__price">$1,500</span></div><div class="pitem"><span class="pitem__label">NMLS MSB Call Report<span class="pitem__sub">Per quarter</span></span><span class="pitem__price">$3,000</span></div><div class="pitem"><span class="pitem__label">SAR filing (CTR bundled)<span class="pitem__sub">Per filing</span></span><span class="pitem__price">$1,200</span></div><div class="pitem"><span class="pitem__label">HMDA LAR preparation<span class="pitem__sub">Annual</span></span><span class="pitem__price">$5,000</span></div><div class="pitem"><span class="pitem__label">BSA/AML program setup<span class="pitem__sub">One-time</span></span><span class="pitem__price">from $25,000</span></div><div class="pitem"><span class="pitem__label">GCC / EU prudential or AML return prep<span class="pitem__sub">Per return</span></span><span class="pitem__price">from $12,000</span></div><div class="pitem"><span class="pitem__label">Payments / EMI license application<span class="pitem__sub">Scoped</span></span><span class="pitem__price">quote</span></div></details><details class="pgroup"><summary class="pgroup__summary">Real estate &amp; development <span class="pgroup__count">4 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary><div class="pitem"><span class="pitem__label">Developer &amp; project registration (DLD-RERA / ADREC / Wafi-Etnam)<span class="pitem__sub">Per project</span></span><span class="pitem__price">from $5,000</span></div><div class="pitem"><span class="pitem__label">Escrow account registration support<span class="pitem__sub">Per project</span></span><span class="pitem__price">from $3,000</span></div><div class="pitem"><span class="pitem__label">Off-plan (Oqood) + marketing permit (Trakheesi)<span class="pitem__sub">Per filing</span></span><span class="pitem__price">from $1,500</span></div><div class="pitem"><span class="pitem__label">Broker-card / contractor-license renewal<span class="pitem__sub">Per license</span></span><span class="pitem__price">from $900</span></div></details></div>
         </div>
 
         <div class="pricing__cta animate-in">
@@ -946,8 +537,8 @@
         </div>
       </div>
     </section>
-
   </main>
+
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer" role="contentinfo">
@@ -961,10 +552,10 @@
         </div>
 
         <nav class="footer__links" aria-label="Footer navigation">
-          <a href="#compliance">Compliance</a>
-          <a href="#legal">Legal</a>
-          <a href="#process">How It Works</a>
-          <a href="#pricing">Pricing</a>
+          <a href="compliance.html">Compliance</a>
+          <a href="legal.html">Legal</a>
+          <a href="index.html#process">How It Works</a>
+          <a href="index.html#pricing">Pricing</a>
           <a href="the-brief.html">The Brief</a>
           <a href="mailto:legal@alefcompute.com">Contact</a>
         </nav>

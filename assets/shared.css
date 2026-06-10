@@ -1824,26 +1824,17 @@
     }
     .clients__reel {
       overflow: hidden;
-      mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
-      -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, black 16%, black 84%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 16%, black 84%, transparent);
     }
     .clients__track {
       display: flex;
       align-items: center;
-      gap: 64px;
+      gap: 84px;
       animation: logo-scroll 40s linear infinite;
       width: max-content;
     }
-    .clients__logo {
-      height: 34px;
-      max-width: 170px;
-      width: auto;
-      object-fit: contain;
-      flex-shrink: 0;
-      opacity: 0.62;
-      filter: grayscale(100%);
-      transition: opacity 0.3s, filter 0.3s;
-    }
+    .clients__logo { height: 26px; max-width: 116px; width: auto; object-fit: contain; flex-shrink: 0; opacity: 0.6; filter: grayscale(100%); transition: opacity 0.3s, filter 0.3s; }
     .clients__logo:hover { opacity: 1; filter: grayscale(0%); }
 
     /* ===== INDUSTRIES / REGULATORY ===== */
@@ -2574,3 +2565,35 @@
       .practices__grid, .ddomain__regions, .fit__grid, .whofor__grid, .gs-checks { grid-template-columns: 1fr; }
       .deepdive__hook { flex-direction: column; align-items: flex-start; gap: 14px; padding: 26px; }
     }
+
+
+/* ===== SUB-PAGE HERO ===== */
+.page-hero { background: var(--alef-charcoal); color: var(--alef-white); padding: 150px 0 72px; text-align: center; }
+.page-hero__eyebrow { font-family: var(--font-mono); letter-spacing: 2px; text-transform: uppercase; font-size: 12px; color: var(--alef-orange); margin-bottom: 16px; }
+.page-hero h1 { color: var(--alef-white); font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 18px; letter-spacing: -0.5px; }
+.page-hero p { color: rgba(255,255,255,0.72); max-width: 660px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6; }
+.page-hero__actions { margin-top: 30px; }
+
+/* ===== COUNTRY COVERAGE ===== */
+.coverage { padding: var(--section-py) 0; background: var(--alef-light); }
+.coverage__head { max-width: 740px; margin-bottom: 44px; }
+.coverage__head h2 { margin-bottom: 14px; }
+.coverage__head p { color: var(--alef-slate); font-size: 1.05rem; line-height: 1.6; }
+.country { margin-bottom: 28px; border: 1px solid var(--alef-mist); border-radius: 18px; overflow: hidden; background: var(--alef-white); }
+.country__head { display: flex; align-items: center; gap: 14px; padding: 20px 28px; background: var(--alef-mist); }
+.country__flag { font-size: 28px; line-height: 1; }
+.country__head h3 { font-size: 1.4rem; color: var(--alef-charcoal); }
+.country__sub { font-family: var(--font-mono); font-size: 11px; color: var(--alef-teal); letter-spacing: 0.5px; margin-top: 3px; }
+.cov-group { padding: 18px 28px 8px; }
+.cov-group__label { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.cov-group__label svg { width: 16px; height: 16px; }
+.cov-group__label--fs { color: var(--alef-teal); }
+.cov-group__label--re { color: var(--alef-orange); }
+.cov-group__scroll { overflow-x: auto; }
+.cov-table { width: 100%; min-width: 580px; border-collapse: collapse; font-size: 0.9rem; }
+.cov-table th { text-align: left; font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--alef-slate); padding: 8px 14px; border-bottom: 2px solid var(--alef-mist); white-space: nowrap; }
+.cov-table td { padding: 11px 14px; border-bottom: 1px solid var(--alef-mist); color: var(--alef-charcoal); vertical-align: top; }
+.cov-table td:first-child { font-weight: 600; }
+.cov-table tr:last-child td { border-bottom: none; }
+.cov-note-inline { color: var(--alef-slate); line-height: 1.6; font-size: 0.95rem; padding-bottom: 6px; }
+.coverage__note { font-size: 0.85rem; color: var(--alef-slate); margin-top: 22px; font-style: italic; }

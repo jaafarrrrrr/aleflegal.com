@@ -370,3 +370,52 @@ filings, real portals, real cadences) is the credibility proof Norm gets from fu
 (CTA/BOI exemption, §1071, SAR FAQs); verify GCC cadence numbers vs live rulebooks; KSA Etnam/Wafi renewal
 cadence + Nevada NSCB unconfirmed. Don't publish a specific number we can't stand behind — prefer "quarterly,"
 "annual," "per-project escrow" framings where the exact figure is uncertain.
+
+---
+
+# APPENDIX (multi-page build) — verified country filings, pricing benchmarks, hero fact-check
+Compiled 2026-06-10. Cadences indicative; several regimes mid-transition (UAE CBUAE Law 6/2025; Dubai Law 7/2025
+→ Jan 2026; EU AMLA 2027; DORA Jan 2025; KSA Etnam/Wafi renewal soft). Verify vs live rulebooks before filing.
+
+## Hero fact-check (verdict: "ERP, CRM and finance systems" = MISLEADING for FIs)
+Real filing-data sources = core banking systems, **general ledger**, transaction-monitoring, risk warehouses,
+regulatory-reporting platforms (AxiomSL, OneSumX, Regnology), and **spreadsheets**. CRM only relevant to KYC.
+Chosen hero wording: "your finance systems, ledgers, and spreadsheets". Sources: Wolters Kluwer OneSumX,
+Nasdaq AxiomSL, PwC reg-reporting, OvalEdge data-lineage, FFIEC BSA/AML.
+
+## EU / Eurozone filings (FS)
+COREP quarterly (~42d) · FINREP quarterly (~42d) · LCR/NSFR monthly · AnaCredit monthly/quarterly (~6 bd) ·
+MiFIR T+1 · EMIR T+1 · AML STR event-driven (EU AMLA Frankfurt from 10 Jul 2027) · DORA ICT incident 4h/72h/1mo
+(in force 17 Jan 2025) · PSD2 fraud semi-annual · AIFMD Annex IV qtrly/semi/annual (30d). Sources: EBA, ECB
+(AnaCredit), ESMA (MiFIR/EMIR), amla.europa.eu, regulation-dora.eu.
+
+## UAE filings — FS
+CBUAE IRR monthly(7–15wd)/quarterly/half-yearly(31 Jul,31 Jan)/annual(31 Jan); ELAR/LCR; goAML STR (no delay);
+RPSCS & SVF periodic + annual renewal; DFSA EPRS quarterly(+1mo)/annual(+4mo) + **Annual AML Return 30 Sep**;
+FSRA EPRS + FSRA Connect; VARA monthly–annual + annual licence renewal; UBO (15d); FATCA/CRS (30 Jun);
+Corporate Tax 9% (within 9 mo of FY-end); insurance/Takaful prudential returns; ADGM annual accounts (9 mo).
+## UAE filings — RE
+DLD developer+project registration; escrow (Law 8/2007) + quarterly milestone / annual audit (by 31 Mar);
+Oqood; Trakheesi (per campaign); RERA broker card (annual); Mollak service-charge (annual); Ejari/Tawtheeq
+tenancy registration; ADREC developer/project/escrow + Madhmoun EOI; AD broker BLN (annual + course); Dubai
+Municipality contractor classification (Law 7/2025, annual, in force 8 Jan 2026). Sources: CBUAE/DFSA/FSRA
+rulebooks, vara.ae, DLD Law 8/2007, Kennedys/DLA Piper/Al Tamimi (Law 7/2025), ADREC, MoF FATCA/CRS, FTA.
+
+## KSA filings — FS
+SAMA audited annual FS (45 bd); quarterly financial reports (30 wd); prudential data models quarterly(25 bd)/
+annual(60 bd, Excel); PSP quarterly(1 mo)/annual(2 mo); SAFIU STR (goAML, no delay); CMA quarterly/half-yearly
++ material disclosure (without delay); ZATCA Zakat+FATCA/CRS (120 d); UBO (annual + 15d). 
+## KSA filings — RE
+REGA Etnam developer registration (annual confirmation); Wafi off-plan sales + marketing licence (180d,
+renewable); escrow + milestone certification (engineer-certified); Baladi/MoMRA commercial licence (annual) +
+contractor classification; ZATCA. Gaps: Etnam/Wafi exact renewal cadence soft. Sources: SAMA Rulebook, CMA,
+REGA/Wafi, Baladi, ZATCA, Al Tamimi, Clyde & Co (UBO).
+
+## Compliance pricing benchmarks (USD) — basis for the flat menu
+Call Report prep $5–15k/qtr → menu $6k · MTL application $5–20k/state → $8k · MTL renewal $0.5–5k → $1.5k ·
+NMLS MSB Call Report $2–6k → $3k · SAR $1–5k → $1.2k · HMDA $3–10k → $5k · BSA/AML setup $25–100k → from $25k ·
+fractional CCO $4–12k/mo → from $6k · GCC/EU prudential or AML return $5–30k → from $12k · EMI license app
+$100–200k (scoped/quote) · Dubai RERA project reg ~$2–8k → from $5k · Oqood/Trakheesi → from $1.5k · broker/
+contractor renewal $100–900 → from $900. Sources: Brico/Remitso/Hodder (MTL), NMLS, FinCEN AML cost survey,
+Luthor/Bercla (fractional CCO), PayCompliance (GCC), MORS/DataTracks (COREP/FINREP), DLD/ADREC fee pages.
+Note: prices are "from"/indicative; scope to volume & jurisdiction; regulator/government fees billed at cost.

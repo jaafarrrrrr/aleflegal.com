@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compliance — Regulatory Filing &amp; License Management | Alef</title>
+  <meta name="description" content="Alef extends your legal team's capacity. Contract review, drafting, and regulatory filing prep for regulated companies. Every deliverable signed off by a licensed attorney.">
+  <meta property="og:title" content="Alef | Legal and Regulatory, Handled">
+  <meta property="og:description" content="We extend your legal team's capacity. Contract review, drafting, and regulatory filing prep for fintech, real estate, and health-tech. Every deliverable signed off by a licensed attorney.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alef.legal">
+  <meta property="og:image" content="https://alef.legal/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alef | Legal and Regulatory, Handled">
+  <meta name="twitter:description" content="We extend your legal team's capacity. Contract review, drafting, and regulatory filing prep for fintech, real estate, and health-tech. Every deliverable signed off by a licensed attorney.">
+  <meta name="twitter:image" content="https://alef.legal/images/og-image.png">
+
+  <!-- Favicon (Alef icon mark - orange) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 328 328'%3E%3Cpath fill='%23CA4C28' d='M108.41,42.96l62.51,62.3c1.08,1.07,1.69,2.53,1.69,4.06h0c.01,3.19-2.57,5.78-5.76,5.78h-61.46c-3.18,0-5.76,2.58-5.76,5.76v43.93c0,3.18,2.58,5.76,5.76,5.76h81.32c3.18,0,5.76-2.58,5.76-5.76V47.85c0-3.18,2.58-5.76,5.76-5.76h82.51c3.18,0,5.76,2.58,5.76,5.76v210.05c0,5.13-6.2,7.7-9.83,4.07l-28.56-28.56c-1.08-1.08-2.54-1.69-4.07-1.69h-10.9c-3.18,0-5.76,2.58-5.76,5.76v43.65c0,3.18-2.58,5.76-5.76,5.76h-68.28c-1.53,0-2.99-.61-4.07-1.69L43.36,179.17c-1.08-1.08-1.68-2.54-1.68-4.07V82.72c0-1.61.67-3.15,1.86-4.24l38.75-35.68c1.06-.98,2.46-1.52,3.9-1.52h18.16c1.52,0,2.99.6,4.06,1.68Z'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="assets/shared.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Alef - Home" data-home>
+        <img class="logo-dark" src="brand/alef-horizontal-rust.svg" alt="Alef" width="784" height="192">
+        <img class="logo-light" src="brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
+      </a>
+
+      <nav class="header__nav" aria-label="Main navigation">
+        <div class="nav-item"><a href="compliance.html">Compliance</a></div>
+        <div class="nav-item"><a href="legal.html">Legal</a></div>
+        <div class="nav-item"><a href="index.html#process">How it works</a></div>
+        <div class="nav-item nav-item--dropdown">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Resources <i data-lucide="chevron-down" class="nav-item__caret"></i></button>
+          <div class="nav-dropdown" role="menu">
+            <a href="index.html#pricing" role="menuitem">
+              <span class="nav-dropdown__title">Pricing</span>
+              <span class="nav-dropdown__desc">Outcome-based rates for legal and compliance work</span>
+            </a>
+            <a href="the-brief.html" role="menuitem">
+              <span class="nav-dropdown__title">The Brief</span>
+              <span class="nav-dropdown__desc">Notes and opinions on legal and regulatory shifts</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header__cta">
+        <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get started</a>
+      </div>
+
+      <button class="header__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="compliance.html">Compliance</a>
+    <a href="legal.html">Legal</a>
+    <a href="index.html#process">How it works</a>
+    <div class="mobile-nav__group">
+      <span class="mobile-nav__group-label">Resources</span>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="the-brief.html">The Brief</a>
+    </div>
+    <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get started</a>
+  </div>
+
+  <main>
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__eyebrow">Compliance</p>
+        <h1>Regulatory filing &amp; license management.</h1>
+        <p>We become the operational owner of your regulatory calendar &mdash; pulling data from your systems, preparing every submission, and managing every renewal across the US and the GCC. You keep the judgment and the sign-off.</p>
+        <div class="page-hero__actions"><a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get started</a></div>
+      </div>
+    </section>
+
+    <!-- ===== COMPLIANCE DEEP-DIVE ===== -->
+    <section class="deepdive" id="compliance">
+      <div class="container">
+        <div class="deepdive__head animate-in">
+          <p class="section-label">Compliance, in depth</p>
+          <h2>We know the filings because we file them.</h2>
+          <p>Two industries. Two regions. The same promise: we pull the data from your systems, prepare every submission, and an attorney signs off before it goes out. Here is the work we own.</p>
+        </div>
+
+        <div class="deepdive__matrix">
+          <div class="ddomain animate-in">
+            <div class="ddomain__head">
+              <span class="ddomain__icon"><i data-lucide="landmark"></i></span>
+              <h3>Financial Services</h3>
+            </div>
+            <div class="ddomain__regions">
+              <div class="dd-region">
+                <p class="dd-region__label">United States</p>
+                <p>Quarterly <strong>Call Reports</strong>. <strong>Money transmitter licenses</strong> across all 50 states &mdash; plus the quarterly NMLS MSB Call Report and annual renewals. <strong>SAR</strong> and <strong>CTR</strong> filings on FinCEN&rsquo;s clock. <strong>HMDA</strong> every March. We track them, prepare them, and keep the bonds and net-worth tests current.</p>
+              </div>
+              <div class="dd-region">
+                <p class="dd-region__label">GCC</p>
+                <p><strong>CBUAE</strong> prudential returns and <strong>goAML</strong> reporting in the UAE. The <strong>DFSA Annual AML Return</strong> in the DIFC. <strong>ADGM</strong> prudential filings through EPRS. <strong>SAMA</strong> and <strong>CMA</strong> reporting in Saudi Arabia. Four regulators, five systems &mdash; one team that knows each one.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="ddomain animate-in">
+            <div class="ddomain__head">
+              <span class="ddomain__icon"><i data-lucide="building-2"></i></span>
+              <h3>Real Estate &amp; Development</h3>
+            </div>
+            <div class="ddomain__regions">
+              <div class="dd-region">
+                <p class="dd-region__label">GCC</p>
+                <p>In Dubai: <strong>developer registration, project and escrow registration, Oqood, Trakheesi</strong> permits, and <strong>annual broker cards</strong> through DLD and RERA. In Abu Dhabi: <strong>ADREC</strong> licensing and escrow. In Saudi Arabia: <strong>Wafi</strong> off-plan licensing and <strong>Etnam</strong> developer registration.</p>
+              </div>
+              <div class="dd-region">
+                <p class="dd-region__label">United States</p>
+                <p><strong>State contractor licensing</strong> and renewals, <strong>subdivision and master-plan</strong> approvals, and the <strong>trade licenses every subcontractor</strong> must hold and maintain &mdash; tracked across boards and municipalities.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="deepdive__hook animate-in">
+          <i data-lucide="layers"></i>
+          <p><strong>One project can carry dozens of licenses &mdash; across subcontractors you don&rsquo;t directly control.</strong> We keep every one current, and tell you what&rsquo;s coming due before it&rsquo;s due.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COUNTRY COVERAGE ===== -->
+    <section class="coverage" id="coverage">
+      <div class="container">
+        <div class="coverage__head animate-in">
+          <p class="section-label">What we cover</p>
+          <h2>The filings we manage, country by country.</h2>
+          <p>Financial services and real estate, across four jurisdictions. We track each obligation, prepare every submission, and an attorney signs off &mdash; you keep the judgment.</p>
+        </div>
+        <div class="country"><div class="country__head"><span class="country__flag">&#127482;&#127480;</span><div><h3>United States</h3><div class="country__sub">Federal &amp; 50-state</div></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--fs"><i data-lucide="landmark"></i> Financial Services</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Bank Call Report (FFIEC 031/041/051)</td><td>FFIEC &mdash; FDIC/OCC/Fed</td><td>Quarterly</td><td>&le; 30 days after quarter-end</td></tr><tr><td>Money Transmitter License renewal</td><td>NMLS / state regulators</td><td>Annual</td><td>Nov&ndash;Dec renewal window</td></tr><tr><td>NMLS MSB Call Report</td><td>NMLS / state regulators</td><td>Quarterly</td><td>45 days (Q4 by Mar 31)</td></tr><tr><td>Suspicious Activity Report (SAR)</td><td>FinCEN</td><td>Event-driven</td><td>30 days from detection</td></tr><tr><td>Currency Transaction Report (CTR)</td><td>FinCEN</td><td>Per transaction</td><td>15 days (cash &gt; $10k)</td></tr><tr><td>HMDA Loan/Application Register</td><td>CFPB</td><td>Annual</td><td>March 1</td></tr><tr><td>FinCEN MSB registration</td><td>FinCEN</td><td>Every 2 years</td><td>Dec 31 of renewal year</td></tr><tr><td>OFAC Annual Report of Blocked Property</td><td>OFAC</td><td>Annual</td><td>September 30</td></tr></tbody></table></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--re"><i data-lucide="building-2"></i> Real Estate &amp; Development</div><p class="cov-note-inline">US real-estate licensing is state- and municipality-specific &mdash; contractor boards (e.g. California CSLB, Florida DBPR), subdivision/plat approvals, and separate trade licenses for every subcontractor, each on its own renewal and continuing-education cycle. We track them per project and jurisdiction.</p></div></div><div class="country"><div class="country__head"><span class="country__flag">&#127462;&#127466;</span><div><h3>United Arab Emirates</h3><div class="country__sub">CBUAE &middot; DIFC/DFSA &middot; ADGM/FSRA &middot; VARA</div></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--fs"><i data-lucide="landmark"></i> Financial Services</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Integrated Regulatory Reporting (IRR)</td><td>CBUAE</td><td>Monthly / Qtrly / H-Y / Annual</td><td>7&ndash;15 working days; 31 Jul &amp; 31 Jan</td></tr><tr><td>ELAR / LCR liquidity returns</td><td>CBUAE</td><td>Monthly</td><td>Per CBUAE guidance</td></tr><tr><td>goAML Suspicious Transaction Report</td><td>UAE FIU</td><td>Event-driven</td><td>Without delay</td></tr><tr><td>DFSA Annual AML Return</td><td>DFSA (DIFC)</td><td>Annual</td><td>30 September</td></tr><tr><td>DFSA prudential returns (EPRS)</td><td>DFSA (DIFC)</td><td>Quarterly / Annual</td><td>+1 month / +4 months</td></tr><tr><td>ADGM prudential (EPRS) + FSRA Connect</td><td>FSRA (ADGM)</td><td>Monthly&ndash;Qtrly / Annual</td><td>Per prudential category</td></tr><tr><td>VARA reporting + licence renewal</td><td>VARA (Dubai)</td><td>Monthly&ndash;Annual</td><td>Annual licence renewal</td></tr><tr><td>FATCA / CRS return</td><td>Ministry of Finance</td><td>Annual</td><td>30 June</td></tr><tr><td>Corporate Tax return (9%)</td><td>Federal Tax Authority</td><td>Annual</td><td>Within 9 months of FY-end</td></tr><tr><td>Ultimate Beneficial Owner register</td><td>Relevant registrar</td><td>On change</td><td>Within 15 days</td></tr></tbody></table></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--re"><i data-lucide="building-2"></i> Real Estate &amp; Development</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Developer &amp; project registration</td><td>Dubai DLD / RERA</td><td>Per project + maintain</td><td>Before off-plan sales</td></tr><tr><td>Escrow account + milestone audit</td><td>DLD / RERA (Law 8/2007)</td><td>Per project + qtrly/annual</td><td>Annual audit by Mar 31</td></tr><tr><td>Oqood off-plan registration</td><td>Dubai DLD</td><td>Per unit</td><td>At point of sale</td></tr><tr><td>Trakheesi marketing permit</td><td>DLD / RERA</td><td>Per campaign</td><td>Before advertising</td></tr><tr><td>RERA broker card</td><td>DLD / RERA</td><td>Annual</td><td>Renew before expiry</td></tr><tr><td>Mollak service-charge filing</td><td>DLD / RERA</td><td>Annual</td><td>Before levying charges</td></tr><tr><td>ADREC developer/project/escrow + Madhmoun</td><td>ADREC (Abu Dhabi)</td><td>Per project</td><td>Before off-plan sales</td></tr><tr><td>Abu Dhabi broker licence (BLN)</td><td>DMT / ADREC</td><td>Annual</td><td>+ renewal course</td></tr><tr><td>Contractor classification (Law 7/2025)</td><td>Dubai Municipality</td><td>Annual</td><td>In force from Jan 2026</td></tr></tbody></table></div></div></div><div class="country"><div class="country__head"><span class="country__flag">&#127480;&#127462;</span><div><h3>Saudi Arabia</h3><div class="country__sub">SAMA &middot; CMA &middot; REGA</div></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--fs"><i data-lucide="landmark"></i> Financial Services</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Audited annual financial statements</td><td>SAMA</td><td>Annual</td><td>Within 45 business days of year-end</td></tr><tr><td>Quarterly financial reports</td><td>SAMA</td><td>Quarterly</td><td>Within 30 working days</td></tr><tr><td>Prudential data models (Excel)</td><td>SAMA</td><td>Quarterly / Annual</td><td>25 bd / 60 bd</td></tr><tr><td>PSP financial reporting</td><td>SAMA</td><td>Quarterly / Annual</td><td>1 month / 2 months</td></tr><tr><td>Suspicious Transaction Report</td><td>SAFIU (goAML)</td><td>Event-driven</td><td>Without delay</td></tr><tr><td>CMA periodic reporting + disclosure</td><td>CMA</td><td>Quarterly / event</td><td>30 days; material: without delay</td></tr><tr><td>Zakat &amp; tax + FATCA/CRS</td><td>ZATCA</td><td>Annual</td><td>Within 120 days of year-end</td></tr><tr><td>Ultimate Beneficial Owner register</td><td>Ministry of Commerce</td><td>Annual + on change</td><td>Within 15 days of change</td></tr></tbody></table></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--re"><i data-lucide="building-2"></i> Real Estate &amp; Development</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Developer registration (Etnam)</td><td>REGA</td><td>Initial + annual confirmation</td><td>Maintain to sell off-plan</td></tr><tr><td>Wafi off-plan sales &amp; marketing licence</td><td>REGA</td><td>Per project (marketing 180 days)</td><td>Renewable</td></tr><tr><td>Escrow account + milestone certification</td><td>REGA + trustee bank</td><td>Quarterly / per milestone</td><td>Engineer-certified</td></tr><tr><td>Commercial licence (developer/contractor)</td><td>Baladi (MoMRA)</td><td>Annual</td><td>Before anniversary</td></tr><tr><td>Contractor classification</td><td>MoMRA</td><td>Periodic</td><td>Required for tenders</td></tr><tr><td>Zakat &amp; tax (RE firms)</td><td>ZATCA</td><td>Annual</td><td>Within 120 days</td></tr></tbody></table></div></div></div><div class="country"><div class="country__head"><span class="country__flag">&#127466;&#127482;</span><div><h3>Eurozone / EU</h3><div class="country__sub">ECB &middot; EBA &middot; ESMA &middot; national regulators</div></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--fs"><i data-lucide="landmark"></i> Financial Services</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>COREP (capital, large exposures, leverage)</td><td>ECB / NCAs (EBA framework)</td><td>Quarterly</td><td>~42 days after quarter-end</td></tr><tr><td>FINREP (financial reporting)</td><td>ECB / NCAs</td><td>Quarterly</td><td>~42 days after quarter-end</td></tr><tr><td>LCR / NSFR liquidity</td><td>ECB / NCAs</td><td>Monthly</td><td>Month-end</td></tr><tr><td>AnaCredit granular credit data</td><td>ECB / national central banks</td><td>Monthly / Quarterly</td><td>~6th business day after month-end</td></tr><tr><td>MiFIR transaction reporting</td><td>NCA via ARM</td><td>Per transaction</td><td>T+1</td></tr><tr><td>EMIR derivatives reporting</td><td>Trade repositories</td><td>Per transaction</td><td>T+1</td></tr><tr><td>AML Suspicious Transaction Report</td><td>National FIU (EU AMLA from 2027)</td><td>Event-driven</td><td>Promptly</td></tr><tr><td>DORA ICT incident reporting</td><td>National competent authority</td><td>Per incident</td><td>4h / 72h / 1 month</td></tr><tr><td>PSD2 fraud reporting</td><td>National competent authority</td><td>Semi-annual</td><td>Per EBA schedule</td></tr><tr><td>AIFMD Annex IV (fund managers)</td><td>National competent authority</td><td>Qtrly / Semi / Annual</td><td>30 days after period</td></tr></tbody></table></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--re"><i data-lucide="building-2"></i> Real Estate &amp; Development</div><p class="cov-note-inline">EU real-estate development licensing is national and municipal &mdash; building permits, developer registration, and off-plan/escrow rules vary by member state. Covered on a per-jurisdiction basis.</p></div></div>
+        <p class="coverage__note animate-in">Indicative cadences as of 2026; several regimes are mid-transition (UAE CBUAE Law 6/2025, Dubai Law 7/2025, EU AMLA 2027, DORA). We confirm every deadline against the live rulebook before filing.</p>
+      </div>
+    </section>
+
+    <!-- ===== COMPLIANCE PRICING ===== -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <p class="section-label animate-in">Pricing</p>
+        <h2 class="animate-in">Compliance pricing.</h2>
+        <p class="pricing__intro animate-in">Flat per-filing pricing, like the rest of Alef. Prices scope to volume and jurisdiction; regulator and government fees are billed at cost. Every deliverable signed off by a licensed attorney.</p>
+        <div class="pricing__detail"><details class="pgroup" open><summary class="pgroup__summary">Cross-industry <span class="pgroup__count">4 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary><div class="pitem"><span class="pitem__label">Obligation calendar build<span class="pitem__sub">One-time</span></span><span class="pitem__price">from $2,500</span></div><div class="pitem"><span class="pitem__label">Ongoing renewal &amp; deadline management<span class="pitem__sub">Monthly</span></span><span class="pitem__price">from $1,500/mo</span></div><div class="pitem"><span class="pitem__label">Regulator information request (RFI) response<span class="pitem__sub">Per request</span></span><span class="pitem__price">from $3,500</span></div><div class="pitem"><span class="pitem__label">Judgment memo (recommended positions to file)<span class="pitem__sub">Per memo</span></span><span class="pitem__price">from $2,500</span></div></details><details class="pgroup"><summary class="pgroup__summary">Financial services <span class="pgroup__count">9 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary><div class="pitem"><span class="pitem__label">Bank Call Report prep (FFIEC 031/041/051)<span class="pitem__sub">Per quarter</span></span><span class="pitem__price">$6,000</span></div><div class="pitem"><span class="pitem__label">Money transmitter license application<span class="pitem__sub">Per state</span></span><span class="pitem__price">$8,000</span></div><div class="pitem"><span class="pitem__label">Money transmitter license renewal<span class="pitem__sub">Per state / yr</span></span><span class="pitem__price">$1,500</span></div><div class="pitem"><span class="pitem__label">NMLS MSB Call Report<span class="pitem__sub">Per quarter</span></span><span class="pitem__price">$3,000</span></div><div class="pitem"><span class="pitem__label">SAR filing (CTR bundled)<span class="pitem__sub">Per filing</span></span><span class="pitem__price">$1,200</span></div><div class="pitem"><span class="pitem__label">HMDA LAR preparation<span class="pitem__sub">Annual</span></span><span class="pitem__price">$5,000</span></div><div class="pitem"><span class="pitem__label">BSA/AML program setup<span class="pitem__sub">One-time</span></span><span class="pitem__price">from $25,000</span></div><div class="pitem"><span class="pitem__label">GCC / EU prudential or AML return prep<span class="pitem__sub">Per return</span></span><span class="pitem__price">from $12,000</span></div><div class="pitem"><span class="pitem__label">Payments / EMI license application<span class="pitem__sub">Scoped</span></span><span class="pitem__price">quote</span></div></details><details class="pgroup"><summary class="pgroup__summary">Real estate &amp; development <span class="pgroup__count">4 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary><div class="pitem"><span class="pitem__label">Developer &amp; project registration (DLD-RERA / ADREC / Wafi-Etnam)<span class="pitem__sub">Per project</span></span><span class="pitem__price">from $5,000</span></div><div class="pitem"><span class="pitem__label">Escrow account registration support<span class="pitem__sub">Per project</span></span><span class="pitem__price">from $3,000</span></div><div class="pitem"><span class="pitem__label">Off-plan (Oqood) + marketing permit (Trakheesi)<span class="pitem__sub">Per filing</span></span><span class="pitem__price">from $1,500</span></div><div class="pitem"><span class="pitem__label">Broker-card / contractor-license renewal<span class="pitem__sub">Per license</span></span><span class="pitem__price">from $900</span></div></details></div>
+        <div class="pricing__cta animate-in"><a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get started</a></div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta-final">
+      <div class="container">
+        <h2 class="animate-in">Bring us your next filing &mdash; or your next contract.</h2>
+        <div class="cta-final__actions animate-in">
+          <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-inverted">Get started</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
+          </div>
+          <p class="footer__tagline">We extend your compliance and legal teams. Regulatory filing, license management, and contract work for regulated companies &mdash; signed off by a licensed attorney.</p>
+        </div>
+
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="compliance.html">Compliance</a>
+          <a href="legal.html">Legal</a>
+          <a href="index.html#process">How It Works</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="the-brief.html">The Brief</a>
+          <a href="mailto:legal@alefcompute.com">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Alef Technologies Ltd.</span>
+        <a href="mailto:legal@alefcompute.com">legal@alefcompute.com</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ===== ESTIMATE MODAL ===== -->
+  <div class="estimate-overlay" id="estimateModal" role="dialog" aria-modal="true" aria-label="Get started">
+    <div class="estimate-dialog">
+      <button class="estimate-close" onclick="closeEstimateModal()" aria-label="Close">&times;</button>
+
+      <div id="estimateFormWrap">
+        <h3>Get started</h3>
+        <p class="estimate-sub">Tell us who you are and what you need. We'll be in touch within one business day.</p>
+
+        <form class="estimate-form" onsubmit="submitEstimate(event)">
+          <div class="estimate-field">
+            <label for="est-name">Name</label>
+            <input type="text" id="est-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="estimate-field">
+            <label for="est-role">Role</label>
+            <input type="text" id="est-role" name="role" placeholder="e.g. Head of Compliance, General Counsel" required>
+          </div>
+          <div class="estimate-field">
+            <label for="est-email">Work email</label>
+            <input type="email" id="est-email" name="email" placeholder="you@company.com" required>
+          </div>
+
+          <div class="estimate-field">
+            <p class="gs-group-label">What can we help with?</p>
+            <div class="gs-checks">
+              <label class="gs-check">
+                <input type="checkbox" id="gs-compliance" name="practice" value="compliance">
+                <span class="gs-check__box">
+                  <strong><i data-lucide="shield-check"></i> Compliance</strong>
+                  <span>Regulatory filing &amp; license management</span>
+                </span>
+              </label>
+              <label class="gs-check">
+                <input type="checkbox" id="gs-legal" name="practice" value="legal">
+                <span class="gs-check__box">
+                  <strong><i data-lucide="scale"></i> Legal</strong>
+                  <span>Contracts &amp; fractional GC</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Conditional: Legal -->
+          <div class="gs-conditional" id="gs-legal-fields">
+            <p class="gs-group-label">Roughly how many contracts a month?</p>
+            <div class="gs-pills">
+              <label class="gs-pill"><input type="radio" name="contracts" value="0-5"><span>0&ndash;5</span></label>
+              <label class="gs-pill"><input type="radio" name="contracts" value="6-20"><span>6&ndash;20</span></label>
+              <label class="gs-pill"><input type="radio" name="contracts" value="20-50"><span>20&ndash;50</span></label>
+              <label class="gs-pill"><input type="radio" name="contracts" value="50+"><span>50+</span></label>
+            </div>
+          </div>
+
+          <!-- Conditional: Compliance -->
+          <div class="gs-conditional" id="gs-compliance-fields">
+            <p class="gs-group-label">Which filings do you work on?</p>
+            <div class="gs-options">
+              <label class="gs-opt"><input type="checkbox" name="filings" value="call-reports"> Bank Call Reports</label>
+              <label class="gs-opt"><input type="checkbox" name="filings" value="mtl"> Money transmitter licensing &amp; renewals</label>
+              <label class="gs-opt"><input type="checkbox" name="filings" value="sar-ctr"> SAR / CTR (AML) filings</label>
+              <label class="gs-opt"><input type="checkbox" name="filings" value="hmda"> HMDA</label>
+              <label class="gs-opt"><input type="checkbox" name="filings" value="gcc"> GCC prudential / AML returns (CBUAE, DFSA, ADGM, SAMA)</label>
+              <label class="gs-opt"><input type="checkbox" name="filings" value="re-registration"> Real estate developer / project / escrow registration</label>
+              <label class="gs-opt"><input type="checkbox" name="filings" value="license-maint"> Broker / contractor license maintenance</label>
+              <label class="gs-opt gs-opt--sep"><input type="checkbox" name="filings" value="not-sure"> Not sure</label>
+            </div>
+          </div>
+
+          <button type="submit" class="estimate-submit" id="estimateBtn">Get started</button>
+        </form>
+      </div>
+
+      <div class="estimate-success" id="estimateSuccess">
+        <div class="checkmark">&#10003;</div>
+        <h4>Sent!</h4>
+        <p>We'll be in touch within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
