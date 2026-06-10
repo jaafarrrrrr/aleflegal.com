@@ -2313,6 +2313,9 @@
       max-width: 440px;
       width: 92%;
       position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
       box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
       transform: scale(0.95) translateY(12px);
       transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);

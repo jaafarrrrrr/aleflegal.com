@@ -348,7 +348,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 /* ===== extracted inline scripts ===== */
-// --- EmailJS init (replace placeholders with your keys) ---
+// --- Submission tracking endpoint (Cloudflare Worker -> GitHub issue). See worker/README.md ---
+    // Paste your deployed Worker URL here to store every submission as a GitHub issue.
+    var SUBMISSION_ENDPOINT = '';
+
+    // --- EmailJS init (replace placeholders with your keys) ---
     var EMAILJS_PUBLIC_KEY  = 'YOUR_EMAILJS_PUBLIC_KEY';
     var EMAILJS_SERVICE_ID  = 'YOUR_EMAILJS_SERVICE_ID';
     var EMAILJS_TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID';
@@ -432,38 +436,60 @@ document.addEventListener('DOMContentLoaded', function () {
       var filings = Array.prototype.map.call(
         document.querySelectorAll('input[name="filings"]:checked'), function (i) { return i.value; });
 
+      // Honeypot: if a bot filled the hidden field, pretend success and drop it.
+      var hp = document.getElementById('est-company');
+      if (hp && hp.value) { showSuccess(); return; }
+
       var params = {
         name:      document.getElementById('est-name').value,
         role:      document.getElementById('est-role').value,
         email:     document.getElementById('est-email').value,
         practice:  practices.join(', '),
         contracts: contractsEl ? contractsEl.value : '',
-        filings:   filings.join(', ')
+        filings:   filings.join(', '),
+        company:   '',
+        page:      window.location.pathname
       };
 
-      // If EmailJS is configured, send the email
+      function fail() {
+        btn.disabled = false;
+        btn.textContent = 'Get started';
+        alert('Something went wrong. Please try again or email legal@alefcompute.com.');
+      }
+
+      // 1) Preferred: store every submission in GitHub via the Worker endpoint.
+      if (SUBMISSION_ENDPOINT) {
+        fetch(SUBMISSION_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(params)
+        })
+          .then(function (r) { if (!r.ok) throw new Error('bad status'); return r.text(); })
+          .then(function () { showSuccess(); })
+          .catch(fail);
+        return;
+      }
+
+      // 2) EmailJS, if configured.
       if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY') {
         emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
-          .then(function() { showSuccess(); })
-          .catch(function() {
-            btn.disabled = false;
-            btn.textContent = 'Get started';
-            alert('Something went wrong. Please try again or email legal@alefcompute.com.');
-          });
-      } else {
-        // Fallback: mailto with pre-filled data
-        var subject = encodeURIComponent('Get started request from ' + params.name);
-        var body = encodeURIComponent(
-          'Name: ' + params.name + '\n' +
-          'Role: ' + params.role + '\n' +
-          'Email: ' + params.email + '\n' +
-          'Interested in: ' + params.practice + '\n' +
-          (params.contracts ? 'Contracts/month: ' + params.contracts + '\n' : '') +
-          (params.filings ? 'Filings: ' + params.filings + '\n' : '')
-        );
-        window.location.href = 'mailto:legal@alefcompute.com?subject=' + subject + '&body=' + body;
-        showSuccess();
+          .then(function () { showSuccess(); })
+          .catch(fail);
+        return;
       }
+
+      // 3) Fallback: open the user's mail client with the details pre-filled.
+      var subject = encodeURIComponent('Get started request from ' + params.name);
+      var body = encodeURIComponent(
+        'Name: ' + params.name + '\n' +
+        'Role: ' + params.role + '\n' +
+        'Email: ' + params.email + '\n' +
+        'Interested in: ' + params.practice + '\n' +
+        (params.contracts ? 'Contracts/month: ' + params.contracts + '\n' : '') +
+        (params.filings ? 'Filings: ' + params.filings + '\n' : '')
+      );
+      window.location.href = 'mailto:legal@alefcompute.com?subject=' + subject + '&body=' + body;
+      showSuccess();
     }
 
     function showSuccess() {
