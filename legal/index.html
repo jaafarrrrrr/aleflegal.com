@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Legal — Your Fractional General Counsel | Alef</title>
+  <title>Legal, Your Fractional General Counsel | Alef</title>
   <meta name="description" content="Alef extends your legal team's capacity. Contract review, drafting, and regulatory filing prep for regulated companies. Every deliverable signed off by a licensed attorney.">
   <meta property="og:title" content="Alef | Legal and Regulatory, Handled">
   <meta property="og:description" content="We extend your legal team's capacity. Contract review, drafting, and regulatory filing prep for fintech, real estate, and health-tech. Every deliverable signed off by a licensed attorney.">
@@ -32,7 +32,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <link rel="stylesheet" href="assets/shared.css">
+  <link rel="stylesheet" href="/assets/shared.css">
 </head>
 <body>
 
@@ -40,14 +40,25 @@
   <header class="header" role="banner">
     <div class="header__inner">
       <a href="/" class="header__logo" aria-label="Alef - Home" data-home>
-        <img class="logo-dark" src="brand/alef-horizontal-rust.svg" alt="Alef" width="784" height="192">
-        <img class="logo-light" src="brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
+        <img class="logo-dark" src="/brand/alef-horizontal-rust.svg" alt="Alef" width="784" height="192">
+        <img class="logo-light" src="/brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
       </a>
 
       <nav class="header__nav" aria-label="Main navigation">
-        <div class="nav-item"><a href="compliance.html">Compliance</a></div>
-        <div class="nav-item"><a href="legal.html">Legal</a></div>
         <div class="nav-item"><a href="/#process">How it works</a></div>
+        <div class="nav-item nav-item--dropdown">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Services <i data-lucide="chevron-down" class="nav-item__caret"></i></button>
+          <div class="nav-dropdown" role="menu">
+            <a href="/compliance/" role="menuitem">
+              <span class="nav-dropdown__title">Compliance</span>
+              <span class="nav-dropdown__desc">Regulatory filing &amp; license management</span>
+            </a>
+            <a href="/legal/" role="menuitem">
+              <span class="nav-dropdown__title">Legal</span>
+              <span class="nav-dropdown__desc">Contracts &amp; fractional general counsel</span>
+            </a>
+          </div>
+        </div>
         <div class="nav-item nav-item--dropdown">
           <button type="button" aria-haspopup="true" aria-expanded="false">Resources <i data-lucide="chevron-down" class="nav-item__caret"></i></button>
           <div class="nav-dropdown" role="menu">
@@ -55,7 +66,7 @@
               <span class="nav-dropdown__title">Pricing</span>
               <span class="nav-dropdown__desc">Outcome-based rates for legal and compliance work</span>
             </a>
-            <a href="the-brief.html" role="menuitem">
+            <a href="/the-brief.html" role="menuitem">
               <span class="nav-dropdown__title">The Brief</span>
               <span class="nav-dropdown__desc">Notes and opinions on legal and regulatory shifts</span>
             </a>
@@ -75,13 +86,16 @@
 
   <!-- Mobile nav drawer -->
   <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
-    <a href="compliance.html">Compliance</a>
-    <a href="legal.html">Legal</a>
     <a href="/#process">How it works</a>
+    <div class="mobile-nav__group">
+      <span class="mobile-nav__group-label">Services</span>
+      <a href="/compliance/">Compliance</a>
+      <a href="/legal/">Legal</a>
+    </div>
     <div class="mobile-nav__group">
       <span class="mobile-nav__group-label">Resources</span>
       <a href="/#pricing">Pricing</a>
-      <a href="the-brief.html">The Brief</a>
+      <a href="/the-brief.html">The Brief</a>
     </div>
     <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get started</a>
   </div>
@@ -92,7 +106,7 @@
       <div class="container">
         <p class="page-hero__eyebrow">Legal</p>
         <h1>Your fractional general counsel.</h1>
-        <p>We extend your legal team&rsquo;s capacity &mdash; contract review, drafting, and negotiation, turned around in under 24 hours and signed off by a licensed attorney.</p>
+        <p>We extend your legal team&rsquo;s capacity, contract review, drafting, and negotiation, turned around in under 24 hours and signed off by a licensed attorney.</p>
         <div class="page-hero__actions"><a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get started</a></div>
       </div>
     </section>
@@ -154,7 +168,7 @@
       </div>
     </section>
 
-    <!-- ===== HOW IT WORKS — SCROLL REEL ===== -->
+    <!-- ===== HOW IT WORKS, SCROLL REEL ===== -->
     <section class="reel" id="how">
       <div class="reel__sticky">
         <div class="reel__header">
@@ -164,7 +178,7 @@
 
         <div class="reel__track">
 
-          <!-- PANEL 1 — Slack Request -->
+          <!-- PANEL 1, Slack Request -->
           <div class="reel__panel reel__panel--slack-request">
             <div class="slack-mock">
               <div class="slack-mock__sidebar">
@@ -203,7 +217,7 @@
             </div>
           </div>
 
-          <!-- PANEL 2 — AI Investigation -->
+          <!-- PANEL 2, AI Investigation -->
           <div class="reel__panel reel__panel--ai-analysis">
             <div class="terminal-mock">
               <div class="terminal-mock__bar">
@@ -232,7 +246,7 @@
             </div>
           </div>
 
-          <!-- PANEL 3 — Document with AI Comments -->
+          <!-- PANEL 3, Document with AI Comments -->
           <div class="reel__panel reel__panel--ai-comments">
             <div class="doc-mock">
               <div class="doc-mock__topbar">
@@ -260,7 +274,7 @@
             </div>
           </div>
 
-          <!-- PANEL 4 — Lawyer Review -->
+          <!-- PANEL 4, Lawyer Review -->
           <div class="reel__panel reel__panel--lawyer-review">
             <div class="doc-mock">
               <div class="doc-mock__topbar">
@@ -306,7 +320,7 @@
             </div>
           </div>
 
-          <!-- PANEL 5 — Slack Delivery -->
+          <!-- PANEL 5, Slack Delivery -->
           <div class="reel__panel reel__panel--slack-delivery">
             <div class="slack-mock">
               <div class="slack-mock__sidebar">
@@ -518,7 +532,7 @@
     <!-- ===== FINAL CTA ===== -->
     <section class="cta-final">
       <div class="container">
-        <h2 class="animate-in">Bring us your next filing &mdash; or your next contract.</h2>
+        <h2 class="animate-in">Bring us your next filing, or your next contract.</h2>
         <div class="cta-final__actions animate-in">
           <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-inverted">Get started</a>
         </div>
@@ -533,17 +547,17 @@
       <div class="footer__inner">
         <div>
           <div class="footer__logo">
-            <img src="brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
+            <img src="/brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
           </div>
-          <p class="footer__tagline">We extend your compliance and legal teams. Regulatory filing, license management, and contract work for regulated companies &mdash; signed off by a licensed attorney.</p>
+          <p class="footer__tagline">We extend your compliance and legal teams. Regulatory filing, license management, and contract work for regulated companies, signed off by a licensed attorney.</p>
         </div>
 
         <nav class="footer__links" aria-label="Footer navigation">
-          <a href="compliance.html">Compliance</a>
-          <a href="legal.html">Legal</a>
+          <a href="/compliance/">Compliance</a>
+          <a href="/legal/">Legal</a>
           <a href="/#process">How It Works</a>
           <a href="/#pricing">Pricing</a>
-          <a href="the-brief.html">The Brief</a>
+          <a href="/the-brief.html">The Brief</a>
           <a href="mailto:legal@alefcompute.com">Contact</a>
         </nav>
       </div>
@@ -640,6 +654,6 @@
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <script src="assets/app.js"></script>
+  <script src="/assets/app.js"></script>
 </body>
 </html>

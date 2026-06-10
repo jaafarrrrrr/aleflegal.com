@@ -544,7 +544,7 @@
 
     .paths__card .btn { align-self: flex-start; }
 
-    /* ===== HOW IT WORKS — SCROLL REEL ===== */
+    /* ===== HOW IT WORKS, SCROLL REEL ===== */
     .reel {
       position: relative;
       height: 900vh;
@@ -2194,16 +2194,16 @@
       .hero-br { display: none; }
 
 
-      /* Fix 5: Path cards — reduce padding */
+      /* Fix 5: Path cards, reduce padding */
       .paths__card { padding: 28px 20px; }
 
-      /* Fix 6: Footer links — stack vertically */
+      /* Fix 6: Footer links, stack vertically */
       .footer__links { flex-direction: column; gap: 12px; }
 
-      /* Fix 8: Pricing scenario cards — tighter padding */
+      /* Fix 8: Pricing scenario cards, tighter padding */
       .pricing__scenario { padding: 24px 20px; }
 
-      /* Fix 10: Touch targets — increase mobile nav link size */
+      /* Fix 10: Touch targets, increase mobile nav link size */
       .mobile-nav a { padding: 14px 16px; min-height: 44px; display: flex; align-items: center; }
 
       /* Reel: stack panels vertically on mobile */
@@ -2248,7 +2248,7 @@
 
       .lawyer-overlay { position: relative; bottom: auto; left: auto; right: auto; margin: 16px 20px; }
 
-      /* New elements — visible on mobile */
+      /* New elements, visible on mobile */
       .approval-buttons,
       .approval-buttons.revealed { transform: none; }
       .slack-reaction { opacity: 1; transform: none; }

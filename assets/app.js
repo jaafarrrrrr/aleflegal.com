@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function () {
           // Main horizontal movement
           reelTL.to(reelTrack, { x: -totalScroll, ease: 'none' });
 
-          // Clickable dots — scroll to the corresponding panel
+          // Clickable dots, scroll to the corresponding panel
           var st = reelTL.scrollTrigger;
           dots.forEach(function(dot) {
             dot.addEventListener('click', function() {
@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
           });
 
-          // Skip link — scroll past the reel to Results
+          // Skip link, scroll past the reel to Results
           var skipLink = document.querySelector('.reel__skip');
           if (skipLink) {
             skipLink.addEventListener('click', function(e) {

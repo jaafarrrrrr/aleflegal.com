@@ -32,7 +32,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <link rel="stylesheet" href="assets/shared.css">
+  <link rel="stylesheet" href="/assets/shared.css">
 </head>
 <body>
 
@@ -40,14 +40,25 @@
   <header class="header" role="banner">
     <div class="header__inner">
       <a href="/" class="header__logo" aria-label="Alef - Home" data-home>
-        <img class="logo-dark" src="brand/alef-horizontal-rust.svg" alt="Alef" width="784" height="192">
-        <img class="logo-light" src="brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
+        <img class="logo-dark" src="/brand/alef-horizontal-rust.svg" alt="Alef" width="784" height="192">
+        <img class="logo-light" src="/brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
       </a>
 
       <nav class="header__nav" aria-label="Main navigation">
-        <div class="nav-item"><a href="compliance.html">Compliance</a></div>
-        <div class="nav-item"><a href="legal.html">Legal</a></div>
         <div class="nav-item"><a href="/#process">How it works</a></div>
+        <div class="nav-item nav-item--dropdown">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Services <i data-lucide="chevron-down" class="nav-item__caret"></i></button>
+          <div class="nav-dropdown" role="menu">
+            <a href="/compliance/" role="menuitem">
+              <span class="nav-dropdown__title">Compliance</span>
+              <span class="nav-dropdown__desc">Regulatory filing &amp; license management</span>
+            </a>
+            <a href="/legal/" role="menuitem">
+              <span class="nav-dropdown__title">Legal</span>
+              <span class="nav-dropdown__desc">Contracts &amp; fractional general counsel</span>
+            </a>
+          </div>
+        </div>
         <div class="nav-item nav-item--dropdown">
           <button type="button" aria-haspopup="true" aria-expanded="false">Resources <i data-lucide="chevron-down" class="nav-item__caret"></i></button>
           <div class="nav-dropdown" role="menu">
@@ -55,7 +66,7 @@
               <span class="nav-dropdown__title">Pricing</span>
               <span class="nav-dropdown__desc">Outcome-based rates for legal and compliance work</span>
             </a>
-            <a href="the-brief.html" role="menuitem">
+            <a href="/the-brief.html" role="menuitem">
               <span class="nav-dropdown__title">The Brief</span>
               <span class="nav-dropdown__desc">Notes and opinions on legal and regulatory shifts</span>
             </a>
@@ -75,13 +86,16 @@
 
   <!-- Mobile nav drawer -->
   <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
-    <a href="compliance.html">Compliance</a>
-    <a href="legal.html">Legal</a>
     <a href="/#process">How it works</a>
+    <div class="mobile-nav__group">
+      <span class="mobile-nav__group-label">Services</span>
+      <a href="/compliance/">Compliance</a>
+      <a href="/legal/">Legal</a>
+    </div>
     <div class="mobile-nav__group">
       <span class="mobile-nav__group-label">Resources</span>
       <a href="/#pricing">Pricing</a>
-      <a href="the-brief.html">The Brief</a>
+      <a href="/the-brief.html">The Brief</a>
     </div>
     <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get started</a>
   </div>
@@ -98,7 +112,7 @@
           <span class="hero__line hero__line--accent"><span class="hero__word">is</span> <span class="hero__word">here.</span></span>
         </h1>
 
-        <p class="hero__sub">Alef extends your compliance and legal teams.<br>We pull the data scattered across your finance systems, ledgers, and spreadsheets &mdash;<br>and turn it into filing-ready submissions and attorney-signed contracts.</p>
+        <p class="hero__sub">Alef extends your compliance and legal teams.<br>We pull the data scattered across your finance systems, ledgers, and spreadsheets,<br>and turn it into filing-ready submissions and attorney-signed contracts.</p>
 
         <div class="hero__actions">
           <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary hero__cta">Get started</a>
@@ -114,21 +128,21 @@
       </div>
       <div class="clients__reel">
         <div class="clients__track">
-          <img class="clients__logo" src="logos/clients/alameed.png" alt="Alameed">
-          <img class="clients__logo" src="logos/clients/reform.png" alt="Reform">
-          <img class="clients__logo" src="logos/clients/sisban.png" alt="Sisban Development">
-          <img class="clients__logo" src="logos/clients/port-tanger.svg" alt="Port Tanger">
-          <img class="clients__logo" src="logos/clients/xeed.png" alt="Xeed Agriculture">
-          <img class="clients__logo" src="logos/clients/breez.png" alt="Breez AI">
-          <img class="clients__logo" src="logos/clients/trofi.png" alt="Trofi">
+          <img class="clients__logo" src="/logos/clients/alameed.png" alt="Alameed">
+          <img class="clients__logo" src="/logos/clients/reform.png" alt="Reform">
+          <img class="clients__logo" src="/logos/clients/sisban.png" alt="Sisban Development">
+          <img class="clients__logo" src="/logos/clients/port-tanger.svg" alt="Port Tanger">
+          <img class="clients__logo" src="/logos/clients/xeed.png" alt="Xeed Agriculture">
+          <img class="clients__logo" src="/logos/clients/breez.png" alt="Breez AI">
+          <img class="clients__logo" src="/logos/clients/trofi.png" alt="Trofi">
           <!-- duplicate for seamless loop -->
-          <img class="clients__logo" src="logos/clients/alameed.png" alt="Alameed">
-          <img class="clients__logo" src="logos/clients/reform.png" alt="Reform">
-          <img class="clients__logo" src="logos/clients/sisban.png" alt="Sisban Development">
-          <img class="clients__logo" src="logos/clients/port-tanger.svg" alt="Port Tanger">
-          <img class="clients__logo" src="logos/clients/xeed.png" alt="Xeed Agriculture">
-          <img class="clients__logo" src="logos/clients/breez.png" alt="Breez AI">
-          <img class="clients__logo" src="logos/clients/trofi.png" alt="Trofi">
+          <img class="clients__logo" src="/logos/clients/alameed.png" alt="Alameed">
+          <img class="clients__logo" src="/logos/clients/reform.png" alt="Reform">
+          <img class="clients__logo" src="/logos/clients/sisban.png" alt="Sisban Development">
+          <img class="clients__logo" src="/logos/clients/port-tanger.svg" alt="Port Tanger">
+          <img class="clients__logo" src="/logos/clients/xeed.png" alt="Xeed Agriculture">
+          <img class="clients__logo" src="/logos/clients/breez.png" alt="Breez AI">
+          <img class="clients__logo" src="/logos/clients/trofi.png" alt="Trofi">
         </div>
       </div>
     </section>
@@ -149,7 +163,7 @@
             </div>
             <div class="statband__item">
               <div class="statband__num" data-count-to="100" data-suffix="%">100%</div>
-              <p class="statband__label">attorney-signed &mdash; every filing reviewed by a licensed attorney</p>
+              <p class="statband__label">attorney-signed, every filing reviewed by a licensed attorney</p>
             </div>
           </div>
         </div>
@@ -159,7 +173,7 @@
           <div class="statband__row">
             <div class="statband__item">
               <div class="statband__num" data-count-to="24" data-prefix="&lt;" data-suffix="h">&lt;24h</div>
-              <p class="statband__label">contract turnaround &mdash; reviewed, redlined, and returned</p>
+              <p class="statband__label">contract turnaround, reviewed, redlined, and returned</p>
             </div>
             <div class="statband__item">
               <div class="statband__num" data-count-to="150" data-suffix="+">150+</div>
@@ -180,28 +194,28 @@
         <div class="practices__head">
           <p class="section-label animate-in">What We Do</p>
           <h2 class="animate-in">Two practices. One standard.</h2>
-          <p class="animate-in">Every deliverable is attorney-signed, on time, and built to in-house quality. Compliance leads &mdash; but our legal practice runs to the same bar.</p>
+          <p class="animate-in">Every deliverable is attorney-signed, on time, and built to in-house quality. Compliance leads, but our legal practice runs to the same bar.</p>
         </div>
 
         <div class="practices__grid">
           <div class="practice-card practice-card--compliance animate-in">
             <p class="practice-card__eyebrow"><span class="practice-card__dot"></span>Compliance</p>
             <h3>Regulatory filing &amp; license management</h3>
-            <p class="practice-card__desc">We become the operational owner of your regulatory calendar. Every return, every renewal, every filing &mdash; pulled from your systems, prepared, and ready to submit. Your compliance officer keeps the judgment and the sign-off. We carry the assembly.</p>
+            <p class="practice-card__desc">We become the operational owner of your regulatory calendar. Every return, every renewal, every filing, pulled from your systems, prepared, and ready to submit. Your compliance officer keeps the judgment and the sign-off. We carry the assembly.</p>
             <ul class="practice-card__list">
               <li><i data-lucide="check"></i> Regulatory filings &amp; periodic returns</li>
               <li><i data-lucide="check"></i> License applications, renewals &amp; maintenance</li>
               <li><i data-lucide="check"></i> AML / KYC policy filings</li>
               <li><i data-lucide="check"></i> Regulator information requests (RFIs)</li>
-              <li><i data-lucide="check"></i> The obligation calendar itself &mdash; owned end to end</li>
+              <li><i data-lucide="check"></i> The obligation calendar itself, owned end to end</li>
             </ul>
-            <a href="compliance.html" class="practice-card__cta">See what we file <i data-lucide="arrow-right"></i></a>
+            <a href="/compliance/" class="practice-card__cta">See what we file <i data-lucide="arrow-right"></i></a>
           </div>
 
           <div class="practice-card practice-card--legal animate-in delay-1">
             <p class="practice-card__eyebrow"><span class="practice-card__dot"></span>Legal</p>
             <h3>Your fractional general counsel</h3>
-            <p class="practice-card__desc">We extend your legal team&rsquo;s capacity. Contract review, drafting, and negotiation &mdash; turned around in under 24 hours, implementing your playbook rather than reinventing it. Signed off by a licensed attorney.</p>
+            <p class="practice-card__desc">We extend your legal team&rsquo;s capacity. Contract review, drafting, and negotiation, turned around in under 24 hours, implementing your playbook rather than reinventing it. Signed off by a licensed attorney.</p>
             <ul class="practice-card__list">
               <li><i data-lucide="check"></i> Contract review &amp; redlines</li>
               <li><i data-lucide="check"></i> Drafting (ToS, Privacy, MSA, DPA, BAA)</li>
@@ -209,7 +223,7 @@
               <li><i data-lucide="check"></i> Playbook development</li>
               <li><i data-lucide="check"></i> Research memos &amp; judgment calls</li>
             </ul>
-            <a href="legal.html" class="practice-card__cta">See how we work <i data-lucide="arrow-right"></i></a>
+            <a href="/legal/" class="practice-card__cta">See how we work <i data-lucide="arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -228,7 +242,7 @@
           <div class="industries__step animate-in">
             <div class="industries__step-num">01</div>
             <h4>Map your obligations</h4>
-            <p>We build the full calendar of every filing, license, and renewal you owe &mdash; by jurisdiction and deadline. You see the whole year on one page.</p>
+            <p>We build the full calendar of every filing, license, and renewal you owe, by jurisdiction and deadline. You see the whole year on one page.</p>
           </div>
           <div class="industries__step animate-in delay-1">
             <div class="industries__step-num">02</div>
@@ -238,7 +252,7 @@
           <div class="industries__step animate-in delay-2">
             <div class="industries__step-num">03</div>
             <h4>Prepare the submission</h4>
-            <p>We assemble exactly what the regulator expects &mdash; formatted, complete, and ready to send. For contracts, redlined and ready to sign.</p>
+            <p>We assemble exactly what the regulator expects, formatted, complete, and ready to send. For contracts, redlined and ready to sign.</p>
           </div>
           <div class="industries__step animate-in delay-3">
             <div class="industries__step-num">04</div>
@@ -257,7 +271,7 @@
         <div class="fit__head animate-in">
           <p class="section-label">How We Fit</p>
           <h2>You keep control. We carry the load.</h2>
-          <p>Alef doesn&rsquo;t replace your compliance officer or your GC. We plug in alongside them &mdash; taking the assembly, tracking, and preparation, while every call that matters stays with your team.</p>
+          <p>Alef doesn&rsquo;t replace your compliance officer or your GC. We plug in alongside them, taking the assembly, tracking, and preparation, while every call that matters stays with your team.</p>
         </div>
 
         <div class="fit__grid">
@@ -281,7 +295,7 @@
           </div>
         </div>
 
-        <p class="fit__close animate-in">We give your team back its hours &mdash; and a licensed attorney stands behind <strong>everything</strong> we hand over.</p>
+        <p class="fit__close animate-in">We give your team back its hours, and a licensed attorney stands behind <strong>everything</strong> we hand over.</p>
       </div>
     </section>
 
@@ -337,7 +351,7 @@
             <div class="proof__subline">Head of Compliance, growth-stage fintech</div>
           </div>
           <div class="proof__card animate-in delay-2">
-            <p class="proof__quote">&ldquo;We sent over a sales agreement and had a negotiation-ready redline the next morning &mdash; attorney-signed. Our last firm took two weeks.&rdquo;</p>
+            <p class="proof__quote">&ldquo;We sent over a sales agreement and had a negotiation-ready redline the next morning, attorney-signed. Our last firm took two weeks.&rdquo;</p>
             <div class="proof__subline">Sarah Chen, General Counsel</div>
           </div>
         </div>
@@ -482,7 +496,7 @@
 
         <!-- ===== COMPLIANCE PANEL ===== -->
         <div class="pricing__panel is-active" data-panel="compliance">
-          <p class="pricing__panel-lead">We own your regulatory calendar and prepare every submission &mdash; you keep the judgment and the sign-off. Pricing is scoped to your filings, jurisdictions, and volume. Tell us what you carry and we&rsquo;ll quote it.</p>
+          <p class="pricing__panel-lead">We own your regulatory calendar and prepare every submission, you keep the judgment and the sign-off. Pricing is scoped to your filings, jurisdictions, and volume. Tell us what you carry and we&rsquo;ll quote it.</p>
 
           <div class="pricing__detail"><details class="pgroup" open><summary class="pgroup__summary">Cross-industry <span class="pgroup__count">4 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary><div class="pitem"><span class="pitem__label">Obligation calendar build<span class="pitem__sub">One-time</span></span><span class="pitem__price">from $2,500</span></div><div class="pitem"><span class="pitem__label">Ongoing renewal &amp; deadline management<span class="pitem__sub">Monthly</span></span><span class="pitem__price">from $1,500/mo</span></div><div class="pitem"><span class="pitem__label">Regulator information request (RFI) response<span class="pitem__sub">Per request</span></span><span class="pitem__price">from $3,500</span></div><div class="pitem"><span class="pitem__label">Judgment memo (recommended positions to file)<span class="pitem__sub">Per memo</span></span><span class="pitem__price">from $2,500</span></div></details><details class="pgroup"><summary class="pgroup__summary">Financial services <span class="pgroup__count">9 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary><div class="pitem"><span class="pitem__label">Bank Call Report prep (FFIEC 031/041/051)<span class="pitem__sub">Per quarter</span></span><span class="pitem__price">$6,000</span></div><div class="pitem"><span class="pitem__label">Money transmitter license application<span class="pitem__sub">Per state</span></span><span class="pitem__price">$8,000</span></div><div class="pitem"><span class="pitem__label">Money transmitter license renewal<span class="pitem__sub">Per state / yr</span></span><span class="pitem__price">$1,500</span></div><div class="pitem"><span class="pitem__label">NMLS MSB Call Report<span class="pitem__sub">Per quarter</span></span><span class="pitem__price">$3,000</span></div><div class="pitem"><span class="pitem__label">SAR filing (CTR bundled)<span class="pitem__sub">Per filing</span></span><span class="pitem__price">$1,200</span></div><div class="pitem"><span class="pitem__label">HMDA LAR preparation<span class="pitem__sub">Annual</span></span><span class="pitem__price">$5,000</span></div><div class="pitem"><span class="pitem__label">BSA/AML program setup<span class="pitem__sub">One-time</span></span><span class="pitem__price">from $25,000</span></div><div class="pitem"><span class="pitem__label">GCC / EU prudential or AML return prep<span class="pitem__sub">Per return</span></span><span class="pitem__price">from $12,000</span></div><div class="pitem"><span class="pitem__label">Payments / EMI license application<span class="pitem__sub">Scoped</span></span><span class="pitem__price">quote</span></div></details><details class="pgroup"><summary class="pgroup__summary">Real estate &amp; development <span class="pgroup__count">4 items</span> <i data-lucide="chevron-down" class="pgroup__chev"></i></summary><div class="pitem"><span class="pitem__label">Developer &amp; project registration (DLD-RERA / ADREC / Wafi-Etnam)<span class="pitem__sub">Per project</span></span><span class="pitem__price">from $5,000</span></div><div class="pitem"><span class="pitem__label">Escrow account registration support<span class="pitem__sub">Per project</span></span><span class="pitem__price">from $3,000</span></div><div class="pitem"><span class="pitem__label">Off-plan (Oqood) + marketing permit (Trakheesi)<span class="pitem__sub">Per filing</span></span><span class="pitem__price">from $1,500</span></div><div class="pitem"><span class="pitem__label">Broker-card / contractor-license renewal<span class="pitem__sub">Per license</span></span><span class="pitem__price">from $900</span></div></details></div>
         </div>
@@ -506,23 +520,23 @@
         <p class="dna__logos-label animate-in">Our team has worked at</p>
         <div class="dna__logos animate-in">
           <div class="dna__logos-track">
-            <img class="dna__logo-img" src="logos/deel.png" alt="Deel">
-            <img class="dna__logo-img" src="logos/sp-global.png" alt="S&amp;P Global">
-            <img class="dna__logo-img" src="logos/capital-one.png" alt="Capital One">
-            <img class="dna__logo-img" src="logos/y-combinator.png" alt="Y Combinator">
-            <img class="dna__logo-img" src="logos/endeavor.png" alt="Endeavor">
-            <img class="dna__logo-img" src="logos/eversheds-sutherland.png" alt="Eversheds Sutherland">
-            <img class="dna__logo-img" src="logos/morgan-morgan.png" alt="Morgan &amp; Morgan">
-            <img class="dna__logo-img" src="logos/amazon.png" alt="Amazon">
+            <img class="dna__logo-img" src="/logos/deel.png" alt="Deel">
+            <img class="dna__logo-img" src="/logos/sp-global.png" alt="S&amp;P Global">
+            <img class="dna__logo-img" src="/logos/capital-one.png" alt="Capital One">
+            <img class="dna__logo-img" src="/logos/y-combinator.png" alt="Y Combinator">
+            <img class="dna__logo-img" src="/logos/endeavor.png" alt="Endeavor">
+            <img class="dna__logo-img" src="/logos/eversheds-sutherland.png" alt="Eversheds Sutherland">
+            <img class="dna__logo-img" src="/logos/morgan-morgan.png" alt="Morgan &amp; Morgan">
+            <img class="dna__logo-img" src="/logos/amazon.png" alt="Amazon">
             <!-- duplicate for seamless loop -->
-            <img class="dna__logo-img" src="logos/deel.png" alt="Deel">
-            <img class="dna__logo-img" src="logos/sp-global.png" alt="S&amp;P Global">
-            <img class="dna__logo-img" src="logos/capital-one.png" alt="Capital One">
-            <img class="dna__logo-img" src="logos/y-combinator.png" alt="Y Combinator">
-            <img class="dna__logo-img" src="logos/endeavor.png" alt="Endeavor">
-            <img class="dna__logo-img" src="logos/eversheds-sutherland.png" alt="Eversheds Sutherland">
-            <img class="dna__logo-img" src="logos/morgan-morgan.png" alt="Morgan &amp; Morgan">
-            <img class="dna__logo-img" src="logos/amazon.png" alt="Amazon">
+            <img class="dna__logo-img" src="/logos/deel.png" alt="Deel">
+            <img class="dna__logo-img" src="/logos/sp-global.png" alt="S&amp;P Global">
+            <img class="dna__logo-img" src="/logos/capital-one.png" alt="Capital One">
+            <img class="dna__logo-img" src="/logos/y-combinator.png" alt="Y Combinator">
+            <img class="dna__logo-img" src="/logos/endeavor.png" alt="Endeavor">
+            <img class="dna__logo-img" src="/logos/eversheds-sutherland.png" alt="Eversheds Sutherland">
+            <img class="dna__logo-img" src="/logos/morgan-morgan.png" alt="Morgan &amp; Morgan">
+            <img class="dna__logo-img" src="/logos/amazon.png" alt="Amazon">
           </div>
         </div>
       </div>
@@ -531,7 +545,7 @@
     <!-- ===== FINAL CTA ===== -->
     <section class="cta-final">
       <div class="container">
-        <h2 class="animate-in">Bring us your next filing &mdash; or your next contract.</h2>
+        <h2 class="animate-in">Bring us your next filing, or your next contract.</h2>
         <div class="cta-final__actions animate-in">
           <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-inverted">Get started</a>
         </div>
@@ -546,17 +560,17 @@
       <div class="footer__inner">
         <div>
           <div class="footer__logo">
-            <img src="brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
+            <img src="/brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
           </div>
-          <p class="footer__tagline">We extend your compliance and legal teams. Regulatory filing, license management, and contract work for regulated companies &mdash; signed off by a licensed attorney.</p>
+          <p class="footer__tagline">We extend your compliance and legal teams. Regulatory filing, license management, and contract work for regulated companies, signed off by a licensed attorney.</p>
         </div>
 
         <nav class="footer__links" aria-label="Footer navigation">
-          <a href="compliance.html">Compliance</a>
-          <a href="legal.html">Legal</a>
+          <a href="/compliance/">Compliance</a>
+          <a href="/legal/">Legal</a>
           <a href="/#process">How It Works</a>
           <a href="/#pricing">Pricing</a>
-          <a href="the-brief.html">The Brief</a>
+          <a href="/the-brief.html">The Brief</a>
           <a href="mailto:legal@alefcompute.com">Contact</a>
         </nav>
       </div>
@@ -653,6 +667,6 @@
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <script src="assets/app.js"></script>
+  <script src="/assets/app.js"></script>
 </body>
 </html>

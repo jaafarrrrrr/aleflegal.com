@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compliance — Regulatory Filing &amp; License Management | Alef</title>
+  <title>Compliance, Regulatory Filing &amp; License Management | Alef</title>
   <meta name="description" content="Alef extends your legal team's capacity. Contract review, drafting, and regulatory filing prep for regulated companies. Every deliverable signed off by a licensed attorney.">
   <meta property="og:title" content="Alef | Legal and Regulatory, Handled">
   <meta property="og:description" content="We extend your legal team's capacity. Contract review, drafting, and regulatory filing prep for fintech, real estate, and health-tech. Every deliverable signed off by a licensed attorney.">
@@ -32,7 +32,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <link rel="stylesheet" href="assets/shared.css">
+  <link rel="stylesheet" href="/assets/shared.css">
 </head>
 <body>
 
@@ -40,14 +40,25 @@
   <header class="header" role="banner">
     <div class="header__inner">
       <a href="/" class="header__logo" aria-label="Alef - Home" data-home>
-        <img class="logo-dark" src="brand/alef-horizontal-rust.svg" alt="Alef" width="784" height="192">
-        <img class="logo-light" src="brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
+        <img class="logo-dark" src="/brand/alef-horizontal-rust.svg" alt="Alef" width="784" height="192">
+        <img class="logo-light" src="/brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
       </a>
 
       <nav class="header__nav" aria-label="Main navigation">
-        <div class="nav-item"><a href="compliance.html">Compliance</a></div>
-        <div class="nav-item"><a href="legal.html">Legal</a></div>
         <div class="nav-item"><a href="/#process">How it works</a></div>
+        <div class="nav-item nav-item--dropdown">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Services <i data-lucide="chevron-down" class="nav-item__caret"></i></button>
+          <div class="nav-dropdown" role="menu">
+            <a href="/compliance/" role="menuitem">
+              <span class="nav-dropdown__title">Compliance</span>
+              <span class="nav-dropdown__desc">Regulatory filing &amp; license management</span>
+            </a>
+            <a href="/legal/" role="menuitem">
+              <span class="nav-dropdown__title">Legal</span>
+              <span class="nav-dropdown__desc">Contracts &amp; fractional general counsel</span>
+            </a>
+          </div>
+        </div>
         <div class="nav-item nav-item--dropdown">
           <button type="button" aria-haspopup="true" aria-expanded="false">Resources <i data-lucide="chevron-down" class="nav-item__caret"></i></button>
           <div class="nav-dropdown" role="menu">
@@ -55,7 +66,7 @@
               <span class="nav-dropdown__title">Pricing</span>
               <span class="nav-dropdown__desc">Outcome-based rates for legal and compliance work</span>
             </a>
-            <a href="the-brief.html" role="menuitem">
+            <a href="/the-brief.html" role="menuitem">
               <span class="nav-dropdown__title">The Brief</span>
               <span class="nav-dropdown__desc">Notes and opinions on legal and regulatory shifts</span>
             </a>
@@ -75,13 +86,16 @@
 
   <!-- Mobile nav drawer -->
   <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
-    <a href="compliance.html">Compliance</a>
-    <a href="legal.html">Legal</a>
     <a href="/#process">How it works</a>
+    <div class="mobile-nav__group">
+      <span class="mobile-nav__group-label">Services</span>
+      <a href="/compliance/">Compliance</a>
+      <a href="/legal/">Legal</a>
+    </div>
     <div class="mobile-nav__group">
       <span class="mobile-nav__group-label">Resources</span>
       <a href="/#pricing">Pricing</a>
-      <a href="the-brief.html">The Brief</a>
+      <a href="/the-brief.html">The Brief</a>
     </div>
     <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get started</a>
   </div>
@@ -92,7 +106,7 @@
       <div class="container">
         <p class="page-hero__eyebrow">Compliance</p>
         <h1>Regulatory filing &amp; license management.</h1>
-        <p>We become the operational owner of your regulatory calendar &mdash; pulling data from your systems, preparing every submission, and managing every renewal across the US and the GCC. You keep the judgment and the sign-off.</p>
+        <p>We become the operational owner of your regulatory calendar, pulling data from your systems, preparing every submission, and managing every renewal across the US and the GCC. You keep the judgment and the sign-off.</p>
         <div class="page-hero__actions"><a href="#" onclick="openEstimateModal(); return false;" class="btn btn-primary">Get started</a></div>
       </div>
     </section>
@@ -115,11 +129,11 @@
             <div class="ddomain__regions">
               <div class="dd-region">
                 <p class="dd-region__label">United States</p>
-                <p>Quarterly <strong>Call Reports</strong>. <strong>Money transmitter licenses</strong> across all 50 states &mdash; plus the quarterly NMLS MSB Call Report and annual renewals. <strong>SAR</strong> and <strong>CTR</strong> filings on FinCEN&rsquo;s clock. <strong>HMDA</strong> every March. We track them, prepare them, and keep the bonds and net-worth tests current.</p>
+                <p>Quarterly <strong>Call Reports</strong>. <strong>Money transmitter licenses</strong> across all 50 states, plus the quarterly NMLS MSB Call Report and annual renewals. <strong>SAR</strong> and <strong>CTR</strong> filings on FinCEN&rsquo;s clock. <strong>HMDA</strong> every March. We track them, prepare them, and keep the bonds and net-worth tests current.</p>
               </div>
               <div class="dd-region">
                 <p class="dd-region__label">GCC</p>
-                <p><strong>CBUAE</strong> prudential returns and <strong>goAML</strong> reporting in the UAE. The <strong>DFSA Annual AML Return</strong> in the DIFC. <strong>ADGM</strong> prudential filings through EPRS. <strong>SAMA</strong> and <strong>CMA</strong> reporting in Saudi Arabia. Four regulators, five systems &mdash; one team that knows each one.</p>
+                <p><strong>CBUAE</strong> prudential returns and <strong>goAML</strong> reporting in the UAE. The <strong>DFSA Annual AML Return</strong> in the DIFC. <strong>ADGM</strong> prudential filings through EPRS. <strong>SAMA</strong> and <strong>CMA</strong> reporting in Saudi Arabia. Four regulators, five systems, one team that knows each one.</p>
               </div>
             </div>
           </div>
@@ -136,7 +150,7 @@
               </div>
               <div class="dd-region">
                 <p class="dd-region__label">United States</p>
-                <p><strong>State contractor licensing</strong> and renewals, <strong>subdivision and master-plan</strong> approvals, and the <strong>trade licenses every subcontractor</strong> must hold and maintain &mdash; tracked across boards and municipalities.</p>
+                <p><strong>State contractor licensing</strong> and renewals, <strong>subdivision and master-plan</strong> approvals, and the <strong>trade licenses every subcontractor</strong> must hold and maintain, tracked across boards and municipalities.</p>
               </div>
             </div>
           </div>
@@ -144,7 +158,7 @@
 
         <div class="deepdive__hook animate-in">
           <i data-lucide="layers"></i>
-          <p><strong>One project can carry dozens of licenses &mdash; across subcontractors you don&rsquo;t directly control.</strong> We keep every one current, and tell you what&rsquo;s coming due before it&rsquo;s due.</p>
+          <p><strong>One project can carry dozens of licenses, across subcontractors you don&rsquo;t directly control.</strong> We keep every one current, and tell you what&rsquo;s coming due before it&rsquo;s due.</p>
         </div>
       </div>
     </section>
@@ -155,9 +169,9 @@
         <div class="coverage__head animate-in">
           <p class="section-label">What we cover</p>
           <h2>The filings we manage, country by country.</h2>
-          <p>Financial services and real estate, across four jurisdictions. We track each obligation, prepare every submission, and an attorney signs off &mdash; you keep the judgment.</p>
+          <p>Financial services and real estate, across four jurisdictions. We track each obligation, prepare every submission, and an attorney signs off, you keep the judgment.</p>
         </div>
-        <div class="country"><div class="country__head"><span class="country__flag">&#127482;&#127480;</span><div><h3>United States</h3><div class="country__sub">Federal &amp; 50-state</div></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--fs"><i data-lucide="landmark"></i> Financial Services</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Bank Call Report (FFIEC 031/041/051)</td><td>FFIEC &mdash; FDIC/OCC/Fed</td><td>Quarterly</td><td>&le; 30 days after quarter-end</td></tr><tr><td>Money Transmitter License renewal</td><td>NMLS / state regulators</td><td>Annual</td><td>Nov&ndash;Dec renewal window</td></tr><tr><td>NMLS MSB Call Report</td><td>NMLS / state regulators</td><td>Quarterly</td><td>45 days (Q4 by Mar 31)</td></tr><tr><td>Suspicious Activity Report (SAR)</td><td>FinCEN</td><td>Event-driven</td><td>30 days from detection</td></tr><tr><td>Currency Transaction Report (CTR)</td><td>FinCEN</td><td>Per transaction</td><td>15 days (cash &gt; $10k)</td></tr><tr><td>HMDA Loan/Application Register</td><td>CFPB</td><td>Annual</td><td>March 1</td></tr><tr><td>FinCEN MSB registration</td><td>FinCEN</td><td>Every 2 years</td><td>Dec 31 of renewal year</td></tr><tr><td>OFAC Annual Report of Blocked Property</td><td>OFAC</td><td>Annual</td><td>September 30</td></tr></tbody></table></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--re"><i data-lucide="building-2"></i> Real Estate &amp; Development</div><p class="cov-note-inline">US real-estate licensing is state- and municipality-specific &mdash; contractor boards (e.g. California CSLB, Florida DBPR), subdivision/plat approvals, and separate trade licenses for every subcontractor, each on its own renewal and continuing-education cycle. We track them per project and jurisdiction.</p></div></div><div class="country"><div class="country__head"><span class="country__flag">&#127462;&#127466;</span><div><h3>United Arab Emirates</h3><div class="country__sub">CBUAE &middot; DIFC/DFSA &middot; ADGM/FSRA &middot; VARA</div></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--fs"><i data-lucide="landmark"></i> Financial Services</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Integrated Regulatory Reporting (IRR)</td><td>CBUAE</td><td>Monthly / Qtrly / H-Y / Annual</td><td>7&ndash;15 working days; 31 Jul &amp; 31 Jan</td></tr><tr><td>ELAR / LCR liquidity returns</td><td>CBUAE</td><td>Monthly</td><td>Per CBUAE guidance</td></tr><tr><td>goAML Suspicious Transaction Report</td><td>UAE FIU</td><td>Event-driven</td><td>Without delay</td></tr><tr><td>DFSA Annual AML Return</td><td>DFSA (DIFC)</td><td>Annual</td><td>30 September</td></tr><tr><td>DFSA prudential returns (EPRS)</td><td>DFSA (DIFC)</td><td>Quarterly / Annual</td><td>+1 month / +4 months</td></tr><tr><td>ADGM prudential (EPRS) + FSRA Connect</td><td>FSRA (ADGM)</td><td>Monthly&ndash;Qtrly / Annual</td><td>Per prudential category</td></tr><tr><td>VARA reporting + licence renewal</td><td>VARA (Dubai)</td><td>Monthly&ndash;Annual</td><td>Annual licence renewal</td></tr><tr><td>FATCA / CRS return</td><td>Ministry of Finance</td><td>Annual</td><td>30 June</td></tr><tr><td>Corporate Tax return (9%)</td><td>Federal Tax Authority</td><td>Annual</td><td>Within 9 months of FY-end</td></tr><tr><td>Ultimate Beneficial Owner register</td><td>Relevant registrar</td><td>On change</td><td>Within 15 days</td></tr></tbody></table></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--re"><i data-lucide="building-2"></i> Real Estate &amp; Development</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Developer &amp; project registration</td><td>Dubai DLD / RERA</td><td>Per project + maintain</td><td>Before off-plan sales</td></tr><tr><td>Escrow account + milestone audit</td><td>DLD / RERA (Law 8/2007)</td><td>Per project + qtrly/annual</td><td>Annual audit by Mar 31</td></tr><tr><td>Oqood off-plan registration</td><td>Dubai DLD</td><td>Per unit</td><td>At point of sale</td></tr><tr><td>Trakheesi marketing permit</td><td>DLD / RERA</td><td>Per campaign</td><td>Before advertising</td></tr><tr><td>RERA broker card</td><td>DLD / RERA</td><td>Annual</td><td>Renew before expiry</td></tr><tr><td>Mollak service-charge filing</td><td>DLD / RERA</td><td>Annual</td><td>Before levying charges</td></tr><tr><td>ADREC developer/project/escrow + Madhmoun</td><td>ADREC (Abu Dhabi)</td><td>Per project</td><td>Before off-plan sales</td></tr><tr><td>Abu Dhabi broker licence (BLN)</td><td>DMT / ADREC</td><td>Annual</td><td>+ renewal course</td></tr><tr><td>Contractor classification (Law 7/2025)</td><td>Dubai Municipality</td><td>Annual</td><td>In force from Jan 2026</td></tr></tbody></table></div></div></div><div class="country"><div class="country__head"><span class="country__flag">&#127480;&#127462;</span><div><h3>Saudi Arabia</h3><div class="country__sub">SAMA &middot; CMA &middot; REGA</div></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--fs"><i data-lucide="landmark"></i> Financial Services</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Audited annual financial statements</td><td>SAMA</td><td>Annual</td><td>Within 45 business days of year-end</td></tr><tr><td>Quarterly financial reports</td><td>SAMA</td><td>Quarterly</td><td>Within 30 working days</td></tr><tr><td>Prudential data models (Excel)</td><td>SAMA</td><td>Quarterly / Annual</td><td>25 bd / 60 bd</td></tr><tr><td>PSP financial reporting</td><td>SAMA</td><td>Quarterly / Annual</td><td>1 month / 2 months</td></tr><tr><td>Suspicious Transaction Report</td><td>SAFIU (goAML)</td><td>Event-driven</td><td>Without delay</td></tr><tr><td>CMA periodic reporting + disclosure</td><td>CMA</td><td>Quarterly / event</td><td>30 days; material: without delay</td></tr><tr><td>Zakat &amp; tax + FATCA/CRS</td><td>ZATCA</td><td>Annual</td><td>Within 120 days of year-end</td></tr><tr><td>Ultimate Beneficial Owner register</td><td>Ministry of Commerce</td><td>Annual + on change</td><td>Within 15 days of change</td></tr></tbody></table></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--re"><i data-lucide="building-2"></i> Real Estate &amp; Development</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Developer registration (Etnam)</td><td>REGA</td><td>Initial + annual confirmation</td><td>Maintain to sell off-plan</td></tr><tr><td>Wafi off-plan sales &amp; marketing licence</td><td>REGA</td><td>Per project (marketing 180 days)</td><td>Renewable</td></tr><tr><td>Escrow account + milestone certification</td><td>REGA + trustee bank</td><td>Quarterly / per milestone</td><td>Engineer-certified</td></tr><tr><td>Commercial licence (developer/contractor)</td><td>Baladi (MoMRA)</td><td>Annual</td><td>Before anniversary</td></tr><tr><td>Contractor classification</td><td>MoMRA</td><td>Periodic</td><td>Required for tenders</td></tr><tr><td>Zakat &amp; tax (RE firms)</td><td>ZATCA</td><td>Annual</td><td>Within 120 days</td></tr></tbody></table></div></div></div><div class="country"><div class="country__head"><span class="country__flag">&#127466;&#127482;</span><div><h3>Eurozone / EU</h3><div class="country__sub">ECB &middot; EBA &middot; ESMA &middot; national regulators</div></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--fs"><i data-lucide="landmark"></i> Financial Services</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>COREP (capital, large exposures, leverage)</td><td>ECB / NCAs (EBA framework)</td><td>Quarterly</td><td>~42 days after quarter-end</td></tr><tr><td>FINREP (financial reporting)</td><td>ECB / NCAs</td><td>Quarterly</td><td>~42 days after quarter-end</td></tr><tr><td>LCR / NSFR liquidity</td><td>ECB / NCAs</td><td>Monthly</td><td>Month-end</td></tr><tr><td>AnaCredit granular credit data</td><td>ECB / national central banks</td><td>Monthly / Quarterly</td><td>~6th business day after month-end</td></tr><tr><td>MiFIR transaction reporting</td><td>NCA via ARM</td><td>Per transaction</td><td>T+1</td></tr><tr><td>EMIR derivatives reporting</td><td>Trade repositories</td><td>Per transaction</td><td>T+1</td></tr><tr><td>AML Suspicious Transaction Report</td><td>National FIU (EU AMLA from 2027)</td><td>Event-driven</td><td>Promptly</td></tr><tr><td>DORA ICT incident reporting</td><td>National competent authority</td><td>Per incident</td><td>4h / 72h / 1 month</td></tr><tr><td>PSD2 fraud reporting</td><td>National competent authority</td><td>Semi-annual</td><td>Per EBA schedule</td></tr><tr><td>AIFMD Annex IV (fund managers)</td><td>National competent authority</td><td>Qtrly / Semi / Annual</td><td>30 days after period</td></tr></tbody></table></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--re"><i data-lucide="building-2"></i> Real Estate &amp; Development</div><p class="cov-note-inline">EU real-estate development licensing is national and municipal &mdash; building permits, developer registration, and off-plan/escrow rules vary by member state. Covered on a per-jurisdiction basis.</p></div></div>
+        <div class="country"><div class="country__head"><span class="country__flag">&#127482;&#127480;</span><div><h3>United States</h3><div class="country__sub">Federal &amp; 50-state</div></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--fs"><i data-lucide="landmark"></i> Financial Services</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Bank Call Report (FFIEC 031/041/051)</td><td>FFIEC, FDIC/OCC/Fed</td><td>Quarterly</td><td>&le; 30 days after quarter-end</td></tr><tr><td>Money Transmitter License renewal</td><td>NMLS / state regulators</td><td>Annual</td><td>Nov&ndash;Dec renewal window</td></tr><tr><td>NMLS MSB Call Report</td><td>NMLS / state regulators</td><td>Quarterly</td><td>45 days (Q4 by Mar 31)</td></tr><tr><td>Suspicious Activity Report (SAR)</td><td>FinCEN</td><td>Event-driven</td><td>30 days from detection</td></tr><tr><td>Currency Transaction Report (CTR)</td><td>FinCEN</td><td>Per transaction</td><td>15 days (cash &gt; $10k)</td></tr><tr><td>HMDA Loan/Application Register</td><td>CFPB</td><td>Annual</td><td>March 1</td></tr><tr><td>FinCEN MSB registration</td><td>FinCEN</td><td>Every 2 years</td><td>Dec 31 of renewal year</td></tr><tr><td>OFAC Annual Report of Blocked Property</td><td>OFAC</td><td>Annual</td><td>September 30</td></tr></tbody></table></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--re"><i data-lucide="building-2"></i> Real Estate &amp; Development</div><p class="cov-note-inline">US real-estate licensing is state- and municipality-specific, contractor boards (e.g. California CSLB, Florida DBPR), subdivision/plat approvals, and separate trade licenses for every subcontractor, each on its own renewal and continuing-education cycle. We track them per project and jurisdiction.</p></div></div><div class="country"><div class="country__head"><span class="country__flag">&#127462;&#127466;</span><div><h3>United Arab Emirates</h3><div class="country__sub">CBUAE &middot; DIFC/DFSA &middot; ADGM/FSRA &middot; VARA</div></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--fs"><i data-lucide="landmark"></i> Financial Services</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Integrated Regulatory Reporting (IRR)</td><td>CBUAE</td><td>Monthly / Qtrly / H-Y / Annual</td><td>7&ndash;15 working days; 31 Jul &amp; 31 Jan</td></tr><tr><td>ELAR / LCR liquidity returns</td><td>CBUAE</td><td>Monthly</td><td>Per CBUAE guidance</td></tr><tr><td>goAML Suspicious Transaction Report</td><td>UAE FIU</td><td>Event-driven</td><td>Without delay</td></tr><tr><td>DFSA Annual AML Return</td><td>DFSA (DIFC)</td><td>Annual</td><td>30 September</td></tr><tr><td>DFSA prudential returns (EPRS)</td><td>DFSA (DIFC)</td><td>Quarterly / Annual</td><td>+1 month / +4 months</td></tr><tr><td>ADGM prudential (EPRS) + FSRA Connect</td><td>FSRA (ADGM)</td><td>Monthly&ndash;Qtrly / Annual</td><td>Per prudential category</td></tr><tr><td>VARA reporting + licence renewal</td><td>VARA (Dubai)</td><td>Monthly&ndash;Annual</td><td>Annual licence renewal</td></tr><tr><td>FATCA / CRS return</td><td>Ministry of Finance</td><td>Annual</td><td>30 June</td></tr><tr><td>Corporate Tax return (9%)</td><td>Federal Tax Authority</td><td>Annual</td><td>Within 9 months of FY-end</td></tr><tr><td>Ultimate Beneficial Owner register</td><td>Relevant registrar</td><td>On change</td><td>Within 15 days</td></tr></tbody></table></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--re"><i data-lucide="building-2"></i> Real Estate &amp; Development</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Developer &amp; project registration</td><td>Dubai DLD / RERA</td><td>Per project + maintain</td><td>Before off-plan sales</td></tr><tr><td>Escrow account + milestone audit</td><td>DLD / RERA (Law 8/2007)</td><td>Per project + qtrly/annual</td><td>Annual audit by Mar 31</td></tr><tr><td>Oqood off-plan registration</td><td>Dubai DLD</td><td>Per unit</td><td>At point of sale</td></tr><tr><td>Trakheesi marketing permit</td><td>DLD / RERA</td><td>Per campaign</td><td>Before advertising</td></tr><tr><td>RERA broker card</td><td>DLD / RERA</td><td>Annual</td><td>Renew before expiry</td></tr><tr><td>Mollak service-charge filing</td><td>DLD / RERA</td><td>Annual</td><td>Before levying charges</td></tr><tr><td>ADREC developer/project/escrow + Madhmoun</td><td>ADREC (Abu Dhabi)</td><td>Per project</td><td>Before off-plan sales</td></tr><tr><td>Abu Dhabi broker licence (BLN)</td><td>DMT / ADREC</td><td>Annual</td><td>+ renewal course</td></tr><tr><td>Contractor classification (Law 7/2025)</td><td>Dubai Municipality</td><td>Annual</td><td>In force from Jan 2026</td></tr></tbody></table></div></div></div><div class="country"><div class="country__head"><span class="country__flag">&#127480;&#127462;</span><div><h3>Saudi Arabia</h3><div class="country__sub">SAMA &middot; CMA &middot; REGA</div></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--fs"><i data-lucide="landmark"></i> Financial Services</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Audited annual financial statements</td><td>SAMA</td><td>Annual</td><td>Within 45 business days of year-end</td></tr><tr><td>Quarterly financial reports</td><td>SAMA</td><td>Quarterly</td><td>Within 30 working days</td></tr><tr><td>Prudential data models (Excel)</td><td>SAMA</td><td>Quarterly / Annual</td><td>25 bd / 60 bd</td></tr><tr><td>PSP financial reporting</td><td>SAMA</td><td>Quarterly / Annual</td><td>1 month / 2 months</td></tr><tr><td>Suspicious Transaction Report</td><td>SAFIU (goAML)</td><td>Event-driven</td><td>Without delay</td></tr><tr><td>CMA periodic reporting + disclosure</td><td>CMA</td><td>Quarterly / event</td><td>30 days; material: without delay</td></tr><tr><td>Zakat &amp; tax + FATCA/CRS</td><td>ZATCA</td><td>Annual</td><td>Within 120 days of year-end</td></tr><tr><td>Ultimate Beneficial Owner register</td><td>Ministry of Commerce</td><td>Annual + on change</td><td>Within 15 days of change</td></tr></tbody></table></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--re"><i data-lucide="building-2"></i> Real Estate &amp; Development</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>Developer registration (Etnam)</td><td>REGA</td><td>Initial + annual confirmation</td><td>Maintain to sell off-plan</td></tr><tr><td>Wafi off-plan sales &amp; marketing licence</td><td>REGA</td><td>Per project (marketing 180 days)</td><td>Renewable</td></tr><tr><td>Escrow account + milestone certification</td><td>REGA + trustee bank</td><td>Quarterly / per milestone</td><td>Engineer-certified</td></tr><tr><td>Commercial licence (developer/contractor)</td><td>Baladi (MoMRA)</td><td>Annual</td><td>Before anniversary</td></tr><tr><td>Contractor classification</td><td>MoMRA</td><td>Periodic</td><td>Required for tenders</td></tr><tr><td>Zakat &amp; tax (RE firms)</td><td>ZATCA</td><td>Annual</td><td>Within 120 days</td></tr></tbody></table></div></div></div><div class="country"><div class="country__head"><span class="country__flag">&#127466;&#127482;</span><div><h3>Eurozone / EU</h3><div class="country__sub">ECB &middot; EBA &middot; ESMA &middot; national regulators</div></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--fs"><i data-lucide="landmark"></i> Financial Services</div><div class="cov-group__scroll"><table class="cov-table"><thead><tr><th>Filing</th><th>Regulator</th><th>Frequency</th><th>When it&rsquo;s due</th></tr></thead><tbody><tr><td>COREP (capital, large exposures, leverage)</td><td>ECB / NCAs (EBA framework)</td><td>Quarterly</td><td>~42 days after quarter-end</td></tr><tr><td>FINREP (financial reporting)</td><td>ECB / NCAs</td><td>Quarterly</td><td>~42 days after quarter-end</td></tr><tr><td>LCR / NSFR liquidity</td><td>ECB / NCAs</td><td>Monthly</td><td>Month-end</td></tr><tr><td>AnaCredit granular credit data</td><td>ECB / national central banks</td><td>Monthly / Quarterly</td><td>~6th business day after month-end</td></tr><tr><td>MiFIR transaction reporting</td><td>NCA via ARM</td><td>Per transaction</td><td>T+1</td></tr><tr><td>EMIR derivatives reporting</td><td>Trade repositories</td><td>Per transaction</td><td>T+1</td></tr><tr><td>AML Suspicious Transaction Report</td><td>National FIU (EU AMLA from 2027)</td><td>Event-driven</td><td>Promptly</td></tr><tr><td>DORA ICT incident reporting</td><td>National competent authority</td><td>Per incident</td><td>4h / 72h / 1 month</td></tr><tr><td>PSD2 fraud reporting</td><td>National competent authority</td><td>Semi-annual</td><td>Per EBA schedule</td></tr><tr><td>AIFMD Annex IV (fund managers)</td><td>National competent authority</td><td>Qtrly / Semi / Annual</td><td>30 days after period</td></tr></tbody></table></div></div><div class="cov-group"><div class="cov-group__label cov-group__label--re"><i data-lucide="building-2"></i> Real Estate &amp; Development</div><p class="cov-note-inline">EU real-estate development licensing is national and municipal, building permits, developer registration, and off-plan/escrow rules vary by member state. Covered on a per-jurisdiction basis.</p></div></div>
         <p class="coverage__note animate-in">Indicative cadences as of 2026; several regimes are mid-transition (UAE CBUAE Law 6/2025, Dubai Law 7/2025, EU AMLA 2027, DORA). We confirm every deadline against the live rulebook before filing.</p>
       </div>
     </section>
@@ -176,7 +190,7 @@
     <!-- ===== FINAL CTA ===== -->
     <section class="cta-final">
       <div class="container">
-        <h2 class="animate-in">Bring us your next filing &mdash; or your next contract.</h2>
+        <h2 class="animate-in">Bring us your next filing, or your next contract.</h2>
         <div class="cta-final__actions animate-in">
           <a href="#" onclick="openEstimateModal(); return false;" class="btn btn-inverted">Get started</a>
         </div>
@@ -191,17 +205,17 @@
       <div class="footer__inner">
         <div>
           <div class="footer__logo">
-            <img src="brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
+            <img src="/brand/alef-horizontal-cyan.svg" alt="Alef" width="784" height="192">
           </div>
-          <p class="footer__tagline">We extend your compliance and legal teams. Regulatory filing, license management, and contract work for regulated companies &mdash; signed off by a licensed attorney.</p>
+          <p class="footer__tagline">We extend your compliance and legal teams. Regulatory filing, license management, and contract work for regulated companies, signed off by a licensed attorney.</p>
         </div>
 
         <nav class="footer__links" aria-label="Footer navigation">
-          <a href="compliance.html">Compliance</a>
-          <a href="legal.html">Legal</a>
+          <a href="/compliance/">Compliance</a>
+          <a href="/legal/">Legal</a>
           <a href="/#process">How It Works</a>
           <a href="/#pricing">Pricing</a>
-          <a href="the-brief.html">The Brief</a>
+          <a href="/the-brief.html">The Brief</a>
           <a href="mailto:legal@alefcompute.com">Contact</a>
         </nav>
       </div>
@@ -298,6 +312,6 @@
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <script src="assets/app.js"></script>
+  <script src="/assets/app.js"></script>
 </body>
 </html>
