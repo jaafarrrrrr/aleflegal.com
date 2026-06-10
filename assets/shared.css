@@ -2617,3 +2617,13 @@
 .cov-table tr:last-child td { border-bottom: none; }
 .cov-note-inline { color: var(--alef-slate); line-height: 1.6; font-size: 0.95rem; padding-bottom: 6px; }
 .coverage__note { font-size: 0.85rem; color: var(--alef-slate); margin-top: 22px; font-style: italic; }
+
+
+/* ===== COLLAPSIBLE COUNTRY ===== */
+.country > summary.country__head { cursor: pointer; list-style: none; user-select: none; transition: background 0.2s; }
+.country > summary.country__head::-webkit-details-marker { display: none; }
+.country > summary.country__head:hover { background: #efe6cf; }
+.country__heading { display: flex; flex-direction: column; }
+.country__chev { margin-left: auto; width: 20px; height: 20px; color: var(--alef-slate); transition: transform 0.25s ease; flex-shrink: 0; }
+.country[open] .country__chev { transform: rotate(180deg); }
+.country:not([open]) > .country__body { display: none; }
